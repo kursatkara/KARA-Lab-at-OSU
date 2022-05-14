@@ -2,8 +2,7 @@
 title: Kursat Kara, Ph.D.
 role: Professor of Aerospace Engineering
 avatar_filename: photo.jpg
-bio: My research interests include distributed robotics, mobile computing and
-  programmable matter.
+bio: "My research interests include "
 interests: []
 social:
   - icon: envelope
@@ -22,8 +21,8 @@ social:
     icon_pack: fab
     link: https://www.linkedin.com/
 organizations:
-  - name: Stanford University
-    url: https://www.stanford.edu/
+  - name: Oklahoma StateUniversity
+    url: https://experts.okstate.edu/kursat.kara
 education:
   courses:
     - course: PhD in Artificial Intelligence
