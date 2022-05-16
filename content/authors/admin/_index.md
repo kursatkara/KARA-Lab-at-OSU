@@ -30,8 +30,12 @@ social:
     icon_pack: fab
     link: https://www.linkedin.com/in/kursat-kara-4744173/
 organizations:
-  - name: Oklahoma StateUniversity
+  - name: Oklahoma State University
     url: https://experts.okstate.edu/kursat.kara
+  - name: American Institute of Aeronautics and Astronautics (AIAA)
+    url: https://www.aiaa.org/
+  - name: American Physical Society (APS)
+    url: https://www.aps.org/
 education:
   courses:
     - course: PhD in Artificial Intelligence
