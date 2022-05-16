@@ -3,7 +3,7 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Computational Hypersonics and Aerodynamics Laborayory # Website name
+title: Computational Hypersonics and Aerodynamics Laboratory # Website name
 baseURL: 'https://www.kursatkara.com/' # Website URL
 
 ############################
