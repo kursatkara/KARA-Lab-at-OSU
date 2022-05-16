@@ -10,8 +10,9 @@ bio: Dr. Kara directs the Computational Hypersonics and Aerodynamics Laboratory
 interests:
   - Hypersonic Boundary-Layer Transition
   - Quantum Computing
-  - Flow Control
+  - Aerodynamic Flow Separation Control
   - Sweeping Jet Actuator
+  - Rotary Wing Aerodynamics
 social:
   - icon: envelope
     icon_pack: fas
