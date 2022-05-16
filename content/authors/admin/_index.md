@@ -8,9 +8,10 @@ bio: Dr. Kara directs the Computational Hypersonics and Aerodynamics Laboratory
   Previously, he had been an assistant professor at Khalifa University, where he
   received the Faculty Excellence Award for Outstanding Teaching in 2015.
 interests:
-  - Hypersonic Boundary-Layer Transition
+  - Hypersonic Flow
+  - Boundary-Layer Transition
   - Quantum Computing
-  - Aerodynamic Flow Separation Control
+  - Flow Separation Control
   - Sweeping Jet Actuator
   - Rotary Wing Aerodynamics
 social:
