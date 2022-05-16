@@ -43,10 +43,10 @@ education:
       year: 2008
     - course: MSc in Aeronautical Engineering
       institution: Istanbul Technical University
-      year: ""
+      year: 2003
     - course: BSc in Aeronautical Engineering
       institution: Istanbul Technical University
-      year: ""
+      year: 1999
 email: ""
 superuser: true
 highlight_name: true
