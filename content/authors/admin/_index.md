@@ -32,9 +32,9 @@ social:
 organizations:
   - name: Oklahoma State University
     url: https://experts.okstate.edu/kursat.kara
-  - name: American Institute of Aeronautics and Astronautics (AIAA)
+  - name: AIAA
     url: https://www.aiaa.org/
-  - name: American Physical Society (APS)
+  - name: APS
     url: https://www.aps.org/
 education:
   courses:
