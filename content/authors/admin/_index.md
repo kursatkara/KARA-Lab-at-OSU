@@ -63,4 +63,4 @@ He served on the following AIAA committees.
 • AIAA APATC Membership Subcommittee (2012 – 2021) 
 • AIAA APATC Education Subcommittee (2012 – 2021)
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
