@@ -2,7 +2,11 @@
 title: Kursat Kara, Ph.D.
 role: Professor of Aerospace Engineering
 avatar_filename: avatar.jpg
-bio: "My research interests include "
+bio: Dr. Kara directs the Computational Hypersonics and Aerodynamics Laboratory
+  at Oklahoma State University. He teaches Fundamentals of Aerodynamics,
+  Unsteady Aerodynamics, Computational Fluid Dynamics, and Quantum Computing.
+  Previously, he had been an assistant professor at Khalifa University, where he
+  received the Faculty Excellence Award for Outstanding Teaching in 2015.
 interests:
   - Hypersonic Flows
   - Boundary-Layer Transition
