@@ -3,7 +3,12 @@ title: Kursat Kara, Ph.D.
 role: Professor of Aerospace Engineering
 avatar_filename: avatar.jpg
 bio: "My research interests include "
-interests: []
+interests:
+  - Hypersonic Flows
+  - Boundary-Layer Transition
+  - Sweeping Jet Actuator
+  - Flow Control
+  - Wind Turbine Aerodynamics
 social:
   - icon: envelope
     icon_pack: fas
