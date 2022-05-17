@@ -82,9 +82,9 @@ experience:
         * Large Eddy Simulations of Hot Supersonic Jets for Aeroacoustics DOD-Navy-STTR-Contract Number: N68335-09-C-0370
         * Instructor: AERSP 312 Aerospace Analysis (May 2010 - July 2010)
 
-  - title: CFD/Aerospace Engineer
+  - title: CFD-Aerospace Engineer
     company: New England Analytics LLC
-    company_url: 'https://www.aero.psu.edu/'
+    company_url: 'http://www.newenglandanalyticsllc.com/'
     company_logo: org-nea
     location: Connecticut
     date_start: '2008-11-01'
