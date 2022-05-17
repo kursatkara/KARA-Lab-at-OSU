@@ -38,13 +38,22 @@ experience:
         * Wind Data Generation for small Unmanned Aerial Systems in Urban Spaces
 
   - title: Visiting Research Scientist
-    company: University of Wyoming
+    company: University of Wyoming - Mechanical Engineering Department
     company_url: 'https://scientific-sims.com/cfdlab/Dimitri_Mavriplis/HOME/assets/papers/AIAA-2020-S76ROTOR.pdf'
     company_logo: org-uwyo
     location: Wyoming
     date_start: '2018-12-01'
     date_end: '2019-07-31'
     description: Hover Predictions of Sikorsky S76 Rotor Using a High Order Discontinuous Galerkin Off-Body Discretization.
+
+  - title: Visiting Professor
+    company: Penn State - Aerospace Engineering Department
+    company_url: 'https://www.aero.psu.edu/'
+    company_logo: org-psu
+    location: Pennsylvania
+    date_start: '2017-06-01'
+    date_end: '2017-08-31'
+    description: Two dimensional Unsteady Reynolds-Averaged Navier-Stokes simulations of a Sweeping Jet Actuator over a NASA Wall Mounted Hump model for flow separation control.
 
   - title: Assistant Professor of Aerospace Engineering
     company: Khalifa University - Aerospace Engineering Department (ABET Accredited)
@@ -57,7 +66,7 @@ experience:
         * Faculty Excellence Award for Outstanding Teaching (2014-2015)
         * Development of Khalifa University Flow Facilities – $3,500,000
         * Low-Speed Wind Tunnel (30m x 8m x 4.9m) 
-        * Flow Measurement Equipment: Stereo PIV, Time-Resolved PIV, Mini - Laser Doppler Anemometry, Hot-wire anemometry, Optic Tables, Traverse System, and Force/Moment Balance
+        * Flow Measurement Equipment: Stereo PIV, Time-Resolved PIV, Mini - Laser Doppler Anemometry, Hot-wire Anemometry, Optic Tables, Traverse System, and Force/Moment Balance
         * Graduate Student Advising
         * Developed/Delivered the several undergraduate and graduate courses
 
