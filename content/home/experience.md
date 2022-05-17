@@ -38,7 +38,7 @@ experience:
 
   - title: Visiting Research Scientist
     company: University of Wyoming
-    company_url: 'https://scientific-sims.com/'
+    company_url: 'https://scientific-sims.com/cfdlab/Dimitri_Mavriplis/HOME/assets/papers/AIAA-2020-S76ROTOR.pdf'
     company_logo: org-uwyo
     location: Wyoming
     date_start: '2018-12-01'
