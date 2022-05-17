@@ -8,7 +8,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 130
 
-title: Contact
+title: Contact Me
 subtitle:
 
 content:
@@ -16,13 +16,13 @@ content:
   autolink: true
 
   # Email form provider
-  form:
-    provider: netlify
-    formspree:
-      id:
-    netlify:
-      # Enable CAPTCHA challenge to reduce spam?
-      captcha: false
+  #form:
+  #  provider: netlify
+  #  formspree:
+  #    id:
+  #  netlify:
+  #    # Enable CAPTCHA challenge to reduce spam?
+  #    captcha: false
 
   # Contact details (edit or remove options as required)
   email: kursat.kara@okstate.edu
@@ -35,8 +35,8 @@ content:
     country: United States
     country_code: US
   coordinates:
-    latitude: '36.12176897872768'
-    longitude: '-97.06735065475057'
+    latitude: '36.1217'
+    longitude: '-97.0673'
   # directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
   # office_hours:
   #  - 'Monday 10:00 to 13:00'
