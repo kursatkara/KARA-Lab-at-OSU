@@ -46,6 +46,22 @@ experience:
     date_end: '2019-07-31'
     description: Hover Predictions of Sikorsky S76 Rotor Using a High Order Discontinuous Galerkin Off-Body Discretization.
 
+  - title: Assistant Professor of Aerospace Engineering
+    company: Khalifa University - Aerospace Engineering Department (ABET Accredited)
+    company_url: 'https://experts.okstate.edu/kursat.kara'
+    company_logo: org-ku
+    location: UAE
+    date_start: '2010-07-31'
+    date_end: '2018-08-31'
+    description: |2-
+        * Faculty Excellence Award for Outstanding Teaching (2014-2015)
+        * Development of Khalifa University Flow Facilities – $3,500,000
+        * Low-Speed Wind Tunnel (30m x 8m x 4.9m) 
+        * Flow Measurement Equipment: Stereo PIV, Time-Resolved PIV, Mini - Laser Doppler Anemometry, Hot-wire anemometry, Optic Tables, Traverse System, and Force/Moment Balance
+        * Graduate Student Advising
+        * Developed/Delivered the several undergraduate and graduate courses
+
+
   - title: Professor of Semiconductor Physics
     company: University X
     company_url: ''
