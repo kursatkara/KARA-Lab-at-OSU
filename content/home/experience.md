@@ -36,6 +36,16 @@ experience:
         * Modelling
         * Deploying
 
+  - title: Visiting Research Scientist
+    company: University of Wyoming
+    company_url: 'https://scientific-sims.com/'
+    company_logo: org-uwyo
+    location: Wyoming
+    date_start: '2018-12-01'
+    date_end: '2019-07-31'
+    description: Hover Predictions of Sikorsky S76 Rotor Using a High Order Discontinuous
+Galerkin Off-Body Discretization.
+
   - title: Professor of Semiconductor Physics
     company: University X
     company_url: ''
