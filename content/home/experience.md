@@ -89,9 +89,7 @@ experience:
     location: Connecticut
     date_start: '2008-11-01'
     date_end: '2009-06-31'
-    description: |2-
-        * Simulated and analyzed the flow field around Unmanned Air Vehicle and computed variations of aerodynamic parameters with respect to the angle of attack using ANSYS Fluent.
-        * Contributed to the development of landing/take-off estimation model based on flight dynamics equations using sensor measurement data. Tested the model in Matlab.
+    description: Simulated and analyzed the flow field around Unmanned Air Vehicle and computed variations of aerodynamic parameters with respect to the angle of attack using ANSYS Fluent.
 
 design:
   columns: '2'
