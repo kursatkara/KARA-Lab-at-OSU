@@ -70,15 +70,30 @@ experience:
         * Graduate Student Advising
         * Developed/Delivered the several undergraduate and graduate courses
 
+  - title: Post-Doctoral Scholar
+    company: Penn State - Aerospace Engineering Department
+    company_url: 'https://www.aero.psu.edu/'
+    company_logo: org-psu
+    location: Pennsylvania
+    date_start: '2009-08-01'
+    date_end: '2010-08-01'
+    description: |2-
+        * Supervisor: Dr. Philip J. Morris
+        * Large Eddy Simulations of Hot Supersonic Jets for Aeroacoustics DOD-Navy-STTR-Contract Number: N68335-09-C-0370
+        * Instructor: AERSP 312 Aerospace Analysis (May 2010 - July 2010)
 
-  - title: Professor of Semiconductor Physics
-    company: University X
-    company_url: ''
-    company_logo: org-x
-    location: California
-    date_start: '2016-01-01'
-    date_end: '2020-12-31'
-    description: Taught electronic engineering and researched semiconductor physics.
+  - title: CFD/Aerospace Engineer
+    company: New England Analytics LLC, Shelton, CT, (Consulting Company to Sikorsky Aircraft Corp.)
+    company_url: 'https://www.aero.psu.edu/'
+    company_logo: org-nea
+    location: Connecticut
+    date_start: '2008-11-01'
+    date_end: '2009-06-31'
+    description: |2-
+        * Simulated and analyzed the flow field around Unmanned Air Vehicle and computed variations of aerodynamic parameters with respect to the angle of attack using ANSYS Fluent.
+        * Contributed to the development of landing/take-off estimation model based on flight dynamics equations using sensor measurement data. Tested the model in Matlab.
+		
+
 
 design:
   columns: '2'
