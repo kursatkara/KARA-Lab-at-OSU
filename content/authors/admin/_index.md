@@ -45,7 +45,7 @@ education:
     - course: BSc in Aeronautical Engineering
       institution: Istanbul Technical University
       year: 1999
-email: ""
+email: "kursat.kara@okstate.edu"
 superuser: true
 highlight_name: true
 ---

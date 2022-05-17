@@ -30,11 +30,12 @@ experience:
     date_start: '2019-08-01'
     date_end: ''
     description: |2-
-        Responsibilities include:
-        
-        * Analysing
-        * Modelling
-        * Deploying
+        Research Areas:
+        * Computational Aerodynamics
+		* Hypersonic Boundary-Layer Stability
+		* Flow Separation Control
+		* Quantum Computing
+		* Wind Data Generation for small Unmanned Aerial Systems in Urban Spaces
 
   - title: Visiting Research Scientist
     company: University of Wyoming
