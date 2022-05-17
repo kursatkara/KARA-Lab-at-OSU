@@ -32,10 +32,10 @@ experience:
     description: |2-
         Research Areas:
         * Computational Aerodynamics
-		* Hypersonic Boundary-Layer Stability
-		* Flow Separation Control
-		* Quantum Computing
-		* Wind Data Generation for small Unmanned Aerial Systems in Urban Spaces
+        * Hypersonic Boundary-Layer Stability
+        * Flow Separation Control
+        * Quantum Computing
+        * Wind Data Generation for small Unmanned Aerial Systems in Urban Spaces
 
   - title: Visiting Research Scientist
     company: University of Wyoming
