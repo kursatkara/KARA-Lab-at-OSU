@@ -82,16 +82,6 @@ experience:
         * Large Eddy Simulations of Hot Supersonic Jets for Aeroacoustics DOD-Navy-STTR-Contract Number: N68335-09-C-0370
         * Instructor: AERSP 312 Aerospace Analysis (May 2010 - July 2010)
 
-  - title: CFD/Aerospace Engineer
-    company: New England Analytics LLC, Shelton, CT, (Consulting Company to Sikorsky Aircraft Corp.)
-    company_url: 'https://www.aero.psu.edu/'
-    company_logo: org-nea
-    location: Connecticut
-    date_start: '2008-11-01'
-    date_end: '2009-06-31'
-    description: |2-
-        * Simulated and analyzed the flow field around Unmanned Air Vehicle and computed variations of aerodynamic parameters with respect to the angle of attack using ANSYS Fluent.
-
 design:
   columns: '2'
 ---
