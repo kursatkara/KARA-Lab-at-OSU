@@ -65,8 +65,10 @@ features:
     extra_languages:
       - r
       - latex
+      - julia
+      - fortran
   math:
-    enable: false
+    enable: true
   privacy_pack:
     enable: false
   repository:
