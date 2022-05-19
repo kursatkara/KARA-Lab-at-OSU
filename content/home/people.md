@@ -9,16 +9,13 @@ active: true
 headless: true
 
 # Order that this section appears on the page.
-weight: 20
+weight: 40
 
 # ... Put Your Section Options Here (title etc.) ...
 
 title: Meet the Team
 
-content:
-  - Principal Investigators
-  - Researchers
-  - Grad Students
+content:["Principal Investigators","Grad Students"]
 
 design:
   # Show user's social networking links? (true/false)
