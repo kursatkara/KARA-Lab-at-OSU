@@ -5,7 +5,7 @@
 
 main:
   - name: Home
-    url: '#about'
+    url: '#slider'
     weight: 10
   - name: PI
     url: '#about'
