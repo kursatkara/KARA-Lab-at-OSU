@@ -15,7 +15,9 @@ weight: 40
 
 title: Meet the Team
 
-content:["Principal Investigators","Grad Students"]
+content:
+   - Principal Investigators
+   - Grad Students
 
 design:
   # Show user's social networking links? (true/false)

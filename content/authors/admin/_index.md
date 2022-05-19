@@ -1,7 +1,7 @@
 ---
 title: Kursat Kara, Ph.D.
 role: Assistant Professor of Aerospace Engineering
-user_groups: ["Principal Investigators"]
+user_groups: Principal Investigators
 avatar_filename: avatar.jpg
 bio: Dr. Kara directs the Computational Hypersonics and Aerodynamics Laboratory
   at Oklahoma State University. He teaches Fundamentals of Aerodynamics,
