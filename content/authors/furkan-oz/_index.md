@@ -1,6 +1,6 @@
 ---
 title: Furkan Oz
-user_groups: Grad Students
+user_groups: ["Grad Students"]
 role: Graduate Student
 avatar_filename: avatar
 interests:
