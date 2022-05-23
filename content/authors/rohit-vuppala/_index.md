@@ -1,6 +1,6 @@
 ---
 title: Rohit Vuppala
-user_groups: ["Graduate Student"]
+user_groups: ["Graduate Students"]
 role: Graduate Student
 avatar_filename: avatar
 interests:
