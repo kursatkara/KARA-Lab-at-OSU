@@ -20,7 +20,7 @@ content:
   user_groups:
     - Principal Investigator
     - Graduate Students
-    - Undergraduate Researchers
+    - Undergraduate Students
     - Alumni
 
 
