@@ -11,17 +11,17 @@ interests:
 social:
   - display:
       header: false
-    link: https://scholar.google.com/citations?user=tRnjE8wAAAAJ&hl
+    link: https://scholar.google.com/citations?user=eAlRaykAAAAJ&hl
     icon_pack: fas
     icon: graduation-cap
   - display:
       header: false
-    link: https://github.com/frkanz
+    link: https://github.com/rohitvuppala
     icon_pack: fab
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/furkan-%C3%B6z-a434b813a/
+    link: https://www.linkedin.com/in/vrkssai
     icon_pack: fab
     icon: linkedin
 organizations:

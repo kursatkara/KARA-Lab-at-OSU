@@ -10,12 +10,12 @@ interests:
 social:
   - display:
       header: false
-    link: https://scholar.google.com/citations?user=tRnjE8wAAAAJ&hl
+    link: 
     icon_pack: fas
     icon: graduation-cap
   - display:
       header: false
-    link: https://github.com/frkanz
+    link: 
     icon_pack: fab
     icon: github
   - display:
