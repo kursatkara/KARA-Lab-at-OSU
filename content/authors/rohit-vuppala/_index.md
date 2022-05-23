@@ -4,10 +4,10 @@ user_groups: ["Graduate Students"]
 role: Ph.D. Candidate
 avatar_filename: avatar
 interests:
-  - UAS
-  - Atmosphetic Boundary Layer
-  - CFD
-  - Machine Learning
+  - Unmanned Aerial Systems
+  - Atmospheric Boundary Layer
+  - Large Eddy Simulations
+  - Reduced Order Modeling
 social:
   - display:
       header: false
