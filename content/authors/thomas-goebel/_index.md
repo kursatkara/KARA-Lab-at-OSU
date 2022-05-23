@@ -1,12 +1,12 @@
 ---
-title: Mobashera Alam
-user_groups: ["Graduate Students"]
-role: M.Sc. Student
+title: Thomas Goebel
+user_groups: ["Alumni"]
+role: Undergraduate Researcher
 avatar_filename: avatar
 interests:
-  - Flow Separation Control
-  - Sweeping Jet Actuator
-  - Dynamic Mode Decomposition
+  - Hypersonic Flows
+  - Boundary Layer Transition
+  - CFD
 social:
   - display:
       header: false

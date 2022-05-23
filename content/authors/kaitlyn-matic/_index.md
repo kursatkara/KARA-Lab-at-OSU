@@ -1,12 +1,12 @@
 ---
-title: Mobashera Alam
-user_groups: ["Graduate Students"]
-role: M.Sc. Student
+title: Kaitlyn Matic
+user_groups: ["Undergraduate Students"]
+role: Undergraduate Researcher
 avatar_filename: avatar
 interests:
   - Flow Separation Control
   - Sweeping Jet Actuator
-  - Dynamic Mode Decomposition
+  - CFD
 social:
   - display:
       header: false

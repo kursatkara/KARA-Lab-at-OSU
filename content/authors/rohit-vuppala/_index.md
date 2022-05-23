@@ -1,7 +1,7 @@
 ---
 title: Rohit Vuppala
 user_groups: ["Graduate Students"]
-role: Graduate Student
+role: Ph.D. Candidate
 avatar_filename: avatar
 interests:
   - UAS
