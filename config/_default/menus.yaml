@@ -16,6 +16,9 @@ main:
   - name: Team
     url: '#people'
     weight: 40
+  - name: Photo Gallery
+    url: '#gallery'
+    weight: 41
   - name: Publications
     url: '#featured'
     weight: 50
