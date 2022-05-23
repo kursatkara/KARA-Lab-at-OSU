@@ -15,8 +15,11 @@ weight: 40
 title: Meet the Team
 
 content:
-   - PI
-   - Students
+  # Choose which groups/teams of users to display.
+  #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
+  user_groups:
+    - PI
+    - Students
 
 design:
   # Show user's social networking links? (true/false)
