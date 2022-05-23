@@ -15,8 +15,8 @@ weight: 40
 title: Meet the Team
 
 content:
-   - Principal Investigators
-   - Grad Students
+   - PI
+   - Students
 
 design:
   # Show user's social networking links? (true/false)
