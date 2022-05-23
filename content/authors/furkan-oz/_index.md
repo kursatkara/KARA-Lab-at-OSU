@@ -1,7 +1,7 @@
 ---
 title: Furkan Oz
-user_groups: ["Students","Graduate Student"]
-role: Graduate Student
+user_groups: ["Graduate Student"]
+#role: Graduate Student
 avatar_filename: avatar
 interests:
   - Hypersonic Flows
