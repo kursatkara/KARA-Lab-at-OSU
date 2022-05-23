@@ -10,7 +10,7 @@ headless: true
 weight: 1
 
 # Section title
-title: Hello
+title: Under Construction!
 
 # Section subtitle
 subtitle:
@@ -25,4 +25,5 @@ design:
   # text_color_light: true
 ---
 
-# Add any content to the body of the section here.
+Welcome to the Kara Lab. 
+This page is under construction.
