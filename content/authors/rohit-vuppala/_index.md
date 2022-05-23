@@ -1,13 +1,13 @@
 ---
-title: Furkan Oz
+title: Rohit Vuppala
 user_groups: ["Students"]
 role: Graduate Student
 avatar_filename: avatar
 interests:
-  - Hypersonic Flows
-  - Boundary Layer Stability
-  - DNS
-  - Quantum Computing
+  - UAS
+  - Atmosphetic Boundary Layer
+  - CFD
+  - Machine Learning
 social:
   - display:
       header: false
