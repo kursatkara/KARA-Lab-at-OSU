@@ -13,11 +13,11 @@ authors:
 #  - 'Equal contribution'
 #  - 'Equal contribution'
 
-date: ''
+date: '2011-12-01T00:00:00Z'
 doi: '10.2514/1.J050032'
 
 # Schedule page publish date (NOT publication's date).
-publishDate: ''
+publishDate: '2012-04-30T00:00:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -44,7 +44,8 @@ featured: true
 # - name: Custom Link
 #   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=RXSWKeMAAAAJ&citation_for_view=RXSWKeMAAAAJ:qjMakFHDy7sC
 
-url_pdf: 'https://ntrs.nasa.gov/api/citations/20110023840/downloads/20110023840.pdf'
+url_pdf: 'kara2011.pdf'
+#url_pdf: 'https://ntrs.nasa.gov/api/citations/20110023840/downloads/20110023840.pdf'
 url_code: ''
 url_dataset: ''
 url_poster: ''
