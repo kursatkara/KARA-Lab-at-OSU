@@ -44,8 +44,7 @@ featured: true
 # - name: Custom Link
 #   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=RXSWKeMAAAAJ&citation_for_view=RXSWKeMAAAAJ:qjMakFHDy7sC
 
-url_pdf: 'kara2011.pdf'
-#url_pdf: 'https://ntrs.nasa.gov/api/citations/20110023840/downloads/20110023840.pdf'
+url_pdf: 'https://ntrs.nasa.gov/api/citations/20110023840/downloads/20110023840.pdf'
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -77,13 +76,3 @@ projects:
 #   Otherwise, set `slides: ""`.
 #slides: example
 ---
-
-{{% callout note %}}
-Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
-
-{{% callout note %}}
-Create your slides in Markdown - click the _Slides_ button to check out the example.
-{{% /callout %}}
-
-Supplementary notes can be added here, including [code, math, and images](https://wowchemy.com/docs/writing-markdown-latex/).
