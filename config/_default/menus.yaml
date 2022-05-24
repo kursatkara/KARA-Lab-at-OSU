@@ -17,7 +17,7 @@ main:
     url: '#people'
     weight: 40
   - name: Publications
-    url: '#publications'
+    url: '#featured'
     weight: 50
   - name: Lab Photos
     url: '#labphotos'
