@@ -16,14 +16,14 @@ main:
   - name: Team
     url: '#people'
     weight: 40
-  - name: Lab Photos
-    url: '#labphotos'
-    weight: 50
-  - name: Personal Photos
-    url: '#personalphotos'
-    weight: 60
   - name: Publications
     url: '#featured'
+    weight: 50
+  - name: Lab Photos
+    url: '#labphotos'
+    weight: 60
+  - name: Personal Photos
+    url: '#personalphotos'
     weight: 70
   - name: Contact
     url: '#contact'
