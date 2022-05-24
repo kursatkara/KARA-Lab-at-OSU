@@ -26,4 +26,3 @@ design:
 ---
 
 Welcome to the Kara Lab. 
-This page is under construction.
