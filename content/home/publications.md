@@ -37,3 +37,4 @@ design:
 ---
 
 Quickly discover relevant content by [filtering publications](./publication/).
+The full list is at the Google Scholar (./https://scholar.google.com/citations?user=RXSWKeMAAAAJ/).
