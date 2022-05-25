@@ -35,7 +35,7 @@ abstract: The receptivity to freestream acoustic disturbances and the stability 
 # Summary. An optional shortened abstract.
 summary: The appearance of instability waves near the nose region and the receptivity of the boundary layer with respect to slow mode acoustic waves are investigated. Computations confirm the stabilizing effect of nose bluntness and the role of the entropy layer in the delay of boundary-layer transition. 
 
-tags: []
+tags: ["Hypersonic","Cone","Mach 6", "Receptivity", "Boundary-Layer", "Stability", "DNS", "Instability", "Acoustic", "Wave", "Slow mode", "WENO", "TVD-RK"]
 
 # Display this page in the Featured widget?
 featured: true
@@ -45,7 +45,7 @@ featured: true
 # - name: Custom Link
 #   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=RXSWKeMAAAAJ&citation_for_view=RXSWKeMAAAAJ:qjMakFHDy7sC
 
-#url_pdf: 'https://ntrs.nasa.gov/api/citations/20110023840/downloads/20110023840.pdf'
+# ###url_pdf: 'https://ntrs.nasa.gov/api/citations/20110023840/downloads/20110023840.pdf'
 url_pdf: ''
 url_code: ''
 url_dataset: ''
@@ -59,7 +59,7 @@ url_video: ''
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
 #  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
-  filename: kara2011.png
+  filename: effects-of-nose-bluntness.png
   focal_point: Smart
   preview_only: false
 
