@@ -18,11 +18,11 @@ image:
 url_code: ""
 ---
 **Investigators**
-  - He Bai (Principal Investigator)
-  - Samuel Vance (Co-Principal Investigator)
-  - Jamey Jacob (Co-Principal Investigator)
-  - Rushikesh Kamalapurkar (Co-Principal Investigator)
-  - Kursat Kara (Co-Principal Investigator)
+- [He Bai](https://experts.okstate.edu/he.bai) (Principal Investigator)
+- [Jamey Jacob](https://ceat.okstate.edu/mae/research/usri/our-people.html) (Co-Principal Investigator)
+- [Rushikesh Kamalapurkar](https://scc-lab.github.io/) (Co-Principal Investigator)
+- Samuel Vance (Co-Principal Investigator)
+- [Kursat Kara](https://experts.okstate.edu/kursat.kara) (Co-Principal Investigator)
   
 **Abstract**
 This project will promote the progress of science, and advance the national health, security and prosperity by conducting fundamental research needed to enhance safety and efficiency of aircraft operations in low altitude urban environments. Safe and seamless inclusion of unmanned aircraft such as delivery drones, and manned aircraft such as air taxis into urban airspace requires building traffic management systems that account for the performance of aircraft, pilots, and autopilots under a variety of atmospheric conditions. Aircraft operating in low altitude urban environments are subject to turbulent wind gusts that cannot be accurately predicted using current techniques. This research project will address this challenge by enabling the progress of science across multiple disciplines, including meteorology, human-robot interaction, machine learning, data-driven modeling, robotics, and instrumentation. Desired research outcomes will significantly impact many important applications, including micro-weather prediction, turbulent plumes of pollutants and emissions, drone package delivery, and air taxis. The inter-disciplinary nature of the project will better prepare next-generation students and engineers and the synergistic activities will broaden the participation of underrepresented groups in research.
