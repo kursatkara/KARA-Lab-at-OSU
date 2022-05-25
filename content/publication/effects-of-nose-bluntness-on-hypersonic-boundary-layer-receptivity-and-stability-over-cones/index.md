@@ -45,7 +45,8 @@ featured: true
 # - name: Custom Link
 #   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=RXSWKeMAAAAJ&citation_for_view=RXSWKeMAAAAJ:qjMakFHDy7sC
 
-url_pdf: 'https://ntrs.nasa.gov/api/citations/20110023840/downloads/20110023840.pdf'
+#url_pdf: 'https://ntrs.nasa.gov/api/citations/20110023840/downloads/20110023840.pdf'
+url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''
