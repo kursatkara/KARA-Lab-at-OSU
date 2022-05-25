@@ -32,7 +32,7 @@ abstract: In the present study, we numerically tested the performance of a Sweep
 # Summary. An optional shortened abstract.
 summary: The SWJ actuator reduced the separation bubble size in all cases, and the reattachment point moved upstream by 41%.
 
-tags: ["Sweeping Jet Actuator", "SWJ", "2D NASA Wall-Mounted Hump", "Flow", "Separation", "Control", "Separation Bubble", "URANS", "Turbulent"]
+tags: ["Sweeping Jet Actuator", "SWJ", "NASA Wall-Mounted Hump", "Flow", "Separation", "Control", "Separation Bubble", "URANS", "Turbulent"]
 
 # Display this page in the Featured widget?
 featured: true
