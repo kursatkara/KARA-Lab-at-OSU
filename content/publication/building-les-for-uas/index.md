@@ -32,7 +32,7 @@ abstract: The ever-increasing demand for Unmanned Aircraft Systems (UAS) has led
 # Summary. An optional shortened abstract.
 summary: We use Large-Eddy Simulation to understand the unsteady and highly coherent turbulent flow structures produced by buildings in neutral atmospheric boundary layer flow. Furthermore, we demonstrate a non-intrusive machine learning methodology to predict flow fields to augment safe wind-aware navigation systems for Unmanned Aerial Vehicles as a first step toward safely integrating UAS into existing aerial infrastructure.
 
-tags: ["Large-Eddy Simulation", "Unmanned Aircraft Systems", "UAS", "Gust", Turbulence", "Urban Environment", "Machine Learning", "ROM", "LSTM", "NSF", "Award# 1925147"]
+tags: ["Large-Eddy Simulation", "Unmanned Aircraft Systems", "UAS", "Gust", Turbulence", "Urban Environment", "Machine Learning", "ROM", "LSTM", "NSF", "Award Number 1925147"]
 
 # Display this page in the Featured widget?
 featured: true
