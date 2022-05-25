@@ -36,6 +36,8 @@ design:
   columns: '2'
 ---
 
+Papers on [GitHub](https://github.com/kursatkara/kursatkara-hugo-academic/tree/main/content/publication) | Quickly discover relevant content by [filtering publications](./publication/).
+
 {{% callout note %}}
 Quickly discover relevant content by [filtering publications](./publication/).
 {{% /callout %}}
