@@ -37,7 +37,7 @@ experience:
         * Quantum Computing
         * Wind Data Generation for small Unmanned Aerial Systems in Urban Spaces
 
-  - title: Visiting Research Scientist
+  - title: Visiting Professor
     company: University of Wyoming - Mechanical Engineering Department
     company_url: 'https://scientific-sims.com/cfdlab/Dimitri_Mavriplis/HOME/assets/papers/AIAA-2020-S76ROTOR.pdf'
     company_logo: org-uwyo
