@@ -6,7 +6,8 @@ title: 'Effects of Nose Bluntness on Hypersonic Boundary-Layer Receptivity and S
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - admin
-  - Ponnampalam Balakumar and Osama A. Kandil
+  - Ponnampalam Balakumar
+  - Osama A. Kandil
 
 # Author notes (optional)
 #author_notes:
@@ -32,7 +33,7 @@ publication: AIAA Journal
 abstract: The receptivity to freestream acoustic disturbances and the stability properties of hypersonic boundary layers are numerically investigated for boundary-layer flows over a 5-degree straight cone at a freestream Mach number of 6.0. To compute the shock and the interaction of the shock with the instability waves, the Navier-Stokes equations in axisymmetric coordinates were solved. In the governing equations, inviscid and viscous flux vectors are discretized using a fifth-order accurate weighted-essentially-non-oscillatory scheme. A third-order accurate total-variationdiminishing Runge-Kutta scheme is employed for time integration. After the mean flow field is computed, disturbances are introduced at the upstream end of the computational domain. The appearance of instability waves near the nose region and the receptivity of the boundary layer with respect to slow mode acoustic waves are investigated. Computations confirm the stabilizing effect of nose bluntness and the role of the entropy layer in the delay of boundary-layer transition. The current solutions, compared with experimental observations and other computational results, exhibit good agreement.
 
 # Summary. An optional shortened abstract.
-#summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: The appearance of instability waves near the nose region and the receptivity of the boundary layer with respect to slow mode acoustic waves are investigated. Computations confirm the stabilizing effect of nose bluntness and the role of the entropy layer in the delay of boundary-layer transition. 
 
 tags: []
 
