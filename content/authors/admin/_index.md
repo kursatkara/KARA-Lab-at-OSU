@@ -27,6 +27,11 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/kursat-kara-4744173/
+  - display:
+      header: false
+    link: https://twitter.com/KursatK97928136
+    icon_pack: fab
+    icon: twitter
 organizations:
   - name: Oklahoma State University
     url: https://experts.okstate.edu/kursat.kara
