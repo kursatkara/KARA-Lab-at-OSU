@@ -13,7 +13,7 @@ headless: true
 
 design:
   # Slide height is automatic unless you force a specific height (e.g. '400px')
-  slide_height: '800px'
+  slide_height: ''
   is_fullscreen: false
   # Automatically transition through slides?
   loop: false
@@ -50,40 +50,7 @@ content:
         icon: graduation-cap
         icon_pack: fas
         text: Join Us
-        url: contact
-
-
-
-
-
-
-
-
-
-# An instance of the Blank widget.
-# Documentation: https://wowchemy.com/docs/page-builder/
-#widget: blank
-
-# This file represents a page section.
-#headless: true
-
-# Order that this section appears on the page.
-#weight: 10
-
-# Section title
-#title: Under Construction!
-
-# Section subtitle
-#subtitle: Welcome to the Kara Lab a.
-
-# Section design
-#design:
-#  # Use a 1-column layout
-#  columns: "1"
-#  # Use a dark navy background with light text.
-#  background:
-#    color: 'LightSkyBlue'
-#  # text_color_light: true
+        url: #contact
 ---
 
  
