@@ -6,9 +6,13 @@
 # Appearance
 
 appearance:
-  theme_day: minimal
-  theme_night: minimal
-  font: minimal
+#  theme_day: minimal
+#  theme_night: minimal
+#  font: minimal
+#  font_size: L
+  theme_day: osu
+  theme_night: osu
+  font: osu
   font_size: L
 
 # SEO
