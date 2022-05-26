@@ -34,7 +34,7 @@ content:
       content: 'transformative aerodynamic concepts'
       align: left
       background:
-        position: center
+        position: left
         color: '#555'
         brightness: 0.7
         media: a-symposium-2022-02.jpg
@@ -50,7 +50,7 @@ content:
         icon: graduation-cap
         icon_pack: fas
         text: Join Us
-        url: #contact
+        url: '#contact'
 ---
 
  
