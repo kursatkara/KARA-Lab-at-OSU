@@ -13,12 +13,12 @@ headless: true
 
 design:
   # Slide height is automatic unless you force a specific height (e.g. '400px')
-  slide_height: '600px'
+  slide_height: '800px'
   is_fullscreen: false
   # Automatically transition through slides?
-  loop: true
+  loop: false
   # Duration of transition between slides (in ms)
-  interval: 2500
+  interval: 3000
 
 content:
   slides:
