@@ -13,44 +13,44 @@ headless: true
 
 design:
   # Slide height is automatic unless you force a specific height (e.g. '400px')
-  slide_height: ''
-  is_fullscreen: true
+  slide_height: '600px'
+  is_fullscreen: false
   # Automatically transition through slides?
   loop: true
   # Duration of transition between slides (in ms)
-  interval: 2000
+  interval: 2500
 
 content:
   slides:
-    - title: 👋 Welcome to the group
+    - title: 👋 Welcome to the Kara Lab at OSU
       content: Take a look at what we're working on...
       align: center
       background:
-        position: right
+        position: center
         color: '#666'
         brightness: 0.7
         media: /albums/lab/a-symposium-2022-01.jpg
-    - title: Lunch & Learn ☕️
-      content: 'Share your knowledge with the group and explore exciting new topics together!'
+    - title: Hypersonic boundary-layer stability  
+      content: 'transformative aerodynamic concepts'
       align: left
       background:
         position: center
         color: '#555'
         brightness: 0.7
         media: /albums/lab/a-symposium-2022-02.jpg
-    - title: World-Class Semiconductor Lab
-      content: 'Just opened last month!'
-      align: right
+    - title: Advanced aerodynamics concepts
+      content: 'transformative aerodynamic concepts'
+      align: left
       background:
         position: center
         color: '#333'
-        brightness: 0.5
+        brightness: 0.7
         media: /albums/lab/a-symposium-2022-03.jpg
       link:
         icon: graduation-cap
         icon_pack: fas
         text: Join Us
-        url: ../contact/
+        url: contact
 
 
 
