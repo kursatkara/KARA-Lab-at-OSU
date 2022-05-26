@@ -15,11 +15,11 @@ appearance:
 
 marketing:
   seo:
-    site_type: Person
+    site_type: ResearchOrganization
     local_business_type: ''
-    org_name: ''
-    description: ''
-    twitter: ''
+    org_name: 'Oklahoma State University'
+    description: 'Kara Lab: Computational Hypersonics and Aerodynamics Laboratory at Oklahoma State University'
+    twitter: 'KursatK97928136'
   analytics:
     google_analytics: 'G-P8T3Q2RL0T'
     baidu_tongji: ''
