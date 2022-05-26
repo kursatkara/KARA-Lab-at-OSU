@@ -29,15 +29,15 @@ content:
         position: center
         color: '#666'
         brightness: 0.7
-        media: a-symposium-2022-01.jpg
+        media: a-symposium-2022-02.jpg
     - title: Hypersonic boundary-layer stability  
       content: 'transformative aerodynamic concepts'
       align: left
       background:
-        position: left
+        position: center
         color: '#555'
         brightness: 0.7
-        media: a-symposium-2022-02.jpg
+        media: a-symposium-2022-01.jpg
     - title: Advanced aerodynamics concepts
       content: 'transformative aerodynamic concepts'
       align: left
