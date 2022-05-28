@@ -14,7 +14,7 @@ headless: true
 design:
   # Slide height is automatic unless you force a specific height (e.g. '400px')
   slide_height: '600px'
-  is_fullscreen: true
+  is_fullscreen: false
   # Automatically transition through slides?
   loop: false
   # Duration of transition between slides (in ms)
@@ -38,7 +38,7 @@ content:
         color: '#555'
         brightness: 0.7
         media: a-symposium-2022-01.jpg
-    - title: Advanced aerodynamics concepts
+    - title: Aerodynamic flow separation control
       content: 'transformative aerodynamic concepts'
       align: left
       background:
