@@ -32,7 +32,7 @@ abstract: While an impinging jet has been widely investigated because of its rem
 # Summary. An optional shortened abstract.
 summary: We investigated the heat transfer of a sweeping jet impinging on a flat wall and analyzed the unsteady flow structures using proper orthogonal decomposition. We observed that two distinct regions of local Nusselt number formed along the wall correlating with flow structures.
 
-tags: ["Sweeping Jet Actuator", "SWJ", "Heat Transfer", "Wall Impinging Jet", "Unsteady Flow", "Nusselt number", "Proper Orthogonal Decomposition", "Particle Image Velocimetry", "PIV"]
+tags: ["Sweeping Jet Actuator", "SWJ", "Heat Transfer", "Wall Impinging Jet", "Unsteady", "Flow", "Nusselt", "Proper Orthogonal Decomposition", "Particle Image Velocimetry", "PIV"]
 
 # Display this page in the Featured widget?
 featured: true
@@ -64,8 +64,7 @@ image:
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects:
-  - Sweeping Jet Actuator
-  - Heat Transfer
+  - Sweeping_Jet_Actuator
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
