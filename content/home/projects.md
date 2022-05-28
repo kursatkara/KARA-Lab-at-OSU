@@ -27,10 +27,14 @@ content:
   filter_button:
     - name: All
       tag: '*'
-    - name: Wind-Aware Navigation
-      tag: Wind-Aware Navigation
-    - name: Other
-      tag: ''
+    - name: ML for Wind-Aware sUAS
+      tag: 'ML for Wind-Aware sUAS'
+    - name: Hypersonic Boundary-Layer Stability
+      tag: 'Hypersonic Boundary-Layer Stability'
+    - name: Sweeping Jet Actuator
+      tag: 'Sweeping Jet Actuator'
+    - name: Rotor in Hover
+      tag: 'Rotor in Hover'
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
