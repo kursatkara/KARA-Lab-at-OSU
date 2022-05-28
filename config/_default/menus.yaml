@@ -16,12 +16,12 @@ main:
   - name: Team
     url: '#people'
     weight: 40
-  - name: Projects
-    url: '#projects'
-    weight: 50
   - name: Publications
     url: '#featured'
-    weight: 60
+    weight: 50
+  - name: Projects
+    url: '#projects'
+    weight: 60    
   - name: Lab Photos
     url: '#labphotos'
     weight: 70
