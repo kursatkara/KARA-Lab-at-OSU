@@ -64,7 +64,6 @@ image:
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects:
-  - Flow Separation
   - Sweeping Jet Actuator
 
 # Slides (optional).
