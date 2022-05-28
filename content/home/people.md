@@ -8,7 +8,7 @@ active: true
 headless: true
 
 # Order that this section appears on the page.
-weight: 40
+#weight: 40
 
 # ... Put Your Section Options Here (title etc.) ...
 

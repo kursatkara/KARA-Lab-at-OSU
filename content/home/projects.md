@@ -7,7 +7,7 @@ widget: portfolio
 headless: true
 
 # Order that this section appears on the page.
-weight: 95
+#weight: 95
 
 title: Projects
 subtitle: ''
@@ -24,17 +24,15 @@ content:
   # To show all items, set `tag` to "*".
   # To filter by a specific tag, set `tag` to an existing tag name.
   # To remove the toolbar, delete the entire `filter_button` block.
-  filter_button:
-    - name: All
-      tag: '*'
-    - name: ML for Wind-Aware sUAS
-      tag: 'ML for Wind-Aware sUAS'
-    - name: Hypersonic Boundary-Layer Stability
-      tag: 'Hypersonic Boundary-Layer Stability'
-    - name: Sweeping Jet Actuator
-      tag: 'Sweeping Jet Actuator'
-    - name: Rotor in Hover
-      tag: 'Rotor in Hover'
+#  filter_button:
+#    - name: All
+#      tag: '*'
+#    - name: Current
+#      tag: ''
+#    - name: Past
+#      tag: ''
+#    - name: Other
+#      tag: ''
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
