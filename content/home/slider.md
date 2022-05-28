@@ -30,12 +30,12 @@ content:
         color: '#666'
         brightness: 0.7
         media: a-symposium-2022-02.jpg
-    - title: Hypersonic boundary-layer stability  
-      content: 'transformative aerodynamic concepts'
+    - title: Hypersonic Flows  
+      content: 'boundary-layer stability and transition to turbulence'
       align: left
       background:
         position: center
-        color: '#555'
+        color: '#666'
         brightness: 0.7
         media: a-symposium-2022-01.jpg
     - title: Aerodynamic flow separation control
@@ -43,7 +43,7 @@ content:
       align: left
       background:
         position: center
-        color: '#333'
+        color: '#666'
         brightness: 0.7
         media: a-symposium-2022-03.jpg
       link:
