@@ -4,23 +4,18 @@
 summary: Flow-Separation Control Using Sweeping Jet Actuator
 #url_video: ""
 date: 2018-10-15T00:00:00.000Z
-external_link: "https://arc.aiaa.org/doi/10.2514/1.J056715"
+#external_link: "https://arc.aiaa.org/doi/10.2514/1.J056715"
 #url_slides: ""
 title: "Flow-Separation Control Using Sweeping Jet Actuator"
 tags: ["Sweeping", "Jet", "Actuator", "Oscillating", "SWJ", "NASA", "Wall-Mounted", "Hump", "Aerodynamic", "Flow", "Separation", "Control", "Bubble", "CFD", "URANS", "Simulation", "Turbulent"]
-links:
-  - url: https://arc.aiaa.org/doi/10.2514/1.J056715
-    icon_pack: ai
+#links:
+#  - url: https://arc.aiaa.org/doi/10.2514/1.J056715
+#    icon_pack: ai
 image:
   #caption: Photo by rawpixel on Unsplash
   focal_point: Smart
 url_code: ""
 ---
-**Investigators**
-- admin
-- Mobashera Alam
-- Furkan Oz
-  
 **Abstract**
 Transformational aerodynamic technologies will play a vital role in improving the next generation aircraft’s performance and contribute enormously to the product cost and operability. Active flow control (AFC) is one of the promising technologies to control boundary-layer separation, mixing, and noise. 
 
