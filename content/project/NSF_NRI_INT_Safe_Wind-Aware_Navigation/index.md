@@ -1,13 +1,12 @@
 ---
-slides: example
-url_pdf: ""
+#slides: example
+#url_pdf: ""
 summary: Safe Wind-Aware Navigation for Collaborative Autonomous Aircraft in Low Altitude Airspace
-url_video: ""
+#url_video: ""
 date: 2022-05-16T17:55:42.929Z
 external_link: "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1925147"
-url_slides: ""
-title: "NSF: NRI: INT: Safe Wind-Aware Navigation for Collaborative Autonomous
-  Aircraft in Low Altitude Airspace"
+#url_slides: ""
+title: "NSF: NRI: INT: Safe Wind-Aware Navigation for Collaborative Autonomous Aircraft in Low Altitude Airspace"
 tags: ["Large-Eddy Simulation", "Unmanned Aircraft Systems", "UAS", "Gust", "Turbulence", "Urban Environment", "Machine Learning", "ROM", "LSTM", "NSF", "Award Number 1925147"]
 links:
   - url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1925147
@@ -15,7 +14,7 @@ links:
 image:
   #caption: Photo by rawpixel on Unsplash
   focal_point: Smart
-url_code: ""
+#url_code: ""
 ---
 **Investigators**
 - [He Bai](https://experts.okstate.edu/he.bai) (Principal Investigator)
