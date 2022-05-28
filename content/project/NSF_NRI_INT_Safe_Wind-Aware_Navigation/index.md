@@ -1,7 +1,7 @@
 ---
 #slides: example
 #url_pdf: ""
-summary: Safe Wind-Aware Navigation for Collaborative Autonomous Aircraft in Low Altitude Airspace
+summary: The project aims to validate the hypothesis that 'in-time' gust awareness by a pilot or an autopilot, can enhance safety, efficiency and robustness of future autonomous aircraft operations in low altitude airspace. 
 #url_video: ""
 date: 2022-05-16T17:55:42.929Z
 external_link: "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1925147"

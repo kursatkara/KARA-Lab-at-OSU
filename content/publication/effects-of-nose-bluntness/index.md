@@ -69,7 +69,7 @@ image:
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects:
-  - Hypersonics
+  - Hypersonic_Boundary_Layer_Transition
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.

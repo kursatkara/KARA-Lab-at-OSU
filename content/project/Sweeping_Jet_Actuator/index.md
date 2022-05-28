@@ -1,7 +1,7 @@
 ---
 #slides: example
 #url_pdf: ""
-summary: Flow-Separation Control Using Sweeping Jet Actuator
+summary: Transformational aerodynamic technologies will play a vital role in improving the next generation aircraft’s performance and contribute enormously to the product cost and operability. Active flow control (AFC) is one of the promising technologies to control boundary-layer separation, mixing, and noise. 
 #url_video: ""
 date: 2018-10-15T00:00:00.000Z
 #external_link: "https://arc.aiaa.org/doi/10.2514/1.J056715"
