@@ -3,7 +3,7 @@
 widget: slider
 
 # Position of this section on the page
-#weight: 10  
+weight: 10  
 
 # Publish this section?
 active: true  
