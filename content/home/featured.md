@@ -32,5 +32,9 @@ design:
   #   2 = Compact
   #   3 = Card
   #   4 = Citation (publication only)
-  view: 1
+  view: 2
 ---
+
+Quickly discover relevant content by [filtering publications](./publication/).
+
+The complete publication list is at the [Google Scholar](https://scholar.google.com/citations?user=RXSWKeMAAAAJ).
