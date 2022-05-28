@@ -1,20 +1,26 @@
 ---
-#slides: example
-#url_pdf: ""
-summary: Prediction and control of the hypersonic boundary-layer transition from a laminar to a turbulent state are vital to developing future hypersonic systems – capable of reaching at least Mach 5, or approximately 3,800 mph. 
-#url_video: ""
+title: Hypersonic Boundary-Layer Stability and Transition to Turbulence
 date: 2022-05-16T17:55:42.929Z
-#external_link: ""
-#url_slides: ""
-title: "Hypersonic Boundary-Layer Stability and Transition to Turbulence"
-tags: ["Hypersonic","Cone","Mach 6", "Receptivity", "Boundary-Layer", "Stability", "DNS", "Instability", "Acoustic", "Wave", "Slow mode", "WENO", "TVD-RK"]
-#links:
-#  - url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1925147
-#    icon_pack: ai
+summary: Prediction and control of the hypersonic boundary-layer transition from
+  a laminar to a turbulent state are vital to developing future hypersonic
+  systems – capable of reaching at least Mach 5, or approximately 3,800 mph.
+tags:
+  - Hypersonic
+  - Cone
+  - Mach 6
+  - Receptivity
+  - Boundary-Layer
+  - Stability
+  - DNS
+  - Instability
+  - Acoustic
+  - Wave
+  - Slow mode
+  - WENO
+  - TVD-RK
 image:
-  #caption: Photo by rawpixel on Unsplash
   focal_point: Smart
-#url_code: ""
+  filename: featured.jpg
 ---
 **Abstract**
 Prediction and control of the hypersonic boundary-layer transition from a laminar to a turbulent state are vital to developing future hypersonic systems – capable of reaching at least Mach 5, or approximately 3,800 mph. 
