@@ -29,7 +29,7 @@ content:
         position: center
         color: '#666'
         brightness: 0.7
-        media: a-symposium-2022-01-b.jpg
+        media: a-symposium-2022-02.jpg
     - title: Hypersonic Flows  
       content: 'boundary-layer stability and transition to turbulence'
       align: left
