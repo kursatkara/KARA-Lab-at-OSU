@@ -14,28 +14,28 @@ authors:
 #  - 'Equal contribution'
 #  - 'Equal contribution'
 
-date: '2011-12-01T00:00:00Z'
-doi: '10.2514/1.J050032'
+date: '2020-01-05T00:00:00Z'
+doi: '10.2514/6.2020-0771'
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2012-04-30T00:00:00Z'
+publishDate: '2020-01-05T00:00:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
-publication_types: ['2']
+publication_types: ['1']
 
 # Publication name and optional abbreviated publication name.
-publication: AIAA Journal
+publication: AIAA Scitech 2020 Forum
 #publication_short: In *ICW*
 
-abstract: The receptivity to freestream acoustic disturbances and the stability properties of hypersonic boundary layers are numerically investigated for boundary-layer flows over a 5-degree straight cone at a freestream Mach number of 6.0. To compute the shock and the interaction of the shock with the instability waves, the Navier-Stokes equations in axisymmetric coordinates were solved. In the governing equations, inviscid and viscous flux vectors are discretized using a fifth-order accurate weighted-essentially-non-oscillatory scheme. A third-order accurate total-variationdiminishing Runge-Kutta scheme is employed for time integration. After the mean flow field is computed, disturbances are introduced at the upstream end of the computational domain. The appearance of instability waves near the nose region and the receptivity of the boundary layer with respect to slow mode acoustic waves are investigated. Computations confirm the stabilizing effect of nose bluntness and the role of the entropy layer in the delay of boundary-layer transition. The current solutions, compared with experimental observations and other computational results, exhibit good agreement.
+abstract: The hover performance of a four-bladed Sikorsky S-76 rotor is studied using a high-order discontinuous Galerkin (DG) off-body discretization. Time accurate Navier-Stokes calculations are performed using the WAKE3D code, which combines solution technologies in a multi-mesh, multi-solver paradigm through a dynamic overset framework that employs an unstructured mesh Navier-Stokes method as a near-body solver and a high-order adaptive discontinuous Galerkin discretization as an off-body solver. The rotor with a swept-tapered tip is simulated. The tip Mach number was 0.65, and the Reynolds number based on the reference chord is 1.2 million. A constant coning angle of 3.5-degrees is applied. The effect of time step size and sub-iterations on the integrated parameters is investigated and convergence results are presented. The effect of the maximum order of accuracy of the adaptive h-p discretization in the off-body solver on solution accuracy and efficiency is also investigated. Thrust coefficient, torque coefficient, and figure of merit are calculated and compared with available data in the literature, and good agreement is found. In general, higher-order off-body simulations are found to result in a better accuracy/cost metric.
 
 # Summary. An optional shortened abstract.
-summary: The appearance of instability waves near the nose region and the receptivity of the boundary layer with respect to slow mode acoustic waves are investigated. Computations confirm the stabilizing effect of nose bluntness and the role of the entropy layer in the delay of boundary-layer transition. 
+summary: The hover performance of a four-bladed Sikorsky S-76 rotor is studied using a high-order discontinuous Galerkin (DG) off-body discretization.
 
-tags: ["Hypersonic","Cone","Mach 6", "Receptivity", "Boundary-Layer", "Stability", "DNS", "Instability", "Acoustic", "Wave", "Slow mode", "WENO", "TVD-RK"]
+tags: ["Sikorsky", "S-76", "Rotor", "Hover", "High-Order", "Discontinuous", "Galerkin", "Multi-solver", "Multi-mesh", "Navier-Stokes", "WAKE3D", "Dynamic", "Overset", "Near-body", "off-body", "swept-tapered", "adaptive", "h-p discretization"]
 
 # Display this page in the Featured widget?
 featured: true
@@ -53,13 +53,13 @@ url_poster: ''
 url_project: ''
 url_slides: ''
 url_source: ''
-url_video: ''
+url_video: s76_rotor_hover.mp4
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
 #  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
-  filename: effects-of-nose-bluntness.png
+  filename: featured.jpg
   focal_point: Smart
   preview_only: false
 
@@ -69,7 +69,7 @@ image:
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects:
-  - Hypersonic_Boundary_Layer_Transition
+  - Rotor_in_Hover
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
