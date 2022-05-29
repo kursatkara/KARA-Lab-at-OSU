@@ -33,7 +33,7 @@ abstract: "Computational fluid dynamics (CFD) simulations are a vital part of th
 # Summary. An optional shortened abstract.
 summary: This paper adopts a recently introduced quantum algorithm for partial differential equations to solve Burgers’ equation and develops a quantum CFD solver. We used our quantum CFD solver to verify the quantum Burgers’ equation algorithm to find the flow solution when a shockwave is and is not present. We found excellent agreements for both cases, and the error of the quantum CFD solver was comparable to that of the classical CFD solver.
 
-tags: ["Quantum Computing", "Computational Fluid Dynamics", "Burgers’ Equation", "partial differential equations", "ODE", "PDE", "QCFD", "CCFD", "CFD"]
+tags: ["Quantum", "Computing", "Computational", "Fluid", "Dynamics", "Navier-Stokes", "Burger", "Equation", "partial", "differential", "equation", "ODE", "PDE", "QCFD", "CCFD", "CFD"]
 
 # Display this page in the Featured widget?
 featured: true
@@ -65,8 +65,7 @@ image:
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects:
-  - Quantum Computing
-  - Fluid Dynamics
+  - Quantum_Computing_Fluid_Dynamics
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
