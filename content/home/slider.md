@@ -22,16 +22,16 @@ design:
 
 content:
   slides:
-    - title: 👋 Welcome to OSU Aerodynamics Reseach Group (SOAR) website.
-      content: Take a look at what we're working on...
+    - title: 
+      content: 
       align: center
       background:
         position: center
         color: '#666'
         brightness: 0.7
         media: SOAR.jpg
-    - title: Hypersonic Flows
-      content: 'boundary-layer stability and transition to turbulence'
+    - title: 👋 Welcome to OSU Aerodynamics Reseach Group (SOAR) website.
+      content: Take a look at what we're working on...
       align: center
       background:
         position: center
