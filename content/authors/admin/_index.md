@@ -62,8 +62,8 @@ Dr. Kara earned his Ph.D. from Old Dominion University. His doctoral dissertatio
 Dr. Kara is a senior member of the American Institute of Aeronautics and Astronautics (AIAA), the American Physical Society (APS), and the AIAA Applied Aerodynamics Technical Committee.
 
 He served on the following AIAA committees:
-AIAA Applied Aerodynamics Technical Committee (APATC) (2012 – 2021)
-AIAA APATC Membership Subcommittee (2012 – 2021)
-AIAA APATC Education Subcommittee (2012 – 2021)
+- AIAA Applied Aerodynamics Technical Committee (APATC) (2012 – 2021)
+- AIAA APATC Membership Subcommittee (2012 – 2021)
+- AIAA APATC Education Subcommittee (2012 – 2021)
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
