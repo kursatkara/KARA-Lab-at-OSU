@@ -30,7 +30,7 @@ content:
         color: '#666'
         brightness: 0.7
         media: SOAR.jpg
-    - title: 👋 Welcome to OSU Aerodynamics Reseach Group (SOAR) website.
+    - title: 👋 Welcome to the SOAR website.
       content: Take a look at what we're working on...
       align: center
       background:
