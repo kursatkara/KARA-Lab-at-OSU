@@ -59,7 +59,8 @@ Kursat Kara is the principal investigator of the Kara Aerodynamics Research Grou
 Dr. Kara earned his Ph.D. from Old Dominion University. His doctoral dissertation was on hypersonic boundary-layer receptivity to acoustic disturbances over cones. Following graduation, he was a research engineer at New England Analytics LLC, a consulting company for the Sikorsky Aircraft Corp. He then joined the Aerospace Engineering Department at Penn State as a post-doc and worked with Prof. Philip J. Morris on supersonic hot jet simulations for aeroacoustics. Later, he joined the Aerospace Engineering Department at Khalifa University as a founding faculty in 2010. In August 2019, he joined Oklahoma State University.
 
 Dr. Kara is a senior member of the American Institute of Aeronautics and Astronautics (AIAA), the American Physical Society (APS), and the AIAA Applied Aerodynamics Technical Committee.
-He served on the following AIAA committees.
+
+He served on the following AIAA committees:
 AIAA Applied Aerodynamics Technical Committee (APATC) (2012 – 2021)
 AIAA APATC Membership Subcommittee (2012 – 2021)
 AIAA APATC Education Subcommittee (2012 – 2021)
