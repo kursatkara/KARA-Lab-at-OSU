@@ -29,9 +29,9 @@ content:
         position: center
         color: '#666'
         brightness: 0.7
-        placement: 1
         media: SOAR.jpg
-        caption: "Photo by [Pratik Bisht](https://unsplash.com/@ob1kanob)"
+      placement: 1
+      caption: "Photo by [Pratik Bisht](https://unsplash.com/@ob1kanob)"
     - title: Welcome to our website.
       content: Take a look at what we're working on...
       align: center
@@ -40,6 +40,11 @@ content:
         color: '#666'
         brightness: 0.7
         media: a-symposium-2022-02.jpg
+      link:
+        icon: fa-solid
+        icon_pack: fas
+        text: Papers
+        url: '#featured'
     - title: Hypersonic Flows  
       content: 'boundary-layer stability and transition to turbulence'
       align: center
@@ -48,6 +53,11 @@ content:
         color: '#666'
         brightness: 0.7
         media: a-symposium-2022-01.jpg
+      link:
+        icon: fa-solid
+        icon_pack: fas
+        text: Projects
+        url: '#projects'
     - title: Aerodynamic flow separation control
       content: 'transformative aerodynamic concepts'
       align: center
