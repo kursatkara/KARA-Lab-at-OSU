@@ -40,7 +40,7 @@ content:
         media: a-symposium-2022-02.jpg
     - title: Hypersonic Flows  
       content: 'boundary-layer stability and transition to turbulence'
-      align: left
+      align: center
       background:
         position: center
         color: '#666'
@@ -48,7 +48,7 @@ content:
         media: a-symposium-2022-01.jpg
     - title: Aerodynamic flow separation control
       content: 'transformative aerodynamic concepts'
-      align: left
+      align: center
       background:
         position: center
         color: '#666'
