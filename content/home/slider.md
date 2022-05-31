@@ -30,7 +30,7 @@ content:
         color: '#666'
         brightness: 0.7
         media: SOAR.jpg
-    - title: 👋 Welcome to the SOAR website.
+    - title: Welcome to our website.
       content: Take a look at what we're working on...
       align: center
       background:
