@@ -35,7 +35,7 @@ experience:
         * Hypersonic Boundary-Layer Stability
         * Flow Separation Control
         * Quantum Computing
-        * Wind Data Generation for small Unmanned Aerial Systems in Urban Spaces
+        * Wind Data Generation for sUAS in Urban Spaces
 
   - title: Visiting Professor
     company: University of Wyoming - Mechanical Engineering Department

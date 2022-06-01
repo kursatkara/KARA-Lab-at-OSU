@@ -22,7 +22,7 @@ main:
   - name: Projects
     url: '#projects'
     weight: 60    
-  - name: Lab Photos
+  - name: Group Photos
     url: '#labphotos'
     weight: 70
   - name: Personal Photos
