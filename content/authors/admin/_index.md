@@ -1,6 +1,6 @@
 ---
 title: Kursat Kara
-role: Assistant Professor of Aerospace Engineering
+role: Assistant Professor, Mechanical and Aerospace Engineering
 avatar_filename: avatar.jpg
 bio: Dr. Kara is the principal investigator of the Kara Aerodynamics Research
   Laboratory at Oklahoma State University. He teaches Fundamentals of
