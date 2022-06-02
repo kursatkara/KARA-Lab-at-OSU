@@ -13,8 +13,8 @@ headless: true
 
 design:
   # Slide height is automatic unless you force a specific height (e.g. '400px')
-  # slide_height: '600px'
-  is_fullscreen: false
+  slide_height: ''
+  is_fullscreen: true
   # Automatically transition through slides?
   loop: false
   # Duration of transition between slides (in ms)
@@ -27,7 +27,7 @@ content:
       align: center
       background:
         position: center
-        color: '#666'
+#        color: '#666'
         brightness: 0.7
         media: SOAR.jpg
       placement: 1
@@ -37,7 +37,7 @@ content:
       align: center
       background:
         position: center
-        color: '#666'
+#        color: '#666'
         brightness: 0.7
         media: a-symposium-2022-02.jpg
       link:
@@ -50,7 +50,7 @@ content:
       align: center
       background:
         position: center
-        color: '#666'
+#        color: '#666'
         brightness: 0.7
         media: a-symposium-2022-01.jpg
       link:
@@ -63,7 +63,7 @@ content:
       align: center
       background:
         position: center
-        color: '#666'
+#        color: '#666'
         brightness: 0.7
         media: a-symposium-2022-03.jpg
       link:
