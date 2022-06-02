@@ -14,7 +14,7 @@ headless: true
 design:
   # Slide height is automatic unless you force a specific height (e.g. '400px')
   slide_height: '400px'
-  is_fullscreen: true
+  is_fullscreen: false
   # Automatically transition through slides?
   loop: false
   # Duration of transition between slides (in ms)
@@ -38,7 +38,7 @@ content:
       background:
         position: center
 #        color: '#666'
-        brightness: 0.7
+        brightness: 1.0
         media: a-symposium-2022-02.jpg
       link:
         icon: fa-solid
@@ -51,7 +51,7 @@ content:
       background:
         position: center
 #        color: '#666'
-        brightness: 0.7
+        brightness: 1.0
         media: a-symposium-2022-01.jpg
       link:
         icon: fa-solid
@@ -64,7 +64,7 @@ content:
       background:
         position: center
 #        color: '#666'
-        brightness: 0.7
+        brightness: 1.0
         media: a-symposium-2022-03.jpg
       link:
         icon: graduation-cap
