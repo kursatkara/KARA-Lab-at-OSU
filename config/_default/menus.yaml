@@ -5,7 +5,7 @@
 
 main:
   - name: Home
-    url: '#slider'
+    url: '#home'
     weight: 10
   - name: Group
     url: '#people'

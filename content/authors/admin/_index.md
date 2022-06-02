@@ -50,11 +50,7 @@ highlight_name: true
 ---
 Kursat Kara is the principal investigator of the Kara Aerodynamics ReseArch Laboratory at Oklahoma State University. He teaches Fundamentals of Aerodynamics, Unsteady Aerodynamics, Computational Fluid Dynamics, and Quantum Computing. Previously, he was an assistant professor at Khalifa University, where he received the Faculty Excellence Award for Outstanding Teaching in 2015.
 
-
-
 Dr. Kara earned his Ph.D. from Old Dominion University. His doctoral dissertation was on hypersonic boundary-layer receptivity to acoustic disturbances over cones. Following graduation, he was a research engineer at New England Analytics LLC, a consulting company for the Sikorsky Aircraft Corp. He then joined the Aerospace Engineering Department at Penn State as a post-doc and worked with Prof. Philip J. Morris on supersonic hot jet simulations for aeroacoustics. Later, he joined the Aerospace Engineering Department at Khalifa University as a founding faculty in 2010. In August 2019, he joined Oklahoma State University.
-
-
 
 Dr. Kara belongs to the following organizations:
 * American Institute of Aeronautics and Astronautics ([AIAA](https://www.aiaa.org/))
