@@ -7,26 +7,26 @@ main:
   - name: Home
     url: '#slider'
     weight: 10
-  - name: PI
-    url: '#about'
-    weight: 20
-  - name: Experience
-    url: '#experience'
-    weight: 30
-  - name: Team
+  - name: Group
     url: '#people'
-    weight: 40
+    weight: 20
+  - name: Photos
+    url: '#labphotos'
+    weight: 30
+  - name: Projects
+    url: '#projects'
+    weight: 40    
   - name: Publications
     url: '#featured'
     weight: 50
-  - name: Projects
-    url: '#projects'
-    weight: 60    
-  - name: Group Photos
-    url: '#labphotos'
-    weight: 70
-  - name: Personal Photos
+  - name: Personal
     url: '#personalphotos'
+    weight: 60
+  - name: Bio
+    url: '#about'
+    weight: 70
+  - name: Experience
+    url: '#experience'
     weight: 80
   - name: Contact
     url: '#contact'
@@ -34,6 +34,6 @@ main:
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
-  - name: CV
-    url: uploads/resume.pdf
-    weight: 110
+#  - name: CV
+#    url: uploads/resume.pdf
+#    weight: 110
