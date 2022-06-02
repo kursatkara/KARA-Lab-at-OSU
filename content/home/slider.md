@@ -22,12 +22,12 @@ design:
 
 content:
   slides:
-    - title: 
-      content: 
+    - title: Albatross 
+      content:'a master of efficient flight'
       align: center
       background:
         position: center
-#        color: '#666'
+        color: '#666'
         brightness: 1.0
         media: SOAR.jpg
       placement: 1
@@ -37,7 +37,7 @@ content:
       align: center
       background:
         position: center
-#        color: '#666'
+        color: '#666'
         brightness: 1.0
         media: a-symposium-2022-02.jpg
       link:
@@ -50,7 +50,7 @@ content:
       align: center
       background:
         position: center
-#        color: '#666'
+        color: '#666'
         brightness: 1.0
         media: a-symposium-2022-01.jpg
       link:
@@ -63,7 +63,7 @@ content:
       align: center
       background:
         position: center
-#        color: '#666'
+        color: '#666'
         brightness: 1.0
         media: a-symposium-2022-03.jpg
       link:
