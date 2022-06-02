@@ -1,9 +1,8 @@
 ---
 title: Kursat Kara
 role: Assistant Professor of Aerospace Engineering
-user_groups: ["Principal Investigator"]
 avatar_filename: avatar.jpg
-bio: Dr. Kara is the principal investigator of the Kara Aerodynamics ReseArch
+bio: Dr. Kara is the principal investigator of the Kara Aerodynamics Research
   Laboratory at Oklahoma State University. He teaches Fundamentals of
   Aerodynamics, Unsteady Aerodynamics, Computational Fluid Dynamics, and Quantum
   Computing. Previously, he was an assistant professor at Khalifa University,
@@ -29,18 +28,9 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/kursat-kara-4744173/
-  - display:
-      header: false
-    link: https://twitter.com/KursatK97928136
-    icon_pack: fab
-    icon: twitter
 organizations:
   - name: Oklahoma State University
-    url: https://experts.okstate.edu/kursat.kara
-  - name: AIAA
-    url: https://www.aiaa.org/
-  - name: APS
-    url: https://www.aps.org/
+    url: https://ceat.okstate.edu/mae/faculty-staff/faculty-bios/kursat-kara.html
 education:
   courses:
     - course: PhD in Aerospace Engineering
@@ -54,17 +44,25 @@ education:
       year: 1999
 email: kursat.kara@okstate.edu
 superuser: true
+user_groups:
+  - Principal Investigator
 highlight_name: true
 ---
 Kursat Kara is the principal investigator of the Kara Aerodynamics ReseArch Laboratory at Oklahoma State University. He teaches Fundamentals of Aerodynamics, Unsteady Aerodynamics, Computational Fluid Dynamics, and Quantum Computing. Previously, he was an assistant professor at Khalifa University, where he received the Faculty Excellence Award for Outstanding Teaching in 2015.
 
+
+
 Dr. Kara earned his Ph.D. from Old Dominion University. His doctoral dissertation was on hypersonic boundary-layer receptivity to acoustic disturbances over cones. Following graduation, he was a research engineer at New England Analytics LLC, a consulting company for the Sikorsky Aircraft Corp. He then joined the Aerospace Engineering Department at Penn State as a post-doc and worked with Prof. Philip J. Morris on supersonic hot jet simulations for aeroacoustics. Later, he joined the Aerospace Engineering Department at Khalifa University as a founding faculty in 2010. In August 2019, he joined Oklahoma State University.
 
-Dr. Kara is a senior member of the American Institute of Aeronautics and Astronautics (AIAA), the American Physical Society (APS), and the AIAA Applied Aerodynamics Technical Committee.
 
-He served on the following AIAA committees:
-- AIAA Applied Aerodynamics Technical Committee (APATC) (2012 – 2021)
-- AIAA APATC Membership Subcommittee (2012 – 2021)
-- AIAA APATC Education Subcommittee (2012 – 2021)
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+Dr. Kara belongs to the following organizations:
+* American Institute of Aeronautics and Astronautics ([AIAA](https://www.aiaa.org/))
+* American Physical Society ([APS](https://www.aps.org/))
+
+Dr. Kara served on the following AIAA committees:
+* Applied Aerodynamics Technical Committee ([APATC](https://engage.aiaa.org/aerospace-sciences/communities/community-home?CommunityKey=290711b5-6db8-464c-a6a7-4a55102f18fd)) (2012 – 2021)
+* APATC Membership Subcommittee (2012 – 2021)
+* APATC Education Subcommittee (2012 – 2021)
+
+{{< icon name="download" pack="fas" >}}{{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
