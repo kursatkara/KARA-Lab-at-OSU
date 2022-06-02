@@ -23,7 +23,7 @@ design:
 content:
   slides:
     - title: Albatross 
-      content:'a master of efficient flight'
+      content: a master of efficient flight
       align: center
       background:
         position: center
