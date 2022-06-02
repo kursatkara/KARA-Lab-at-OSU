@@ -13,7 +13,7 @@ headless: true
 
 design:
   # Slide height is automatic unless you force a specific height (e.g. '400px')
-  slide_height: ''
+  slide_height: '400px'
   is_fullscreen: true
   # Automatically transition through slides?
   loop: false
@@ -28,7 +28,7 @@ content:
       background:
         position: center
 #        color: '#666'
-        brightness: 0.7
+        brightness: 1.0
         media: SOAR.jpg
       placement: 1
       caption: "Photo by [Pratik Bisht](https://unsplash.com/@ob1kanob)"
