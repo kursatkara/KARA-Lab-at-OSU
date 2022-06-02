@@ -1,6 +1,6 @@
 ---
 widget: blank
-headless: true
+headless: false
 
 # ... Put Your Section Options Here (title etc.) ...
 title: Welcome to the KARA Lab!
