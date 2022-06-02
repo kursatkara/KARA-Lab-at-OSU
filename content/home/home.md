@@ -3,16 +3,14 @@ widget: blank
 headless: true
 
 # ... Put Your Section Options Here (title etc.) ...
-title: Home
+title: Welcome to the KARA Lab!
 subtitle:
 weight: 10  # section position on page
 design:
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns: '1'
+  columns: '2'
 ---
-Welcome to KARA Lab!
-
-I am the principal investigator of the **K**ara **A**erodynamics **R**ese**a**rch **Lab**oratory at Oklahoma State University (KARA Lab)
+I am the principal investigator of the **K**ara **A**erodynamics **R**ese**a**rch **Lab**oratory at Oklahoma State University (KARA Lab).
 
 I am an Assistant Professor in the School of Mechanical and Aerospace Engineering at Oklahoma State University, a position that I hold since August 2019.
 
