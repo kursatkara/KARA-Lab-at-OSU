@@ -1,11 +1,12 @@
 ---
 title: Bartosz Jurewicz Slupski
 user_groups: ["Alumni"]
-role: "PhD, R&D Engineer at The Sanad Group A Mubadala Company"
+role: "PhD, Current Position: R&D Engineer at The Sanad Group A Mubadala Company"
 avatar_filename: avatar
 interests:
   - Sweeping Jet Actuator
   - Flow Separation Control
+  - Computational Fluid Dynamics
 social:
   - display:
       header: false
