@@ -1,12 +1,12 @@
 ---
-title: Michael Cuthbertson
-user_groups: ["Alumni"]
+title: Serge Amangoua
+user_groups: ["Undergraduate Students"]
 role: Undergraduate Researcher
 avatar_filename: avatar
 interests:
-  - Flow Separation Control
-  - Sweeping Jet Actuator
-  - CFD
+  - Large Eddy Simulations
+  - Unmanned Aerials Systems
+  - Atmospheric Boundary Layers
 social:
   - display:
       header: false
@@ -20,7 +20,7 @@ social:
     icon: github
   - display:
       header: false
-    link: 
+    link: https://www.linkedin.com/in/serge-a-19596499/
     icon_pack: fab
     icon: linkedin
 organizations:
