@@ -10,7 +10,7 @@ interests:
 social:
   - display:
       header: false
-    link: https://scholar.google.com/citations?user=RXSWKeMAAAAJ
+    link: https://scholar.google.com/citations?user=U_b-B54AAAAJ&hl=en
     icon_pack: fas
     icon: graduation-cap
   - display:

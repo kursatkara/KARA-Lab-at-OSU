@@ -21,7 +21,7 @@ social:
     link: /#contact
   - icon: graduation-cap
     icon_pack: fas
-    link: https://scholar.google.com/citations?user=RXSWKeMAAAAJ
+    link: https://scholar.google.com/citations?user=RXSWKeMAAAAJ=en&user=RXSWKeMAAAAJ
   - icon: github
     icon_pack: fab
     link: https://github.com/kursatkara
