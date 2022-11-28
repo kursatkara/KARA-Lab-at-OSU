@@ -10,12 +10,12 @@ interests:
 social:
   - display:
       header: false
-    link: 
+    link: https://www.peytonpierson.com/ 
     icon_pack: fas
     icon: graduation-cap
   - display:
       header: false
-    link: 
+    link: https://www.peytonpierson.com/
     icon_pack: fab
     icon: github
   - display:
