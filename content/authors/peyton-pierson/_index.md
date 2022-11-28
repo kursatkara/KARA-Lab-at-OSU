@@ -1,5 +1,5 @@
 ---
-title: Tuyen Nguyen
+title: Peyton Pierson
 user_groups: ["Undergraduate Students"]
 role: Undergraduate Researcher
 avatar_filename: avatar
@@ -20,7 +20,7 @@ social:
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/t-nguyen11/
+    link: https://www.linkedin.com/in/peytonpierson/
     icon_pack: fab
     icon: linkedin
 organizations:

@@ -1,7 +1,7 @@
 ---
 title: Tyler Landua
 user_groups: ["Alumni"]
-role: Undergraduate Researcher
+role: "Structural Engineer at Boeing"
 avatar_filename: avatar
 interests:
   - Large Eddy Simulations
