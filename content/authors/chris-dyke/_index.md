@@ -1,12 +1,12 @@
 ---
-title: Tyler Landua
-user_groups: ["Alumni"]
-role: "BSc, Current Position: Structural Engineer at Boeing"
+title: Chris Dyke
+user_groups: ["Undergraduate Students"]
+role: Undergraduate Researcher
 avatar_filename: avatar
 interests:
-  - Large Eddy Simulations
-  - Unmanned Aerials Systems
-  - Atmospheric Boundary Layers
+  - High-Speed Aerodynamics
+  - Atmospheric Entry Simulations
+  - Computational Fluid Dynamics
 social:
   - display:
       header: false
@@ -20,7 +20,7 @@ social:
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/tyler-landua/
+    link: 
     icon_pack: fab
     icon: linkedin
 organizations:
