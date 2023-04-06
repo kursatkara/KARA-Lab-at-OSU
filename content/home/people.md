@@ -21,6 +21,7 @@ content:
 #   - Principal Investigator
     - Graduate Students
     - Undergraduate Students
+    - High School Students
     - Alumni
 
 
