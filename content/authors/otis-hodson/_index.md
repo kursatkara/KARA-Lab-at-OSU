@@ -1,12 +1,11 @@
 ---
-title: Hs Test
+title: Otis Hodson
 user_groups: ["High School Students"]
 role: High School Researcher
 avatar_filename: avatar
 interests:
-  - Large Eddy Simulations
   - Unmanned Aerials Systems
-  - Atmospheric Boundary Layers
+  - Computational Fluid Dynamics
 social:
   - display:
       header: false
