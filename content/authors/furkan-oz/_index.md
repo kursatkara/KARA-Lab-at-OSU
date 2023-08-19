@@ -4,6 +4,8 @@ user_groups: ["Graduate Students"]
 role: Ph.D. Candidate
 avatar_filename: avatar
 interests:
+  - Blunt-Body Dynamic Stability
+  - Physics-Guided Multifidelity Learning
   - Hypersonic Flows
   - Boundary Layer Stability
   - DNS

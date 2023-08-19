@@ -1,27 +1,25 @@
 ---
-title: Furkan Oz
+title: Shafi Romeo
 user_groups: ["Graduate Students"]
-role: Ph.D. Candidate
+role: Ph.D. Student
 avatar_filename: avatar
 interests:
-  - Hypersonic Flows
-  - Boundary Layer Stability
-  - DNS
-  - Quantum Computing
+  - Blunt-Body Dynamic Stability
+  - Physics-Guided Multifidelity Learning
 social:
   - display:
       header: false
-    link: https://scholar.google.com/citations?user=tRnjE8wAAAAJ&hl
+    link: https://scholar.google.com/citations?user=RXSWKeMAAAAJ
     icon_pack: fas
     icon: graduation-cap
   - display:
       header: false
-    link: https://github.com/frkanz
+    link: https://github.com/kursatkara
     icon_pack: fab
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/furkan-%C3%B6z-a434b813a/
+    link: https://www.linkedin.com/in/salman40/
     icon_pack: fab
     icon: linkedin
 organizations:

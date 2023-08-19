@@ -4,7 +4,6 @@ user_groups: ["Graduate Students"]
 role: Ph.D. Student
 avatar_filename: avatar
 interests:
-  - 
   - Blunt-Body Dynamic Stability
   - Physics-Guided Multifidelity Learning
 social:
