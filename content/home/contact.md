@@ -28,7 +28,7 @@ content:
   email: kursat.kara@okstate.edu
   phone: (405)744-5900
   address:
-    street: 201 General Academic Building
+    street: 300 Engineering South
     city: Stillwater
     region: OK
     postcode: '74078'
