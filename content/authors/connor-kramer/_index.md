@@ -1,7 +1,7 @@
 ---
 title: Connor Kramer
-user_groups: ["Undergraduate Students"]
-role: Undergraduate Researcher
+user_groups: ["Alumni"]
+role: "Undergraduate Researcher"
 avatar_filename: avatar
 interests:
   - High-Speed Aerodynamics
