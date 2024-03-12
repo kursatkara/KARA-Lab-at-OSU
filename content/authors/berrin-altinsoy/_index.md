@@ -1,12 +1,11 @@
 ---
-title: Jared Greif
-user_groups: ["Alumni"]
-role: Undergraduate Researcher
+title: Berrin Altinsoy
+user_groups: ["High School Students"]
+role: High School Researcher
 avatar_filename: avatar
 interests:
-  - High-Speed Aerodynamics
-  - Computational Fluid Dynamics
-  - Solid Modeling
+  - Dynamical Systems
+  - Engineering Data Analysis
 social:
   - display:
       header: false
@@ -15,12 +14,12 @@ social:
     icon: graduation-cap
   - display:
       header: false
-    link: https://github.com/kursatkara
+    link: https://github.com/berrina
     icon_pack: fab
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/jared-greif-2a4aa61ab/
+    link: https://www.linkedin.com/in/berrinaltinsoy/
     icon_pack: fab
     icon: linkedin
 organizations:
