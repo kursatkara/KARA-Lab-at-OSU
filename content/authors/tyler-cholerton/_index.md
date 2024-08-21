@@ -1,6 +1,6 @@
 ---
 title: Tyler Cholerton
-user_groups: ["Alumni Undergraduate Researchers"]
+user_groups: ["Undergraduate Students"]
 role: "Undergraduate Researcher"
 avatar_filename: avatar
 interests:
