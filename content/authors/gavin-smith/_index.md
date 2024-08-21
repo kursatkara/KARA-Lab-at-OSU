@@ -1,21 +1,21 @@
 ---
-title: Zack Osborne
-user_groups: ["Alumni"]
-role: Undergraduate Researcher
+title: Gavin Smith
+user_groups: ["Undergraduate Students"]
+role: "Undergraduate Researcher"
 avatar_filename: avatar
 interests:
-  - Atmospheric Boundary Layers
-  - Large Eddy Simulations
-  - Unmanned Aerials Systems
+  - Blunt-Body Dynamic Stability
+  - Data-Driven Methods
+  - Computational Fluid Dynamics
 social:
   - display:
       header: false
-    link: 
+    link: https://scholar.google.com/citations?user=RXSWKeMAAAAJ=en&user=RXSWKeMAAAAJ
     icon_pack: fas
     icon: graduation-cap
   - display:
       header: false
-    link: 
+    link: https://github.com/kursatkara
     icon_pack: fab
     icon: github
   - display:

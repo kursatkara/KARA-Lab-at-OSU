@@ -1,6 +1,6 @@
 ---
 title: Gavin Sockey
-user_groups: ["Undergraduate Students"]
+user_groups: ["Alumni"]
 role: Undergraduate Researcher
 avatar_filename: avatar
 interests:
