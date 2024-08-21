@@ -1,7 +1,7 @@
 ---
 title: Peyton Pierson
-user_groups: ["Alumni"]
-role: "Undergraduate Researcher, will join SpaceX (Starship )" 
+user_groups: ["Alumni Undergraduate Researchers"]
+role: "Undergraduate Researcher, Joined SpaceX (Starship )" 
 avatar_filename: avatar
 interests:
   - High-Speed Aerodynamics

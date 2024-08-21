@@ -1,6 +1,6 @@
 ---
 title: Shamma Al Hemeiri
-user_groups: ["Alumni"]
+user_groups: ["Alumni MSc Graduates"]
 role: "M.Sc. (at KU), Current Position: Aerospace Engineer, Atlas Aerospace"
 avatar_filename: avatar
 interests:

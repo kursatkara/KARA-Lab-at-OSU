@@ -1,6 +1,6 @@
 ---
 title: Shaikha Al-Ali
-user_groups: ["Alumni"]
+user_groups: ["Alumni MSc Graduates"]
 role: "M.Sc. (at KU), Current Position: Modification & Systems Integration Engineer"
 avatar_filename: avatar
 interests:

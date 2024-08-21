@@ -1,7 +1,7 @@
 ---
 title: Tyler Landua
-user_groups: ["Alumni"]
-role: "BSc, Current Position: Structural Engineer at Boeing"
+user_groups: ["Alumni Undergraduate Researchers"]
+role: "B.Sc., Current Position: Structural Engineer at Boeing"
 avatar_filename: avatar
 interests:
   - Large Eddy Simulations

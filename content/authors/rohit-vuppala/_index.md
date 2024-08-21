@@ -1,7 +1,7 @@
 ---
 title: Rohit Vuppala
-user_groups: ["Graduate Students"]
-role: Ph.D. Candidate
+user_groups: ["Alumni PhD Graduates"]
+role: "Ph.D., Current Position: University of Chicago"
 avatar_filename: avatar
 interests:
   - Unmanned Aerial Systems

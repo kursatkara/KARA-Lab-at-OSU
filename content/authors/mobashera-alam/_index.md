@@ -1,7 +1,7 @@
 ---
 title: Mobashera Alam
-user_groups: ["Alumni"]
-role: "MSc, Current Position: Design Engineer at American ShiZuki Corporation"
+user_groups: ["Alumni MSc Graduates"]
+role: "M.Sc., Current Position: Design Engineer at American ShiZuki Corporation"
 avatar_filename: avatar
 interests:
   - Flow Separation Control

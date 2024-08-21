@@ -1,6 +1,6 @@
 ---
 title: Zack Osborne
-user_groups: ["Alumni"]
+user_groups: ["Alumni Undergraduate Researchers"]
 role: Undergraduate Researcher
 avatar_filename: avatar
 interests:

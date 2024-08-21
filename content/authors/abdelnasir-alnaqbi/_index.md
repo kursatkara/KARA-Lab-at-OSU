@@ -1,6 +1,6 @@
 ---
 title: Abdelnasir Alnaqbi
-user_groups: ["Alumni"]
+user_groups: ["Alumni MSc Graduates"]
 role: "M.Sc. (at KU)"
 avatar_filename: avatar
 interests:
