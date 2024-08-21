@@ -23,8 +23,8 @@ content:
     - Undergraduate Students
     - High School Students
     - Alumni PhD Graduates
-	- Alumni MSc Graduates
-	- Alumni Undergraduate Researchers
+    - Alumni MSc Graduates
+    - Alumni Undergraduate Researchers
 
 
 design:
