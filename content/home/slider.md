@@ -29,7 +29,7 @@ content:
         position: center
         color: '#666'
         brightness: 1.0
-        media: a0-00-furkan-defense-01-72.jpg
+        media: a0-00-furkan-defense-01-72-50.jpg
       placement: 1
 #    - title: Albatross 
 #      content: a master of efficient flight
