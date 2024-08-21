@@ -1,6 +1,6 @@
 ---
 title: Bartosz Jurewicz Slupski
-user_groups: ["Alumni: Ph.D."]
+user_groups: ["Alumni PhD Graduates"]
 role: "PhD (at KU), Current Position: R&D Engineer at The Sanad Group A Mubadala Company"
 avatar_filename: avatar
 interests:
