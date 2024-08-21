@@ -22,16 +22,26 @@ design:
 
 content:
   slides:
-    - title: Albatross 
-      content: a master of efficient flight
+    - title: Furkan Oz 
+      content: PhD Defense
       align: center
       background:
         position: center
         color: '#666'
         brightness: 1.0
-        media: SOAR.jpg
+        media: a0-00-furkan-defense-01.jpg
       placement: 1
       caption: "Photo by [Pratik Bisht](https://unsplash.com/@ob1kanob)"
+#    - title: Albatross 
+#      content: a master of efficient flight
+#      align: center
+#      background:
+#        position: center
+#        color: '#666'
+#        brightness: 1.0
+#        media: SOAR.jpg
+#      placement: 1
+#      caption: "Photo by [Pratik Bisht](https://unsplash.com/@ob1kanob)"
     - title: Welcome to our website.
       content: Take a look at what we're working on...
       align: center
