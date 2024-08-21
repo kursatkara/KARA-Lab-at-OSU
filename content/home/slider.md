@@ -31,7 +31,6 @@ content:
         brightness: 1.0
         media: a0-00-furkan-defense-01.jpg
       placement: 1
-      caption: "Photo by [Pratik Bisht](https://unsplash.com/@ob1kanob)"
 #    - title: Albatross 
 #      content: a master of efficient flight
 #      align: center
