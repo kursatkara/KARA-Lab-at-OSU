@@ -1,7 +1,7 @@
 ---
 title: Furkan Oz
-user_groups: ["Graduate Students"]
-role: Ph.D. Candidate
+user_groups: ["Alumni PhD Graduates"]
+role: "Ph.D., Current Position: Oak Ridge National Laboratory"
 avatar_filename: avatar
 interests:
   - Blunt-Body Dynamic Stability
