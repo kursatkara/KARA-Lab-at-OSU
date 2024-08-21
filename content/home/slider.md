@@ -16,20 +16,20 @@ design:
   slide_height: '600px'
   is_fullscreen: false
   # Automatically transition through slides?
-  loop: false
+  loop: true
   # Duration of transition between slides (in ms)
   interval: 3000
 
 content:
   slides:
-    - title: Furkan Oz 
-      content: PhD Defense
+    - title:  
+      content: 
       align: center
       background:
         position: center
         color: '#666'
         brightness: 1.0
-        media: a0-00-furkan-defense-01.jpg
+        media: a0-00-furkan-defense-01-72.jpg
       placement: 1
 #    - title: Albatross 
 #      content: a master of efficient flight
