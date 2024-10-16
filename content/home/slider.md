@@ -35,7 +35,7 @@ content:
         icon: fa-solid
         icon_pack: fas
         text: Register Here
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLScHRVsRvx4Nmre0DjdfvThA05vRYUvNiIbweuk8qqOD5WWmPA/viewform'
+        url: https://docs.google.com/forms/d/e/1FAIpQLScHRVsRvx4Nmre0DjdfvThA05vRYUvNiIbweuk8qqOD5WWmPA/viewform
     - title: Controlling hypersonic boundary layer transition with localized cooling and metasurface treatments  
       content: Local Cooling Local Metasurface (LCLM)
       align: center
@@ -44,11 +44,11 @@ content:
         color: '#666'
         brightness: 1.0
         media: a0-00-furkan-defense-01-72-50.jpg
-     link:
+      link:
         icon: fa-solid
         icon_pack: fas
         text: Read
-        url: 'https://www.nature.com/articles/s41598-024-66867-4'
+        url: https://www.nature.com/articles/s41598-024-66867-4
 #    - title: Albatross 
 #      content: a master of efficient flight
 #      align: center
@@ -59,8 +59,8 @@ content:
 #        media: SOAR.jpg
 #      placement: 1
 #      caption: "Photo by [Pratik Bisht](https://unsplash.com/@ob1kanob)"
-    - title: Welcome to our website.
-      content: Take a look at what we're working on...
+    - title: 
+      content: 
       align: center
       background:
         position: center
