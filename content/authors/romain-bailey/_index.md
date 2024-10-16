@@ -1,5 +1,5 @@
 ---
-title: Romain Bailey
+title: Romain Bailey (ROTC)
 user_groups: ["Alumni Undergraduate Researchers"]
 role: Undergraduate Researcher
 avatar_filename: avatar
