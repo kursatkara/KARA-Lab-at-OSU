@@ -13,7 +13,7 @@ headless: true
 
 design:
   # Slide height is automatic unless you force a specific height (e.g. '400px')
-  slide_height: '600px'
+  slide_height: '500px'
   is_fullscreen: false
   # Automatically transition through slides?
   loop: true
@@ -44,7 +44,6 @@ content:
         color: '#666'
         brightness: 1.0
         media: a0-00-furkan-defense-01-72-50.jpg
-      placement: 2
      link:
         icon: fa-solid
         icon_pack: fas
