@@ -22,6 +22,20 @@ design:
 
 content:
   slides:
+    - title: Qiskit Fall Fest 2024 at Kara Lab 
+      content: Quantum Computing for Fluid Dynamics
+      align: center
+      background:
+        position: center
+        color: '#666'
+        brightness: 1.0
+        media: Qiskit_Fall_Fest_2024_Kara_Lab_Quantum_Computing_Fluid_Dynamics.jpg
+      placement: 1
+      link:
+        icon: fa-solid
+        icon_pack: fas
+        text: Register Here
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLScHRVsRvx4Nmre0DjdfvThA05vRYUvNiIbweuk8qqOD5WWmPA/viewform'
     - title:  
       content: 
       align: center
@@ -30,7 +44,7 @@ content:
         color: '#666'
         brightness: 1.0
         media: a0-00-furkan-defense-01-72-50.jpg
-      placement: 1
+      placement: 2
 #    - title: Albatross 
 #      content: a master of efficient flight
 #      align: center
