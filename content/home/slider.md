@@ -13,12 +13,12 @@ headless: true
 
 design:
   # Slide height is automatic unless you force a specific height (e.g. '400px')
-  slide_height: '600px'
+  #slide_height: '400px'
   is_fullscreen: false
   # Automatically transition through slides?
   loop: true
   # Duration of transition between slides (in ms)
-  interval: 3000
+  interval: 2000
 
 content:
   slides:
@@ -36,8 +36,8 @@ content:
         icon_pack: fas
         text: Register Here
         url: https://docs.google.com/forms/d/e/1FAIpQLScHRVsRvx4Nmre0DjdfvThA05vRYUvNiIbweuk8qqOD5WWmPA/viewform
-    - title: Controlling hypersonic boundary layer transition with localized cooling and metasurface treatments  
-      content: Local Cooling Local Metasurface (LCLM)
+    - title: 
+      content: 
       align: center
       background:
         position: center
@@ -72,8 +72,8 @@ content:
         icon_pack: fas
         text: Papers
         url: '#featured'
-    - title: Hypersonic Flows  
-      content: 'boundary-layer stability and transition to turbulence'
+    - title: 
+      content: 
       align: center
       background:
         position: center
@@ -85,8 +85,8 @@ content:
         icon_pack: fas
         text: Projects
         url: '#projects'
-    - title: Aerodynamic flow separation control
-      content: 'transformative aerodynamic concepts'
+    - title: 
+      content: 
       align: center
       background:
         position: center
