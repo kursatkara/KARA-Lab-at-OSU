@@ -20,7 +20,7 @@ social:
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/yao-nayo-a5385a173/
+    link: https://www.linkedin.com/in/yao-nayo/
     icon_pack: fab
     icon: linkedin
 organizations:
