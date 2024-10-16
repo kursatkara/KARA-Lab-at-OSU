@@ -50,7 +50,6 @@ content:
         icon_pack: fas
         text: Read
         url: 'https://www.nature.com/articles/s41598-024-66867-4'
-
 #    - title: Albatross 
 #      content: a master of efficient flight
 #      align: center
