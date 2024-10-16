@@ -1,10 +1,11 @@
 ---
-title: Brad Harris
-user_groups: ["Alumni Undergraduate Researchers"]
+title: Yao Nayo (ROTC)
+user_groups: ["Undergraduate Students"]
 role: "Undergraduate Researcher"
 avatar_filename: avatar
 interests:
-  - Blunt-Body Dynamic Stability
+  - LES of Projectile Flight Body
+  - Data-Driven Methods
   - Computational Fluid Dynamics
 social:
   - display:
@@ -19,7 +20,7 @@ social:
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/brad-harris-8596a9290/
+    link: https://www.linkedin.com/in/yao-nayo-a5385a173/
     icon_pack: fab
     icon: linkedin
 organizations:
