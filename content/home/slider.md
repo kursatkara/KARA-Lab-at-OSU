@@ -22,7 +22,7 @@ design:
 
 content:
   slides:
-    - title: Qiskit Fall Fest 2024 at Kara Lab 
+    - title:  
       content: Quantum Computing for Fluid Dynamics
       align: center
       background:
