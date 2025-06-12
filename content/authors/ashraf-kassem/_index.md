@@ -6,6 +6,7 @@ avatar_filename: avatar
 interests:
   - Blunt-Body Dynamic Stability
   - Physics-Guided Multifidelity Learning
+  - Wall-Modeled Large Eddy Simulation
 social:
   - display:
       header: false
