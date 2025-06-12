@@ -4,8 +4,9 @@ user_groups: ["High School Students"]
 role: High School Researcher
 avatar_filename: avatar
 interests:
-  - Dynamical Systems
+  - Quantum Computing
   - Engineering Data Analysis
+  - Dynamical Systems
 social:
   - display:
       header: false
