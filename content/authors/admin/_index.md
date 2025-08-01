@@ -1,20 +1,24 @@
 ---
 title: Kursat Kara
-role: Assistant Professor, Mechanical and Aerospace Engineering
+role: Associate Professor, Mechanical and Aerospace Engineering
 avatar_filename: avatar.jpg
-bio: Dr. Kara is the principal investigator of the Kara Aerodynamics Research
-  Laboratory at Oklahoma State University. He teaches the Fundamentals of
-  Aerodynamics, Unsteady Aerodynamics, Computational Fluid Dynamics, and Quantum
-  Computing. Previously, he was an assistant professor at Khalifa University,
-  where he received the Faculty Excellence Award for Outstanding Teaching in
-  2015.
-interests:
-  - Hypersonic Flows
-  - Boundary-Layer Transition
-  - Computational Aerodynamics
-  - Quantum Computing
-  - Flow Separation Control
-  - Sweeping Jet Actuator
+bio: Kursat Kara is an Associate Professor of Mechanical and Aerospace Engineering at Oklahoma State University and principal investigator of the Kara Aerodynamics Research Laboratory. His research spans hypersonic boundary-layer physics, unsteady aerodynamics, and the emerging interface of quantum computing and fluid dynamics. 
+
+A dedicated educator and mentor, he teaches core and advanced courses—including Fundamentals of Aerodynamics, Computational Fluid Dynamics, Boundary-Layer Theory and Transition, and Quantum Computing—and supervises graduate and undergraduate projects in high-fidelity simulation and data-driven modeling. His work has been funded by NASA, NSF, Oklahoma NASA-EPSCoR, NAVAIR, ANSYS, and IBM Quantum. 
+
+In 2025, he received the CEAT Excellent Faculty Award and was nominated for both the 2024 Excellent Teacher Award and the 2025 Excellent Faculty Award by OSU’s School of Mechanical and Aerospace Engineering.
+
+Dr. Kara earned his Ph.D. from Old Dominion University with a dissertation on hypersonic boundary layer receptivity to acoustic disturbances. He began his career as a research engineer at New England Analytics (supporting Sikorsky Aircraft), then completed a post-doctoral appointment at Penn State in hot jet simulations for aeroacoustics. In 2010, he helped establish the Aerospace Engineering Department at Khalifa University—where he won the President’s Faculty Excellence Award for Outstanding Teaching in 2015—before joining OSU.
+
+An active member of AIAA and APS, he served on the AIAA Applied Aerodynamics Technical Committee (2012–2021) and chaired/co-chaired multiple AIAA conferences. He also sits on the editorial board of Nature Scientific Reports and guest-edits its Quantum Computing collection.
+
+AIAA Conference Leadership
+Served as technical chair or co-chair for multiple Applied Aerodynamics conferences:
+- Conference Technical Co-Chair, 32nd AIAA Applied Aerodynamics Conference, AVIATION 2014 (Atlanta, GA)
+- Conference Technical Co-Chair, 34th AIAA Applied Aerodynamics Conference, AVIATION 2016 (Washington, D.C.)
+- Conference Technical Chair, SciTech 2018 Applied Aerodynamics Track (Kissimmee, FL)
+- Conference Technical Co-Chair, 38th AIAA Applied Aerodynamics Conference, AVIATION 2020 (virtual)
+
 social:
   - icon: envelope
     icon_pack: fas
@@ -33,6 +37,9 @@ organizations:
     url: https://ceat.okstate.edu/mae/faculty-staff/faculty-bios/kursat-kara.html
 education:
   courses:
+    - course: PostDoc in Aerospace Engineering
+      institution: Penn State
+      year: 2010
     - course: PhD in Aerospace Engineering
       institution: Old Dominion University
       year: 2008
@@ -48,10 +55,21 @@ user_groups:
   - Principal Investigator
 highlight_name: true
 ---
-Kursat Kara is the principal investigator of the Kara Aerodynamics Research Laboratory at Oklahoma State University. He teaches Fundamentals of Aerodynamics, Unsteady Aerodynamics, Computational Fluid Dynamics, and Quantum Computing. Previously, he was an assistant professor at Khalifa University, where he received the President's Faculty Excellence Award for Outstanding Teaching in 2015.
+Kursat Kara is an Associate Professor of Mechanical and Aerospace Engineering at Oklahoma State University and principal investigator of the Kara Aerodynamics Research Laboratory. His research spans hypersonic boundary-layer physics, unsteady aerodynamics, and the emerging interface of quantum computing and fluid dynamics. 
 
-Dr. Kara earned his Ph.D. from Old Dominion University, focusing on hypersonic boundary-layer receptivity to acoustic disturbances over cones. After graduation, he worked as a research engineer at New England Analytics LLC, a consulting firm for Sikorsky Aircraft Corp. He then joined Penn State's Aerospace Engineering Department as a post-doc, collaborating with Prof. Philip J. Morris on supersonic hot jet simulations for aeroacoustics. In 2010, he became a founding faculty member of the Aerospace Engineering Department at Khalifa University. In August 2019, he joined Oklahoma State University.
+A dedicated educator and mentor, he teaches core and advanced courses—including Fundamentals of Aerodynamics, Computational Fluid Dynamics, Boundary-Layer Theory and Transition, and Quantum Computing—and supervises graduate and undergraduate projects in high-fidelity simulation and data-driven modeling. His work has been funded by NASA, NSF, Oklahoma NASA-EPSCoR, NAVAIR, ANSYS, and IBM Quantum. 
 
-Dr. Kara is a member of the American Institute of Aeronautics and Astronautics (AIAA) and the American Physical Society (APS). He served on the AIAA Applied Aerodynamics Technical Committee (APATC) from 2012 to 2021, including its Membership and Education subcommittees during that time.
+In 2025, he received the CEAT Excellent Faculty Award and was nominated for both the 2024 Excellent Teacher Award and the 2025 Excellent Faculty Award by OSU’s School of Mechanical and Aerospace Engineering.
+
+Dr. Kara earned his Ph.D. from Old Dominion University with a dissertation on hypersonic boundary layer receptivity to acoustic disturbances. He began his career as a research engineer at New England Analytics (supporting Sikorsky Aircraft), then completed a post-doctoral appointment at Penn State in hot jet simulations for aeroacoustics. In 2010, he helped establish the Aerospace Engineering Department at Khalifa University—where he won the President’s Faculty Excellence Award for Outstanding Teaching in 2015—before joining OSU.
+
+An active member of AIAA and APS, he served on the AIAA Applied Aerodynamics Technical Committee (2012–2021) and chaired/co-chaired multiple AIAA conferences. He also sits on the editorial board of Nature Scientific Reports and guest-edits its Quantum Computing collection.
+
+AIAA Conference Leadership
+Served as technical chair or co-chair for multiple Applied Aerodynamics conferences:
+- Conference Technical Co-Chair, 32nd AIAA Applied Aerodynamics Conference, AVIATION 2014 (Atlanta, GA)
+- Conference Technical Co-Chair, 34th AIAA Applied Aerodynamics Conference, AVIATION 2016 (Washington, D.C.)
+- Conference Technical Chair, SciTech 2018 Applied Aerodynamics Track (Kissimmee, FL)
+- Conference Technical Co-Chair, 38th AIAA Applied Aerodynamics Conference, AVIATION 2020 (virtual)
 
 {{< icon name="download" pack="fas" >}}{{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
