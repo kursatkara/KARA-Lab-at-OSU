@@ -1,24 +1,36 @@
 ---
-# Use the Slider widget as this page section
+## Use the Slider widget as this page section
+#widget: slider
+
+## Position of this section on the page
+#weight: 1  
+
+## Publish this section?
+#active: true  
+
+## This file represents a page section.
+#headless: true  
+
+#design:
+#  # Slide height is automatic unless you force a specific height (e.g. '400px')
+#  slide_height: '600px'
+#  is_fullscreen: false
+#  # Automatically transition through slides?
+#  loop: true
+#  # Duration of transition between slides (in ms)
+#  interval: 2000
+
 widget: slider
-
-# Position of this section on the page
-weight: 1  
-
-# Publish this section?
-active: true  
-
-# This file represents a page section.
-headless: true  
+weight: 1
+active: true
+headless: true
 
 design:
-  # Slide height is automatic unless you force a specific height (e.g. '400px')
-  slide_height: '600px'
+  slide_height: '65vh'
   is_fullscreen: false
-  # Automatically transition through slides?
   loop: true
-  # Duration of transition between slides (in ms)
   interval: 2000
+
 
 content:
   slides:
