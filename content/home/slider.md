@@ -29,7 +29,7 @@ content:
         position: center
         color: '#666'
         brightness: 1.0
-        media: Qiskit_Fall_Fest_2025_Kara_Lab_Quantum_Computing_Fluid_Dynamics_1.jpg
+        media: Qiskit_Fall_Fest_2025_Kara_Lab_Quantum_Computing_Fluid_Dynamics_4.jpg
       placement: 1
       link:
         icon: fa-solid
