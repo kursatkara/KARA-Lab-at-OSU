@@ -38,7 +38,7 @@ content:
       content: Quantum Computing for Fluid Dynamics
       align: center
       background:
-        position: 'top center'
+        position: center
         color: '#666'
         brightness: 1.0
         media: Qiskit_Fall_Fest_2025_Kara_Lab_Quantum_Computing_Fluid_Dynamics_4.jpg
@@ -52,7 +52,7 @@ content:
       content: 
       align: center
       background:
-        position: 'top center'
+        position: center
         color: '#666'
         brightness: 1.0
         media: a0-00-furkan-defense-01-72-50.jpg
