@@ -29,13 +29,13 @@ content:
         position: center
         color: '#666'
         brightness: 1.0
-        media: Qiskit_Fall_Fest_2024_Kara_Lab_Quantum_Computing_Fluid_Dynamics_1.jpg
+        media: Qiskit_Fall_Fest_2025_Kara_Lab_Quantum_Computing_Fluid_Dynamics_1.jpg
       placement: 1
       link:
         icon: fa-solid
         icon_pack: fas
         text: Register Here
-        url: https://docs.google.com/forms/d/e/1FAIpQLScHRVsRvx4Nmre0DjdfvThA05vRYUvNiIbweuk8qqOD5WWmPA/viewform
+        url: https://forms.gle/QFX9VXnRvjnKLpJN6
     - title: 
       content: 
       align: center
