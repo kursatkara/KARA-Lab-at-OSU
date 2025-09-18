@@ -22,20 +22,33 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
+  - title: Associate Professor
+    company: Oklahoma State University
+    company_url: 'https://experts.okstate.edu/kursat.kara'
+    company_logo: org-osu
+    location: Oklahoma
+    date_start: '2025-08-01'
+    date_end: ''
+    description: |2-
+        Research Areas:
+        * Quantum Computing for Fluid Dynamics
+        * Physics-Guided Multifidelity Learning
+        * Blunt-Body Dynamic Stability
+        * Realistic Urban Wind Field Generation for UAVs
+        * Computational Aerodynamics
+        * Hypersonic Aerothermodynamics
+        * Flow Separation Control
+
   - title: Assistant Professor
     company: Oklahoma State University
     company_url: 'https://experts.okstate.edu/kursat.kara'
     company_logo: org-osu
     location: Oklahoma
     date_start: '2019-08-01'
-    date_end: ''
+    date_end: '2025-07-31'
     description: |2-
-        Research Areas:
-        * Computational Aerodynamics
-        * Hypersonic Boundary-Layer Stability
-        * Flow Separation Control
-        * Quantum Computing
-        * Wind Data Generation for sUAS in Urban Spaces
+        * 2025 CEAT Excellent Faculty Award
+        * 2024 CEAT Excellent Teacher Award Nominee
 
   - title: Visiting Professor
     company: University of Wyoming - Mechanical Engineering Department
