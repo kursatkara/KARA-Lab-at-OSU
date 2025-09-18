@@ -29,7 +29,7 @@ design:
   slide_height: '75vh'
   is_fullscreen: false
   loop: true
-  interval: 2000
+  interval: 5000
 
 
 content:
@@ -47,7 +47,7 @@ content:
         icon: fa-solid
         icon_pack: fas
         text: Register Here
-        url: https://forms.gle/QFX9VXnRvjnKLpJN6
+        url: https://kursatkara.github.io/qiskit-fall-fest-2025/
     - title: 
       content: 
       align: center
