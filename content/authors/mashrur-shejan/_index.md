@@ -1,25 +1,24 @@
 ---
-title: Shafi Romeo
+title: Mashrur Shejan
 user_groups: ["Graduate Students"]
-role: Ph.D. Candidate
+role: Ph.D. Student
 avatar_filename: avatar
 interests:
-  - NASA Rentry Capsule Dynamic Stability
-  - Physics-Guided Multifidelity Learning
+  - Wall-Modeled Large Eddy Simulation
 social:
   - display:
       header: false
-    link: https://scholar.google.com/citations?user=YvRRMd4AAAAJ
+    link: https://scholar.google.com/citations?user=MlEO-I8AAAAJ&hl
     icon_pack: fas
     icon: graduation-cap
   - display:
       header: false
-    link: https://github.com/salmanromeo
+    link: https://github.com/kursatkara
     icon_pack: fab
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/salman40/
+    link: https://www.linkedin.com/in/mashrur-shejan-2a5201191/
     icon_pack: fab
     icon: linkedin
 organizations:

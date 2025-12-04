@@ -1,16 +1,16 @@
 ---
 title: Ashraf Kassem
 user_groups: ["Graduate Students"]
-role: Ph.D. Student
+role: Ph.D. Candidate
 avatar_filename: avatar
 interests:
-  - Blunt-Body Dynamic Stability
+  - NASA Rentry Capsule Dynamic Stability
   - Physics-Guided Multifidelity Learning
   - Wall-Modeled Large Eddy Simulation
 social:
   - display:
       header: false
-    link: https://scholar.google.com/citations?user=RXSWKeMAAAAJ
+    link: https://scholar.google.com/citations?user=dwc-AvcAAAAJ
     icon_pack: fas
     icon: graduation-cap
   - display:
