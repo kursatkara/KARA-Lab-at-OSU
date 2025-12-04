@@ -4,7 +4,7 @@ user_groups: ["Graduate Students"]
 role: Ph.D. Candidate
 avatar_filename: avatar
 interests:
-  - NASA Rentry Capsule Dynamic Stability
+  - NASA Reentry Capsule Dynamic Stability
   - Physics-Guided Multifidelity Learning
   - Wall-Modeled Large Eddy Simulation
 social:
