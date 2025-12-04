@@ -1,6 +1,6 @@
 ---
 title: Gavin Smith
-user_groups: ["Undergraduate Students"]
+user_groups: ["Alumni Undergraduate Researchers"]
 role: "Undergraduate Researcher"
 avatar_filename: avatar
 interests:
