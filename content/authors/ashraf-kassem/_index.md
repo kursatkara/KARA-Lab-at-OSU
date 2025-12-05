@@ -15,7 +15,7 @@ social:
     icon: graduation-cap
   - display:
       header: false
-    link: https://github.com/kursatkara
+    link: https://github.com/ashrafaero
     icon_pack: fab
     icon: github
   - display:
