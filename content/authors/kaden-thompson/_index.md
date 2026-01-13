@@ -1,6 +1,6 @@
 ---
-title: Ilya Dzialendzik
-user_groups: ["Alumni Undergraduate Researchers"]
+title: Kaden Thompson
+user_groups: ["Undergraduate Students"]
 role: "Undergraduate Researcher"
 avatar_filename: avatar
 interests:
@@ -20,7 +20,7 @@ social:
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/ilyadzia298/
+    link: https://www.linkedin.com/in/kadenrthompson/
     icon_pack: fab
     icon: linkedin
 organizations:

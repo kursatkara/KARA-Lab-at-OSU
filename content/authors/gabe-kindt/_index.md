@@ -1,10 +1,11 @@
 ---
-title: Ilya Dzialendzik
-user_groups: ["Alumni Undergraduate Researchers"]
+title: Gabe Kindt
+user_groups: ["Undergraduate Students"]
 role: "Undergraduate Researcher"
 avatar_filename: avatar
 interests:
-  - Blunt-Body Dynamic Stability
+  - Ship Airwake
+  - Small Unmanned Aerial Systems
   - Data-Driven Methods
   - Computational Fluid Dynamics
 social:
@@ -20,7 +21,7 @@ social:
     icon: github
   - display:
       header: false
-    link: https://www.linkedin.com/in/ilyadzia298/
+    link: https://www.linkedin.com/in/gaberielkindt/
     icon_pack: fab
     icon: linkedin
 organizations:
