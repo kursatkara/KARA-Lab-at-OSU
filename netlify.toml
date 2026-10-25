@@ -1,21 +1,10 @@
+# Plain static site. The "build" only copies the page and its assets into public/,
+# because the Netlify dashboard deploys from the public/ folder.
 [build]
-  command = "hugo --gc --minify -b $URL"
   publish = "public"
+  command = "rm -rf public && mkdir public && cp -R index.html assets public/"
 
-[build.environment]
-  HUGO_VERSION = "0.97.3"
-  HUGO_ENABLEGITINFO = "true"
-
-[context.production.environment]
-  HUGO_ENV = "production"
-
-[context.deploy-preview]
-  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
-
-[context.branch-deploy]
-  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
-
-[[plugins]]
-  package = "netlify-plugin-hugo-cache-resources"
-  [plugins.inputs]
-    debug = true
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
