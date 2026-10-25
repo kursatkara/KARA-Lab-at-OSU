@@ -268,7 +268,7 @@
         <li><a href="#publications">Publications</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#outreach">Outreach</a></li>
+        <li><a href="#outreach">Honors</a></li>
         <li><a href="#photos">Photos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -289,7 +289,7 @@
       <li>Associate Fellow, American Institute of Aeronautics and Astronautics (AIAA)</li>
       <li class="inst">Oklahoma State University · Stillwater, Oklahoma</li>
     </ul>
-    <p class="thesis">We build high-fidelity simulations and the fast, physics-guided models trained on them, for flows that decide whether vehicles fly safely: entry capsules, ships' airwakes, city winds, and hypersonic boundary layers.</p>
+    <p class="thesis">We combine high-fidelity simulation (DNS and LES) with physics-guided reduced-order and machine-learning models to predict the unsteady flows that govern flight safety: the dynamic stability of reentry capsules, ship airwakes, urban atmospheric turbulence, and hypersonic boundary-layer transition.</p>
     <div class="links">
       <a class="primary" href="assets/Kursat_Kara_CV.pdf">CV (PDF)</a>
       <a href="https://scholar.google.com/citations?user=RXSWKeMAAAAJ">Google Scholar</a>
@@ -307,7 +307,7 @@
   <div class="wrap">
     <h2 id="glance-h">At a glance</h2>
     <div class="bio">
-      <p>Kursat Kara directs the Kara Aerodynamics Research Laboratory (KARA Lab) at Oklahoma State University. The lab works on data-driven aerodynamics and reduced-order modeling, entry-capsule dynamic stability, ship airwakes and urban winds for drones and advanced air mobility, hypersonic boundary-layer transition, flow control, and quantum computing for fluid dynamics. Our tools are high-fidelity simulation (DNS, LES, high-order methods) combined with scientific machine learning. The work is funded by NASA, the U.S. Navy (NAWCAD), NSF, the FAA, and IBM Quantum.</p>
+      <p>Kursat Kara directs the Kara Aerodynamics Research Laboratory (KARA Lab) at Oklahoma State University. The lab works on data-driven aerodynamics and reduced-order modeling, entry-capsule dynamic stability, ship airwakes and urban winds for drones and advanced air mobility, hypersonic boundary-layer transition, flow control, and quantum computing for fluid dynamics. The lab's tools are high-fidelity simulation (DNS, LES, high-order methods) combined with scientific machine learning. The work is funded by NASA, the U.S. Navy (NAWCAD), NSF, the FAA, and IBM Quantum.</p>
       <p>He earned his Ph.D. at Old Dominion University, supported by NASA Langley, with a dissertation on hypersonic boundary-layer receptivity. He worked as a CFD engineer at New England Analytics on projects for Sikorsky Aircraft, was a postdoctoral scholar at Penn State on large-eddy simulation of hot supersonic jets, and was a founding faculty member of the first aerospace engineering program in the UAE at Khalifa University before joining OSU in 2019. He was elected an AIAA Associate Fellow in 2026. He serves on the editorial board of <i>Scientific Reports</i> and guest-edits its Quantum Computing collection.</p>
     </div>
 
@@ -339,7 +339,7 @@
       <li><time>Apr 2026</time><span>Ashraf Kassem received the CEAT Dean's Overall Outstanding Graduate Student Award and the MAE Outstanding Graduate Student Award.</span></li>
       <li><time>Feb 2026</time><span>The U.S. Navy (NAWCAD) funded <b>AIRWISE</b>, our project on AI for real-time wake inference in ship environments.</span></li>
       <li><time>Jan 2026</time><span>NASA extended our Early Stage Innovations project on blunt-body dynamic stability through January 2027.</span></li>
-      <li><time>2025–26</time><span>The lab published ten journal papers, including six in <i>Aerospace Science and Technology</i> on entry-capsule dynamics.</span></li>
+      <li><time>2025–2026</time><span>The lab published ten journal papers, including six in <i>Aerospace Science and Technology</i> on entry-capsule dynamics.</span></li>
       <li><time>Oct 2025</time><span>The lab ran <a href="https://kursatkara.github.io/qiskit-fall-fest-2025/">Qiskit Fall Fest 2025</a>, three weekly workshops on qubits, superposition, and entanglement.</span></li>
       <li><time>2025</time><span>Kursat Kara received the CEAT Excellent Faculty Award. The lab also received <a href="https://news.okstate.edu/articles/engineering-architecture-technology/2025/ceat_research_lab_awarded_70k_in_ibm_quantum_credits_to_advance_fluid_dynamics_research.html">$70,000 in IBM Quantum credits</a>.</span></li>
     </ul>
@@ -350,14 +350,14 @@
 <section id="research" aria-labelledby="research-h">
   <div class="wrap">
     <h2 id="research-h">Research</h2>
-    <p class="lede">We build simulation and learning tools for flows that matter to flight: from Mach 6 boundary layers and tumbling reentry capsules to gusts in city streets. Every project pairs high-fidelity physics with a model fast enough to use.</p>
+    <p class="lede">Our work spans Mach 6 boundary-layer transition, the dynamic stability of reentry capsules, and turbulence in urban and shipboard airwakes. Each project couples high-fidelity simulation with reduced-order or machine-learning models fast enough for design, uncertainty quantification, or real-time use.</p>
 
     <figure class="tunnel" aria-labelledby="tunnel-cap">
       <canvas id="tunnel" role="img" aria-label="Animated streamlines of potential flow past a Joukowski airfoil"></canvas>
       <figcaption class="bar">
         <label for="alpha">Angle of attack <input id="alpha" type="range" min="-4" max="14" step="0.5" value="6"> <output id="alpha-out" for="alpha">6.0°</output></label>
         <span>C<sub>l</sub> = <output id="cl-out">0.00</output></span>
-        <span class="note" id="tunnel-cap">Potential flow past a Joukowski airfoil with the Kutta condition enforced. Particles move with the exact velocity field.</span>
+        <span class="note" id="tunnel-cap">Inviscid, incompressible potential flow past a Joukowski airfoil with the Kutta condition enforced; C<sub>l</sub> follows from the Kutta–Joukowski theorem. Particles move with the exact velocity field.</span>
       </figcaption>
     </figure>
 
@@ -367,7 +367,7 @@
         <figure><img src="assets/research/qcfd.jpg" alt="Burgers' equation shock profiles computed with a quantum algorithm compared with classical CFD" loading="lazy" width="800" height="600"></figure>
         <div class="body">
           <h3>Quantum computing for fluid dynamics</h3>
-          <p>We apply quantum PDE algorithms to Burgers', heat, and Navier–Stokes equations and test them on IBM quantum hardware, including Chebyshev-point solvers that cut the qubit and gate cost.</p>
+          <p>We develop quantum algorithms for the partial differential equations of fluid dynamics: a quantum PDE solver for the viscous Burgers' equation, a Chebyshev-point formulation that improves its efficiency, and hybrid classical–quantum lattice Boltzmann methods, executed on IBM quantum hardware.</p>
           <span class="label sponsor">IBM Quantum</span>
         </div>
       </article>
@@ -375,7 +375,7 @@
         <figure><img src="assets/research/blunt-body.jpg" alt="Schematic of a blunt-body entry capsule pitching at angle theta in a free stream, with a pitch oscillation that grows into a limit cycle" loading="lazy" width="800" height="600"></figure>
         <div class="body">
           <h3>Entry-capsule dynamic stability</h3>
-          <p>Free-flight CFD, multifidelity data fusion, Bayesian parameter estimation, neural operators, and equation discovery characterize the pitch dynamics of blunt-body entry vehicles such as the Genesis capsule.</p>
+          <p>Free-flight CFD, multifidelity data fusion, Bayesian estimation of pitch-damping derivatives, neural-operator surrogates, and equation discovery characterize the nonlinear pitch dynamics and limit-cycle behavior of blunt-body entry vehicles such as the Genesis capsule.</p>
           <span class="label sponsor">NASA Early Stage Innovations</span>
         </div>
       </article>
@@ -383,7 +383,7 @@
         <figure><img src="assets/research/urban-wind.jpg" alt="Large eddy simulation of wind velocity around Boone Pickens Stadium on the OSU campus" loading="lazy" width="800" height="600"></figure>
         <div class="body">
           <h3>Urban winds for drones and air mobility</h3>
-          <p>LES of the urban boundary layer feeds reduced-order wind models coupled to drone flight dynamics, and now turbulence loading on advanced air mobility VTOL vehicles.</p>
+          <p>LES of the urban atmospheric boundary layer trains reduced-order wind models (POD–LSTM and convolutional autoencoders) that couple to drone and advanced air mobility flight dynamics. New FAA work quantifies turbulence-induced structural loads on AAM VTOL vehicles.</p>
           <span class="label sponsor">NSF NRI 1925147 · FAA ASSURE</span>
         </div>
       </article>
@@ -391,7 +391,7 @@
         <figure><img src="assets/research/hypersonic.jpg" alt="Disturbance contours in a hypersonic boundary layer over a blunt cone with 0.10-inch nose radius" loading="lazy" width="800" height="600"></figure>
         <div class="body">
           <h3>Hypersonic boundary-layer transition</h3>
-          <p>Direct numerical simulation of receptivity and instability over cones at Mach 6, and transition control with local wall cooling and acoustic metasurfaces.</p>
+          <p>Direct numerical simulation of receptivity to free-stream acoustic disturbances and second-mode (Mack-mode) instability over blunt cones at Mach 6, and transition control with localized wall cooling and acoustic metasurfaces.</p>
           <span class="label sponsor">NASA Oklahoma EPSCoR</span>
         </div>
       </article>
@@ -399,7 +399,7 @@
         <figure><img src="assets/research/swj.jpg" alt="Six panels of URANS streamlines over the NASA wall-mounted hump: the separation bubble shrinks as sweeping-jet mass flow increases" loading="lazy" width="800" height="600"></figure>
         <div class="body">
           <h3>Flow-separation control</h3>
-          <p>Sweeping jet actuators are fluidic oscillators with no moving parts. We study how their geometry sets the jet frequency, how they suppress separation, and how to model them with DMD-based reduced-order models.</p>
+          <p>Sweeping jet actuators are fluidic oscillators with no moving parts. We study how internal geometry and mass flow rate set the oscillation frequency, how the sweeping jet suppresses separation, and how to model the actuator with DMD-based and causal state-space reduced-order models.</p>
           <span class="label sponsor">Active flow control</span>
         </div>
       </article>
@@ -407,7 +407,7 @@
         <figure><img src="assets/research/rotor.jpg" alt="Vortex wake of a Sikorsky S-76 rotor in hover from a high-order simulation" loading="lazy" width="800" height="600"></figure>
         <div class="body">
           <h3>Ship airwakes and rotorcraft</h3>
-          <p>GPU-accelerated LES of the NATO Generic Destroyer airwake, validated against wind-tunnel data, trains AI surrogates for real-time wake inference during shipboard flight operations. Earlier work used high-order DG solvers for rotor hover.</p>
+          <p>GPU-accelerated LES of the NATO Generic Destroyer airwake, validated against 1:50-scale wind-over-deck measurements, trains AI surrogates for real-time wake inference during shipboard flight operations. Earlier work: high-order discontinuous Galerkin off-body simulations of S-76 rotor hover.</p>
           <span class="label sponsor">U.S. Navy NAWCAD · AIRWISE</span>
         </div>
       </article>
@@ -421,13 +421,12 @@
       <li><span class="who">PI</span><span>Physics-Guided Multifidelity Learning for Characterization of Blunt-Body Dynamic Stability. NASA Early Stage Innovations (ESI22), 80NSSC23K0231, with a paid extension.</span><span class="yrs">2023–2027</span></li>
       <li><span class="who">PI</span><span>Exploring Quantum Computing Paradigms for Fluid Dynamics. IBM Quantum.</span><span class="yrs">2025</span></li>
       <li><span class="who">PI</span><span>Classical Aerodynamics Meet with Modern Engineering Simulation Tools. ANSYS curriculum development.</span><span class="yrs">2024–2025</span></li>
-      <li><span class="who">PI</span><span>University Consortium for Applied Hypersonics (UCAH) institutional membership. Texas A&amp;M Engineering Experiment Station, prime sponsor DoD.</span><span class="yrs">2024–</span></li>
       <li><span class="who">PI</span><span>Direct Numerical Simulation of Broadband Acoustic Metasurfaces to Stabilize Acoustic Modes in Hypersonic Boundary Layer. NASA Oklahoma EPSCoR Research Initiation Grant.</span><span class="yrs">2022–2023</span></li>
       <li><span class="who">Co-PI</span><span>Next Generation Smart Heatsinks. OCAST AR20-020.</span><span class="yrs">2021–2022</span></li>
       <li><span class="who">PI</span><span><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1925147">NRI: INT: Safe Wind-Aware Navigation for Collaborative Autonomous Aircraft in Low Altitude Airspace</a>. NSF 1925147, with an REU supplement.</span><span class="yrs">2020–2025</span></li>
       <li><span class="who">PI</span><span>Hypersonic Boundary-Layer Receptivity to Solid Particulates. NASA Oklahoma EPSCoR.</span><span class="yrs">2019</span></li>
     </ul>
-    <p class="key">Computing allocations: NSF ACCESS (PHY260216, PHY260139, MTH220018), NASA High-End Computing, XSEDE, and IBM Quantum.</p>
+    <p class="key">Computing allocations: NSF ACCESS (PHY260216, PHY260139, MTH220018), NASA High-End Computing, XSEDE, and IBM Quantum. Member institution, University Consortium for Applied Hypersonics (UCAH), since 2024.</p>
   </div>
 </section>
 
@@ -580,7 +579,7 @@
 <!-- ============================== OUTREACH ============================== -->
 <section id="outreach" aria-labelledby="out-h">
   <div class="wrap">
-    <h2 id="out-h">Outreach and service</h2>
+    <h2 id="out-h">Outreach, honors, and service</h2>
     <p class="lede">The lab runs quantum computing events with IBM Quantum and hosts high school researchers.</p>
     <div class="events">
       <article class="event">
@@ -592,14 +591,23 @@
         <div class="body"><span class="label">Nov 9, 2024</span><h3>Qiskit Fall Fest at OSU</h3><p>Kursat Kara chaired the organizing committee and gave the main talk, "Quantum Computing for Fluid Dynamics."</p></div>
       </article>
     </div>
+    <h3 class="sub">Honors</h3>
+    <ul class="news">
+      <li><time>2026</time><span>Associate Fellow, American Institute of Aeronautics and Astronautics (Class of 2027)</span></li>
+      <li><time>2026</time><span>AIAA Section–Student Branch Partnership Award, second place (Oklahoma Section; Technical Symposium advisor)</span></li>
+      <li><time>2025</time><span>Excellent Faculty Award, College of Engineering, Architecture and Technology, Oklahoma State University</span></li>
+      <li><time>2023</time><span>Principal investigator, NASA Early Stage Innovations award</span></li>
+      <li><time>2015</time><span>President's Faculty Excellence Award for Outstanding Teaching, Khalifa University</span></li>
+    </ul>
     <h3 class="sub">Professional service</h3>
     <ul class="news">
-      <li><time>2026–</time><span>Associate Fellow, AIAA (Class of 2027); MAE representative, CEAT Academic Council</span></li>
+      <li><time>2026–</time><span>MAE representative, CEAT Academic Council</span></li>
       <li><time>2023–</time><span>Editorial Board, <i>Scientific Reports</i>; Guest Editor, Quantum Computing collection (2024–)</span></li>
       <li><time>2022–</time><span>NSF ACCESS Allocation Review Committee; NSF NAIRR Pilot Review Committee (2024–); Executive Committee, NERSC Users Group (NUGEX)</span></li>
       <li><time>2022–2025</time><span>Review panels for NSF Fluids ERI, NASA TechLeap, NASA EPSCoR R3, NASA Next Gen STEM, DOE ASCR, and the Naval Research Laboratory</span></li>
       <li><time>2014–2021</time><span>Technical Chair, AIAA Applied Aerodynamics Conference at AVIATION 2016 and SciTech 2018; Technical Co-Chair at AVIATION 2014 and 2020; Co-Chair, 40th AIAA/ASME Symposium (2021)</span></li>
       <li><time>2012–2021</time><span>Member, AIAA Applied Aerodynamics Technical Committee</span></li>
+      <li><time>2019–</time><span>Member, American Physical Society</span></li>
     </ul>
   </div>
 </section>
