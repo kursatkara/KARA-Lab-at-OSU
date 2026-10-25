@@ -25,6 +25,11 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - Fonts: Source Serif 4 (headings), IBM Plex Sans (body), IBM Plex Mono (labels, dates, DOIs).
 - Do not use official OSU logos or wordmarks; the airfoil mark in the header and `assets/favicon.svg` is the lab's own.
 - Keep text short; this is a landing page, not the CV.
+- Use precise technical terminology, as in a paper abstract: "dynamic stability of reentry capsules" (not "tumbling"),
+  "urban atmospheric boundary layer" or "urban turbulence" (not "gusts in city streets"), "second-mode instability",
+  "pitch-damping derivatives". Name the method, the flow, and the quantity; avoid marketing phrasing.
+- Keep the bio and research text in the third person for Kursat Kara and "the lab"/"we" for lab work; don't mix them
+  within one paragraph.
 
 ## Accessibility (WCAG 2.1 AA)
 - Every image needs meaningful `alt` text. Keep heading order h1 → h2 → h3.
@@ -42,7 +47,10 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   Put the whole figure on a white 800×600 canvas (letterbox, don't crop): axis labels and panel captions must stay visible.
   `blunt-body.jpg` is a schematic drawn with matplotlib, not data; replace it with a real result figure when one is public.
 - **Publications list** shows the 10 newest by default; "Show all" reveals the rest. Keep it to about 25 selected papers.
-- **Grant:** add an `<li>` at the top of `.grants` (role, title + sponsor + award number, years).
+- **Grant:** add an `<li>` at the top of `.grants` (role, title + sponsor + award number, years). Only funded awards;
+  memberships and computing allocations go in the note under the list.
+- **Honors** (in `#outreach`) and **Professional service** are separate lists; an elected member grade is an honor, not service.
+- **Old addresses:** `netlify.toml` redirects the old Hugo paths (`/publication/*`, `/author/*`, …) to page sections.
 - **Course:** copy an `<article class="course">`; link the course site in the `<h3>` if there is one.
 - **Gallery photo:** `assets/gallery/<name>.jpg`, 720×540 JPEG (< 100 KB), add a `<figure>` in `.gallery`. Keep 9 or 12 photos.
 - **CV:** overwrite `assets/Kursat_Kara_CV.pdf` (keep the name), then check the numbers in "By the numbers".
