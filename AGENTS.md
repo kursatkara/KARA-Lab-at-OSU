@@ -4,7 +4,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 
 ## What this is
 - One static page, `index.html`. Plain HTML + inline CSS + a small inline script. No build step, no framework.
-- Hosted on Netlify (`netlify.toml`: publish `.`, no build command). `.nojekyll` also lets it run on GitHub Pages unchanged.
+- Hosted on Netlify. `netlify.toml` copies `index.html` and `assets/` into `public/`, which Netlify deploys. A new top-level file
+  that must be online has to be added to that copy command. `.nojekyll` lets the same files run on GitHub Pages.
 - Images live in `assets/`. Keep the repo small: resize photos before committing (sizes below).
 
 ## Source of truth
