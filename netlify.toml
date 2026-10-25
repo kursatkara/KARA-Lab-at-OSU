@@ -1,7 +1,16 @@
 # Plain static site: no build step. Netlify serves this folder as is.
+# The command is an explicit no-op so Netlify does not fall back to the old Hugo
+# build command saved in the site's dashboard settings.
 [build]
   publish = "."
-  command = ""
+  command = "echo 'Static site: no build step'"
+
+[context.production]
+  command = "echo 'Static site: no build step'"
+[context.deploy-preview]
+  command = "echo 'Static site: no build step'"
+[context.branch-deploy]
+  command = "echo 'Static site: no build step'"
 
 [[headers]]
   for = "/assets/*"
