@@ -42,7 +42,6 @@
     --sketch-top: #f3f5f8; --sketch-bot: #e6eaef;   /* the illustration backdrop gradient, so the panel has no seam */
     --plate-ink: #5a6068; --plate-link: #a24600; --plate-line: #e6e8eb;   /* caption text on the white plate, same in both themes */
     --tunnel-bg: #101215;   /* dark backdrop behind outreach banners */
-    --flow: #2f74c0;        /* free stream and shock in the pitch demo */
     --radius: 12px;
     --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
     --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -52,14 +51,14 @@
     :root:not([data-theme="light"]) {
       --orange: #ff9a4d; --orange-hi: #ff8a33;
       --bg: #111316; --surface: #191c20; --ink: #e8eaed; --muted: #a0a7af;
-      --line: #2b2f35; --chip: #23272c; --flow: #6aa8ea;
+      --line: #2b2f35; --chip: #23272c;
       color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
     --orange: #ff9a4d; --orange-hi: #ff8a33;
     --bg: #111316; --surface: #191c20; --ink: #e8eaed; --muted: #a0a7af;
-    --line: #2b2f35; --chip: #23272c; --flow: #6aa8ea;
+    --line: #2b2f35; --chip: #23272c;
     color-scheme: dark;
   }
 
@@ -156,21 +155,6 @@
 
   /* Research projects: one panel per funded project; figure and text alternate sides on wide screens */
   .projects { display: grid; gap: 22px; }
-  /* Pitch demo (Research): 1-DoF capsule pitch oscillation with amplitude-dependent damping */
-  .pitch { margin: 0 0 30px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-  .pitch-viz { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
-  .pitch canvas { display: block; width: 100%; height: 300px; }
-  #pitch-body { border-right: 1px solid var(--line); }
-  .pitch-bar { display: grid; gap: 8px; padding: 12px 16px 14px; border-top: 1px solid var(--line); }
-  .pitch-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-  .pitch-lab { font: 500 .74rem var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
-  .pitch-ctl button { font: 500 .85rem var(--mono); color: var(--ink); background: var(--chip); border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px; cursor: pointer; }
-  .pitch-ctl button:hover { border-color: var(--orange-hi); }
-  .pitch-ctl button[aria-pressed="true"] { background: var(--surface); border-color: var(--orange-hi); box-shadow: inset 0 0 0 1px var(--orange-hi); }
-  .pitch-ctl .pitch-replay { margin-left: auto; background: transparent; }
-  .pitch-status { margin: 0; font-weight: 500; }
-  .pitch-note { margin: 0; font-size: .82rem; color: var(--muted); }
-  @media (max-width: 700px) { .pitch-viz { grid-template-columns: 1fr; } #pitch-body { border-right: 0; border-bottom: 1px solid var(--line); } .pitch canvas { height: 230px; } }
   .pindex { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; padding: 0; list-style: none; }
   .pindex a { display: inline-flex; gap: 6px; align-items: baseline; padding: 6px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); text-decoration: none; font-size: .88rem; }
   .pindex a span { font: 500 .72rem var(--mono); color: var(--muted); }
@@ -396,26 +380,6 @@
   <div class="wrap">
     <h2 id="research-h">Research</h2>
     <p class="lede">Our research integrates high-fidelity computational fluid dynamics (DNS and LES), physics-guided reduced-order modeling, and scientific machine learning to understand and predict complex unsteady flows. We develop computationally efficient predictive models that translate high-fidelity flow physics into real-time aerodynamic prediction, flow reconstruction, and decision support. Our work spans reentry-vehicle dynamic stability, ship airwakes, urban atmospheric turbulence, and hypersonic boundary-layer transition. These efforts aim to improve the prediction of vehicle stability and aerodynamic loads, anticipate turbulence-induced flight hazards, support autonomous flight planning and control, and enable more reliable prediction of hypersonic boundary-layer transition.</p>
-
-    <!-- ===== PITCH DEMO ===== -->
-    <!-- Interactive 1-DoF pitch model (script: "Pitch demo" block). Presets are the initial angle of attack in degrees. -->
-    <figure class="pitch" aria-labelledby="pitch-cap">
-      <div class="pitch-viz">
-        <canvas id="pitch-body" role="img" aria-label="A blunt reentry capsule pitching about its center of gravity in a supersonic free stream, behind a detached bow shock"></canvas>
-        <canvas id="pitch-plot" role="img" aria-label="Pitch angle versus time"></canvas>
-      </div>
-      <figcaption class="pitch-bar">
-        <div class="pitch-ctl" role="group" aria-label="Initial angle of attack">
-          <span class="pitch-lab">Initial angle of attack</span>
-          <button type="button" data-a0="2" aria-pressed="true">2°</button>
-          <button type="button" data-a0="10" aria-pressed="false">10°</button>
-          <button type="button" data-a0="20" aria-pressed="false">20°</button>
-          <button type="button" class="pitch-replay">Replay</button>
-        </div>
-        <p class="pitch-status" id="pitch-status" aria-live="polite"></p>
-        <p class="pitch-note" id="pitch-cap">Simplified single-degree-of-freedom pitch model with amplitude-dependent pitch damping, <i>α</i>″ − <i>ε</i>(1 − <i>α</i>²/<i>a</i>²)<i>α</i>′ + <i>ω</i>²<i>α</i> = 0. The pitch-damping sum is destabilizing at small amplitude and stabilizing at large amplitude, so every oscillation approaches a ±10° limit cycle. Illustrative parameters, not fitted to flight or CFD data.</p>
-      </figcaption>
-    </figure>
 
 
     <!-- One panel per funded project, newest first. Copy one <article class="proj"> block to add a project.
@@ -825,122 +789,6 @@
     const a = links.get(e.target.id); if (a) a.setAttribute('aria-current', 'true');
   }), { rootMargin: '-45% 0px -50% 0px' });
   links.forEach((a, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
-})();
-
-/* Pitch demo: alpha'' - eps (1 - alpha^2/a^2) alpha' + w^2 alpha = 0 (van der Pol form), alpha in degrees.
-   With small eps the amplitude A obeys dA/dt = (eps/2) A (1 - A^2/(4 a^2)), so the limit cycle is A* = 2a = 10 deg:
-   2 deg grows (dynamically unstable), 10 deg holds (neutral, on the limit cycle), 20 deg decays (stable). */
-(() => {
-  const fig = document.querySelector('.pitch'); if (!fig) return;
-  const cb = document.getElementById('pitch-body'), cp = document.getElementById('pitch-plot');
-  const status = document.getElementById('pitch-status'), presets = [...fig.querySelectorAll('[data-a0]')], replay = fig.querySelector('.pitch-replay');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const T = 16, DT = 1 / 200, N = Math.round(T / DT), W = 2 * Math.PI * 0.75, EPS = 0.34, A2 = 25, SPEED = 1.6, YMAX = 22;
-  const TEXT = {
-    2: ['α₀ = 2°: the amplitude keeps growing. Small-amplitude motion is dynamically unstable.', 'grows toward the ±10° limit cycle'],
-    10: ['α₀ = 10°: the amplitude holds. The motion starts on the limit cycle (neutral stability).', 'holds at ±10°, on the limit cycle'],
-    20: ['α₀ = 20°: the amplitude decays toward the limit cycle. Large-amplitude motion is dynamically stable.', 'decays toward the ±10° limit cycle'],
-  };
-  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-  let traj = null, a0 = 2, t = 0, playing = false, last = 0, phase = 0, raf = 0, visible = false, B, P;
-
-  function simulate(x0) {            // RK4
-    const out = new Float32Array(N + 1); let x = x0, q = 0; out[0] = x;
-    const f = (x, q) => [q, EPS * (1 - x * x / A2) * q - W * W * x];
-    for (let i = 1; i <= N; i++) {
-      const k1 = f(x, q), k2 = f(x + DT / 2 * k1[0], q + DT / 2 * k1[1]), k3 = f(x + DT / 2 * k2[0], q + DT / 2 * k2[1]), k4 = f(x + DT * k3[0], q + DT * k3[1]);
-      x += DT / 6 * (k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0]); q += DT / 6 * (k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1]); out[i] = x;
-    }
-    return out;
-  }
-  function fit(c) {
-    const r = c.getBoundingClientRect(), d = window.devicePixelRatio || 1;
-    c.width = Math.round(r.width * d); c.height = Math.round(r.height * d);
-    const ctx = c.getContext('2d'); ctx.setTransform(d, 0, 0, d, 0, 0); return { ctx, w: r.width, h: r.height };
-  }
-  function arrow(ctx, x0, y, x1, col) {
-    ctx.strokeStyle = col; ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1 - 7, y); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(x1, y); ctx.lineTo(x1 - 9, y - 4.5); ctx.lineTo(x1 - 9, y + 4.5); ctx.closePath(); ctx.fill();
-  }
-  function drawBody(al) {
-    const { ctx, w, h } = B, ink = css('--ink'), muted = css('--muted'), flow = css('--flow');
-    ctx.fillStyle = css('--surface'); ctx.fillRect(0, 0, w, h);
-    const R = Math.min(h * 0.27, w * 0.2), cx = w * 0.6, cy = h * 0.52;
-    // free stream (dashes advect to the right) and detached bow shock
-    ctx.lineWidth = 2; ctx.setLineDash([10, 8]); ctx.lineDashOffset = -phase;
-    for (const k of [-1.5, -0.5, 0.5, 1.5]) arrow(ctx, 12, cy + k * R * 0.75, cx - R * 1.45, flow);
-    ctx.setLineDash([]);
-    ctx.globalAlpha = 0.75; ctx.strokeStyle = flow; ctx.lineWidth = 2.2; ctx.beginPath();
-    for (let i = 0; i <= 40; i++) { const s = -1.5 + 3 * i / 40, x = cx - R * 0.98 + R * 0.42 * s * s, y = cy + s * R; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
-    ctx.stroke(); ctx.globalAlpha = 1;
-    // body axis and the free-stream reference, with the angle between them
-    const th = al * Math.PI / 180;   // positive alpha: heat shield (nose) up into the free stream; canvas y points down
-    ctx.strokeStyle = muted; ctx.lineWidth = 1; ctx.setLineDash([4, 4]);
-    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + R * 1.75, cy); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + R * 1.75 * Math.cos(th), cy + R * 1.75 * Math.sin(th)); ctx.stroke(); ctx.setLineDash([]);
-    ctx.beginPath(); ctx.arc(cx, cy, R * 1.45, Math.min(0, th), Math.max(0, th)); ctx.stroke();
-    // capsule: blunt heat shield facing the flow, conical backshell; origin at the center of gravity
-    ctx.save(); ctx.translate(cx, cy); ctx.rotate(th); ctx.scale(R, R); ctx.lineWidth = 1.5 / R;
-    ctx.beginPath(); ctx.moveTo(0.02, -1); ctx.lineTo(0.62, -0.5); ctx.lineTo(0.78, -0.42); ctx.lineTo(0.78, 0.42); ctx.lineTo(0.62, 0.5); ctx.lineTo(0.02, 1); ctx.closePath();
-    ctx.fillStyle = css('--chip'); ctx.fill(); ctx.strokeStyle = muted; ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(0.04, -1); ctx.quadraticCurveTo(-1.19, 0, 0.04, 1); ctx.lineTo(0.08, 0.96); ctx.quadraticCurveTo(-1.0, 0, 0.08, -0.96); ctx.closePath();
-    ctx.fillStyle = ink; ctx.fill();
-    ctx.restore();
-    // center of gravity marker
-    ctx.fillStyle = css('--surface'); ctx.strokeStyle = ink; ctx.lineWidth = 1.5;
-    ctx.beginPath(); ctx.arc(cx, cy, 6, 0, 2 * Math.PI); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = ink; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, 6, 0, Math.PI / 2); ctx.closePath(); ctx.fill();
-    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, 6, Math.PI, 1.5 * Math.PI); ctx.closePath(); ctx.fill();
-    ctx.font = '500 13px ' + css('--mono'); ctx.fillStyle = ink; ctx.textBaseline = 'top';
-    ctx.fillText('α = ' + (al >= 0 ? ' ' : '') + al.toFixed(1) + '°', 14, 14);
-    ctx.fillStyle = muted; ctx.fillText('free stream', 14, h - 26);
-  }
-  function drawPlot(k) {
-    const { ctx, w, h } = P, ink = css('--ink'), muted = css('--muted'), line = css('--line'), hi = css('--orange-hi');
-    ctx.fillStyle = css('--surface'); ctx.fillRect(0, 0, w, h);
-    const L = 48, Rm = 14, Tp = 16, Bm = 30, X = i => L + (w - L - Rm) * i / N, Y = v => Tp + (h - Tp - Bm) * (1 - (v + YMAX) / (2 * YMAX));
-    ctx.font = '12px ' + css('--mono'); ctx.textBaseline = 'middle'; ctx.textAlign = 'right';
-    for (const v of [-20, -10, 0, 10, 20]) {
-      ctx.strokeStyle = v === 0 ? muted : line; ctx.lineWidth = 1; ctx.setLineDash(Math.abs(v) === 10 ? [6, 5] : []);
-      if (Math.abs(v) === 10) ctx.strokeStyle = muted;
-      ctx.beginPath(); ctx.moveTo(L, Y(v)); ctx.lineTo(w - Rm, Y(v)); ctx.stroke(); ctx.setLineDash([]);
-      ctx.fillStyle = muted; ctx.fillText((v > 0 ? '+' : '') + v + '°', L - 6, Y(v));
-    }
-    ctx.textAlign = 'right'; ctx.textBaseline = 'bottom'; ctx.fillStyle = muted;
-    ctx.fillText('limit cycle', w - Rm - 2, Y(10) - 3);
-    ctx.textBaseline = 'top'; ctx.fillText('time →', w - Rm, h - Bm + 8);
-    ctx.textAlign = 'left'; ctx.fillStyle = ink; ctx.font = '500 13px ' + css('--mono'); ctx.fillText('α(t)', L + 6, 2);
-    if (!traj) return;
-    ctx.strokeStyle = hi; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.beginPath();
-    for (let i = 0; i <= k; i++) { const x = X(i), y = Y(traj[i]); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
-    ctx.stroke();
-    ctx.fillStyle = hi; ctx.beginPath(); ctx.arc(X(k), Y(traj[k]), 4, 0, 2 * Math.PI); ctx.fill();
-  }
-  function draw() { const k = Math.min(N, Math.round(t / DT)); drawBody(traj ? traj[k] : a0); drawPlot(k); }
-  function frame(now) {
-    const dt = Math.min(0.05, (now - last) / 1000); last = now;
-    t = Math.min(T, t + dt * SPEED); phase += dt * 60; draw();
-    if (t < T && visible) raf = requestAnimationFrame(frame); else playing = false;
-  }
-  function play() { cancelAnimationFrame(raf); if (reduce) { t = T; draw(); return; } playing = true; last = performance.now(); raf = requestAnimationFrame(frame); }
-  function choose(v) {
-    a0 = v; traj = simulate(v); t = 0;
-    presets.forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.a0 === v)));
-    status.textContent = TEXT[v][0];
-    cp.setAttribute('aria-label', `Pitch angle versus time from an initial angle of attack of ${v}°: the amplitude ${TEXT[v][1]}.`);
-    if (visible || reduce) play(); else draw();
-  }
-  function resize() { B = fit(cb); P = fit(cp); draw(); }
-  presets.forEach(b => b.addEventListener('click', () => choose(+b.dataset.a0)));
-  replay.addEventListener('click', () => { t = 0; play(); });
-  new IntersectionObserver(es => es.forEach(e => {
-    visible = e.isIntersecting;
-    if (visible && !playing && t < T) play(); else if (!visible) cancelAnimationFrame(raf), playing = false;
-  })).observe(fig);
-  addEventListener('resize', resize);
-  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
-  B = fit(cb); P = fit(cp); choose(2);
 })();
 
 /* Light/dark toggle: follows the system until the visitor picks a theme; the choice is kept in this browser only */

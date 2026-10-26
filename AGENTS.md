@@ -71,13 +71,6 @@ Resize a photo (Python + Pillow):
 
     python3 -c "from PIL import Image,ImageOps;im=ImageOps.fit(Image.open('in.jpg').convert('RGB'),(720,540));im.save('out.jpg',quality=80,optimize=True)"
 
-## Pitch demo
-- The interactive figure at the top of `#research` is a single-degree-of-freedom capsule pitch model in van der Pol form,
-  α″ − ε(1 − α²/a²)α′ + ω²α = 0 (α in degrees, a = 5°, so the limit cycle is ±10°). Presets: 2° grows (dynamically unstable),
-  10° holds (on the limit cycle), 20° decays (stable). Code is the "Pitch demo" block of the inline script; `EPS`, `W`, `A2`,
-  and `T` set the damping, frequency, limit cycle, and time window. It is illustrative, not fitted to data; keep the caption saying so.
-- It pauses off screen and, under prefers-reduced-motion, draws the finished trace without animating.
-
 ## Light and dark themes
 - The page follows the visitor's system setting; the round button at the right of the top bar switches themes and stores
   the choice in `localStorage` (`theme`). A one-line script in `<head>` applies it before the first paint.
