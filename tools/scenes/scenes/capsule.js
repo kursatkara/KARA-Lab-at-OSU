@@ -54,26 +54,35 @@ export default async function () {
   streamline(scene, [...arc].reverse(), { r: 0.06, color: C.orange, opacity: 1 });
   scene.add(mesh(new THREE.SphereGeometry(0.1, 24, 16), clay(C.white), { pos: [cg[0], cg[1], 1.7] }));
 
-  // Sub-figure: total angle of attack for a dynamically unstable capsule (free oscillation grows to a limit cycle)
-  const w = 500, h = 300, px0 = 74, px1 = w - 26, py0 = h - 58, py1 = 104;
-  let path = '', env = '';
-  for (let i = 0; i <= 600; i++) {
-    const t = i / 600, A = 0.06 + 0.94 / (1 + Math.exp(-11 * (t - 0.45)));
-    const aT = A * Math.abs(Math.sin(2 * Math.PI * 7.5 * t));
-    const X = px0 + (px1 - px0) * t, Y = py0 - (py0 - py1) * aT;
-    path += (i ? 'L' : 'M') + X.toFixed(1) + ',' + Y.toFixed(1);
-    env += (i ? 'L' : 'M') + X.toFixed(1) + ',' + (py0 - (py0 - py1) * A).toFixed(1);
-  }
-  inset(ctx.stage, { x: 1200 - w - 26, y: 900 - h - 26, w, h, svg: `
+  // Sub-figure: total angle of attack from two initial conditions. Small alpha_0 (2 deg) is dynamically unstable and grows;
+  // large alpha_0 (20 deg) is stable and decays to a limit cycle (dashed).
+  const w = 520, h = 404, px0 = 96, px1 = w - 24, ph = 112, amax = 22, L = 10;
+  const panel = (yb, a0, grow) => {               // yb: baseline y of the panel
+    let path = '', env = '';
+    const Y = a => yb - ph * a / amax;
+    for (let i = 0; i <= 700; i++) {
+      const t = i / 700;
+      const A = grow ? a0 * Math.exp(Math.log(amax * 0.86 / a0) * t)   // keeps growing over the whole window
+                     : L + (a0 - L) * Math.exp(-5.2 * t);
+      const X = px0 + (px1 - px0) * t;
+      path += (i ? 'L' : 'M') + X.toFixed(1) + ',' + Y(A * Math.abs(Math.cos(2 * Math.PI * 7.5 * t))).toFixed(1);
+      env += (i ? 'L' : 'M') + X.toFixed(1) + ',' + Y(A).toFixed(1);
+    }
+    return { path, env, yL: Y(L), y0: Y(a0) };
+  };
+  const yA = 186, yB = 362, top20 = panel(yA, 20, false), bot2 = panel(yB, 2, true);
+  const axes = yb => `<line x1="${px0}" y1="${yb - ph - 8}" x2="${px0}" y2="${yb}" stroke="#b9b0a4" stroke-width="3"/><line x1="${px0}" y1="${yb}" x2="${px1}" y2="${yb}" stroke="#b9b0a4" stroke-width="3"/>`;
+  const trace = (p, col, lc = true) => `${lc ? `<line x1="${px0}" y1="${p.yL}" x2="${px1}" y2="${p.yL}" stroke="#7a8088" stroke-width="2.5" stroke-dasharray="9 7"/>` : ''}<path d="${p.path}" fill="none" stroke="${col}" stroke-width="3.6" stroke-linejoin="round"/>`;
+  const tag = (y, txt, col) => `<text x="${px1}" y="${y}" text-anchor="end" font-family="Plex" font-weight="600" font-size="19" letter-spacing="1" fill="${col}">${txt}</text>`;
+  const a0lab = (y, v) => `<text x="${px0 - 10}" y="${y + 8}" text-anchor="end" font-family="PlexMono" font-size="21" fill="#3d4148">${v}°</text><line x1="${px0 - 6}" y1="${y}" x2="${px0}" y2="${y}" stroke="#b9b0a4" stroke-width="3"/>`;
+  inset(ctx.stage, { x: 1200 - w - 18, y: 900 - h - 12, w, h, svg: `
     <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
-      <text x="26" y="44" font-family="Plex" font-weight="600" font-size="25" letter-spacing="1.5" fill="#3d4148">DYNAMICALLY UNSTABLE</text>
-      <line x1="${px0}" y1="${py1 - 12}" x2="${px0}" y2="${py0}" stroke="#b9b0a4" stroke-width="3"/>
-      <line x1="${px0}" y1="${py0}" x2="${px1}" y2="${py0}" stroke="#b9b0a4" stroke-width="3"/>
-      <path d="${env}" fill="none" stroke="#9aa3ad" stroke-width="2.5" stroke-dasharray="9 7"/>
-      <path d="${path}" fill="none" stroke="#ff7a1a" stroke-width="4" stroke-linejoin="round"/>
-      <text x="22" y="${(py0 + py1) / 2 + 10}" font-family="PlexMono" font-size="28" fill="#3d4148">α<tspan font-size="19" dy="7">T</tspan></text>
-      <text x="${px1}" y="${h - 18}" text-anchor="end" font-family="PlexMono" font-size="23" fill="#5a6068">time</text>
-      <text x="${px1}" y="${py1 - 18}" text-anchor="end" font-family="Plex" font-weight="600" font-size="19" letter-spacing="1" fill="#7a8088" dy="4">LIMIT CYCLE</text>
+      <text x="24" y="40" font-family="Plex" font-weight="600" font-size="23" letter-spacing="1.5" fill="#3d4148">TOTAL ANGLE OF ATTACK</text>
+      ${axes(yA)}${trace(top20, '#3f86d9')}${a0lab(top20.y0, 20)}${tag(yA - ph - 4, 'LARGE α₀: STABLE, DECAYS', '#3f86d9')}
+      ${axes(yB)}${trace(bot2, '#ff7a1a', false)}${a0lab(bot2.y0, 2)}${tag(yB - ph - 4, 'SMALL α₀: UNSTABLE, GROWS', '#d55a00')}
+      <text x="22" y="${(yA + yB) / 2 - 30}" font-family="PlexMono" font-size="28" fill="#3d4148">α<tspan font-size="19" dy="7">T</tspan></text>
+      <text x="${px0 + 8}" y="${yA + 26}" font-family="Plex" font-weight="600" font-size="17" letter-spacing="1" fill="#7a8088">- - LIMIT CYCLE</text>
+      <text x="${px1}" y="${h - 14}" text-anchor="end" font-family="PlexMono" font-size="21" fill="#5a6068">time</text>
     </svg>` });
 
   finish(ctx, [
