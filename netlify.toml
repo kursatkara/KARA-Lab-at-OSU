@@ -4,10 +4,12 @@
   publish = "public"
   command = "rm -rf public && mkdir public && cp -R index.html assets public/"
 
+# Assets keep fixed file names, so browsers must revalidate them (Netlify's default, with ETags);
+# a long max-age would keep showing an old image for days after it is replaced.
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Old Hugo/Wowchemy addresses (before October 2026) go to the matching section of the new page,
 # so links people saved or shared still work.
