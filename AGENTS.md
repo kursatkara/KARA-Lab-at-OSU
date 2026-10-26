@@ -43,11 +43,15 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - **Team member:** copy an `<article class="person">` block. Photo: `assets/team/<first-last>.jpg`, square 200×200 JPEG.
   Use only photos the student provided. High school researchers use initials (`<span class="ini">`) instead of photos.
 - **Graduate → alumni:** delete the person's card and add an `<li>` under Alumni with their current position.
-- **Research area:** copy an `<article class="area">`; image `assets/research/<name>.jpg`, 800×600 JPEG (< 100 KB).
-  Put the whole figure on a white 800×600 canvas (letterbox, don't crop): axis labels and panel captions must stay visible.
-  `blunt-body.jpg` is a schematic drawn with matplotlib, not data; replace it with a real result figure when one is public.
+- **Research projects:** one `<article class="proj">` panel per funded project in `.projects`, newest first, plus a link
+  in the `.pindex` list above it. Each panel: sponsor · role · years (label), a plain-language title (h3), the official
+  award title and number (`.award`), a 2–3 sentence summary, then Team and Papers. Figure: `assets/research/<name>.jpg`,
+  the whole figure on a white 800×600 canvas (letterbox, don't crop away axes or colorbars), with a credit line in
+  `<figcaption>` (authors, venue + DOI link, and license for open-access figures). A project with no public figure yet
+  uses the `<div class="dataplate">` variant listing real simulation conditions; replace it when a figure is available.
+  Smaller grants (curriculum, state seed funds) go in the "Other support" list below the panels.
 - **Publications list** shows the 10 newest by default; "Show all" reveals the rest. Keep it to about 25 selected papers.
-- **Grant:** add an `<li>` at the top of `.grants` (role, title + sponsor + award number, years). Only funded awards;
+- **Other support:** add an `<li>` at the top of `.grants` (role, title + sponsor, years). Only funded awards;
   memberships and computing allocations go in the note under the list.
 - **Honors** (in `#outreach`) and **Professional service** are separate lists; an elected member grade is an honor, not service.
 - **Old addresses:** `netlify.toml` redirects the old Hugo paths (`/publication/*`, `/author/*`, …) to page sections.
