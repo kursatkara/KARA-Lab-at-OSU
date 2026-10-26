@@ -1,4 +1,6 @@
 import { THREE, C, setup, clay, glass, glow, mesh, rbox, tile, streamline, swirl, finish } from './lib.js';
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
 
 function wakeTexture() {
   const cv = document.createElement('canvas'); cv.width = 512; cv.height = 360; const g = cv.getContext('2d');
@@ -9,43 +11,36 @@ function wakeTexture() {
 }
 
 export default async function () {
-  const ctx = setup({ cam: [10.5, 8.2, 15.5], target: [-0.6, 1.6, 0], fov: 31, lightPos: [9, 15, 9], shadowSize: 11 });
+  const ctx = setup({ cam: [8.6, 5.0, 12.6], target: [-0.9, 1.05, 0], fov: 31, lightPos: [9, 15, 9], shadowSize: 11 });
   const { scene } = ctx;
   const top = tile(scene, { w: 13.5, d: 8.5, top: C.water, base: '#e6dccb' });
 
-  // hull (top-view outline extruded upward), deck at y = deckY
-  const s = new THREE.Shape(); s.moveTo(-4.6, -0.62); s.lineTo(1.4, -0.66); s.quadraticCurveTo(3.6, -0.55, 4.8, 0); s.quadraticCurveTo(3.6, 0.55, 1.4, 0.66); s.lineTo(-4.6, 0.62); s.closePath();
-  const hullGeo = new THREE.ExtrudeGeometry(s, { depth: 0.72, bevelEnabled: true, bevelThickness: 0.06, bevelSize: 0.06, bevelSegments: 4 });
-  hullGeo.rotateX(-Math.PI / 2);
-  const hull = new THREE.Mesh(hullGeo, [clay('#cfd4d9'), clay('#8e98a2')]); hull.position.y = top - 0.22; hull.castShadow = hull.receiveShadow = true; scene.add(hull);
-  const deckY = top - 0.22 + 0.78;
-  const band = new THREE.ExtrudeGeometry(s, { depth: 0.08, bevelEnabled: true, bevelThickness: 0.0, bevelSize: 0.075, bevelSegments: 2 }); band.rotateX(-Math.PI / 2);
-  scene.add(mesh(band, clay('#4f5964'), { pos: [0, top - 0.02, 0], cast: false }));
-  const grey = clay('#b9c0c7'), dark = clay('#7c858f');
-  scene.add(mesh(rbox(2.0, 1.0, 1.05, 0.08), grey, { pos: [1.1, deckY + 0.5, 0] }));          // forward superstructure
-  scene.add(mesh(rbox(1.2, 0.5, 0.95, 0.06), grey, { pos: [1.4, deckY + 1.25, 0] }));         // bridge
-  scene.add(mesh(rbox(0.9, 0.12, 1.0, 0.03), clay('#5a6470'), { pos: [1.65, deckY + 1.33, 0] })); // bridge windows band
-  scene.add(mesh(rbox(0.3, 1.6, 0.3, 0.05), dark, { pos: [0.7, deckY + 2.0, 0] }));             // mast
-  scene.add(mesh(rbox(0.7, 0.08, 0.5, 0.03), dark, { pos: [0.7, deckY + 2.5, 0] }));
-  scene.add(mesh(rbox(0.5, 0.45, 0.6, 0.06), grey, { pos: [-0.35, deckY + 0.9, 0] }));         // funnel
-  scene.add(mesh(rbox(1.45, 0.95, 1.1, 0.06), grey, { pos: [-1.2, deckY + 0.47, 0] }));        // hangar
-  scene.add(mesh(rbox(0.5, 0.25, 0.45, 0.05), grey, { pos: [3.0, deckY + 0.13, 0] }));         // gun mount
-  scene.add(mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.8, 12), dark, { pos: [3.45, deckY + 0.2, 0], rot: [0, 0, Math.PI / 2 - 0.08] }));
-  // flight deck markings
-  scene.add(mesh(new THREE.TorusGeometry(0.42, 0.035, 8, 48), clay(C.orange, { emissive: C.orange, emissiveIntensity: 0.3 }), { pos: [-3.25, deckY + 0.06, 0], rot: [Math.PI / 2, 0, 0], cast: false }));
-  scene.add(mesh(new THREE.BoxGeometry(2.6, 0.012, 0.05), clay(C.white), { pos: [-3.2, deckY + 0.055, 0], cast: false }));
+  // NATO Generic Destroyer (1:50 baseline geometry, STEP -> STL). CAD x: bow 0 -> stern 2818, z up with the waterline at z = 0.
+  // Mapped so the bow points to +X; the submerged hull sits inside the opaque water tile and is hidden.
+  const sc = 9.4 / 3000, xc = 1318;
+  const raw = new STLLoader().parse(await (await fetch('models/natogd.stl')).arrayBuffer());
+  const p = raw.attributes.position;
+  for (let i = 0; i < p.count; i++) { const x = p.getX(i), y = p.getY(i), z = p.getZ(i); p.setXYZ(i, -(x - xc) * sc, z * sc, y * sc); }
+  raw.deleteAttribute('normal');
+  const geo = toCreasedNormals(raw, Math.PI / 6);
+  const ship = mesh(geo, clay('#b9c0c7'), { pos: [0, top, 0] }); scene.add(ship);
+  const X = cx => -(cx - xc) * sc, Zt = cz => top + cz * sc;
+  const deckY = Zt(185.7), hangarX = X(2220), hangarTop = Zt(345.7), mastX = X(1100), mastTop = Zt(606);
+  // boot-top stripe at the waterline and flight-deck markings
+  scene.add(mesh(new THREE.TorusGeometry(0.47, 0.03, 8, 48), clay(C.orange, { emissive: C.orange, emissiveIntensity: 0.3 }), { pos: [X(2560), deckY + 0.012, 0], rot: [Math.PI / 2, 0, 0], cast: false }));
+  scene.add(mesh(new THREE.BoxGeometry(X(2250) - X(2800), 0.01, 0.04), clay(C.white), { pos: [(X(2250) + X(2800)) / 2, deckY + 0.008, 0], cast: false }));
   // anemometers on the mast
-  for (const z of [-0.3, 0.3]) scene.add(mesh(new THREE.SphereGeometry(0.09, 16, 12), glow(C.orange), { pos: [0.7, deckY + 2.62, z] }));
+  for (const z of [-0.14, 0.14]) scene.add(mesh(new THREE.SphereGeometry(0.075, 16, 12), glow(C.orange), { pos: [mastX, mastTop + 0.06, z] }));
 
-  // wind over deck from the bow (+x -> -x): separation off the hangar roof, recirculation over the flight deck
-  for (const [y, z] of [[deckY + 1.9, -0.9], [deckY + 1.5, 0.9], [deckY + 2.8, 0.0]]) {
-    streamline(scene, [[6.0, y, z], [3.0, y, z], [1.4, y + 0.55, z], [-0.6, y + 0.25, z], [-1.9, y + 0.1, z], [-3.4, y - 0.45, z], [-5.6, y - 0.55, z]], { r: 0.045, color: C.flow, opacity: 0.85 });
+  // wind over deck from the bow (+X -> -X): separation off the hangar roof edge, recirculation over the flight deck
+  for (const [y, z] of [[hangarTop + 0.55, -0.75], [hangarTop + 0.3, 0.8], [mastTop + 0.45, 0.0]]) {
+    streamline(scene, [[6.2, y, z], [3.2, y, z], [1.2, y + 0.35, z], [-1.2, y + 0.15, z], [hangarX, y + 0.05, z], [hangarX - 1.0, y - 0.45, z], [-6.2, y - 0.55, z]], { r: 0.045, color: C.flow, opacity: 0.85 });
   }
-  swirl(scene, [-2.5, deckY + 0.75, 0.0], { axis: [0, 0, 1], radius: 0.48, turns: 2.6, length: 1.3, color: C.hot, opacity: 0.9 });
-  swirl(scene, [-3.7, deckY + 0.7, 0.75], { axis: [-1, 0, 0.2], radius: 0.28, turns: 2.2, length: 1.1, color: C.hot, opacity: 0.8 });
+  swirl(scene, [hangarX - 0.65, deckY + 0.4, 0.0], { axis: [0, 0, 1], radius: 0.36, turns: 2.6, length: 1.2, color: C.hot, opacity: 0.9 });
+  swirl(scene, [hangarX - 1.5, deckY + 0.45, 0.55], { axis: [-1, 0, 0.2], radius: 0.22, turns: 2.2, length: 0.9, color: C.hot, opacity: 0.8 });
 
   // helicopter approaching the stern
-  const h = new THREE.Group(), hp = [-5.7, deckY + 1.7, 0.4];
+  const h = new THREE.Group(), hp = [X(2818) - 1.4, deckY + 1.3, 0.35];
   h.add(mesh(new THREE.SphereGeometry(0.5, 32, 20), clay(C.charcoal), { scale: [1.25, 0.6, 0.6] }));
   h.add(mesh(new THREE.CylinderGeometry(0.07, 0.11, 1.5, 14), clay(C.charcoal), { pos: [-1.1, 0.12, 0], rot: [0, 0, Math.PI / 2] }));
   h.add(mesh(rbox(0.3, 0.32, 0.04, 0.02), clay(C.orange), { pos: [-1.8, 0.28, 0] }));
@@ -53,10 +48,10 @@ export default async function () {
   h.add(mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.2, 10), clay(C.charcoal), { pos: [0, 0.33, 0] }));
   for (const z of [-0.28, 0.28]) h.add(mesh(new THREE.CylinderGeometry(0.025, 0.025, 1.0, 8), clay(C.charcoal), { pos: [0.05, -0.38, z], rot: [0, 0, Math.PI / 2] }));
   h.add(mesh(rbox(0.5, 0.06, 0.06, 0.02), clay(C.orange), { pos: [0.4, 0.05, 0.3] }));
-  h.scale.setScalar(1.3); h.position.set(...hp); h.rotation.set(0, 0.25, 0.06); scene.add(h);
+  h.scale.setScalar(1.05); h.position.set(...hp); h.rotation.set(0, 0.25, 0.06); scene.add(h);
 
   // AI wake inference: mast anemometers -> neural network -> inferred airwake over the flight deck
-  const nnX = -0.9, nnY = deckY + 3.6, layers = [[-0.75, 3], [0, 5], [0.75, 3]], nodes = [];
+  const nnX = -1.1, nnY = mastTop + 1.35, layers = [[-0.75, 3], [0, 5], [0.75, 3]], nodes = [];
   layers.forEach(([dx, n], li) => { const col = []; for (let k = 0; k < n; k++) { const p = new THREE.Vector3(nnX + dx, nnY + (k - (n - 1) / 2) * 0.32, 0.4);
     scene.add(mesh(new THREE.SphereGeometry(0.085, 18, 12), glow(li === 1 ? C.flow : C.orange), { pos: p.toArray(), cast: false })); col.push(p); } nodes.push(col); });
   const link = (a, b) => { const d = b.clone().sub(a); const m = mesh(new THREE.CylinderGeometry(0.012, 0.012, d.length(), 6), clay('#9aa3ad'), { cast: false });
@@ -66,8 +61,8 @@ export default async function () {
   const dash = (pts, col) => { const cv = new THREE.CatmullRomCurve3(pts.map(p => new THREE.Vector3(...p)));
     for (let i = 0; i < 12; i++) { const a2 = cv.getPoint(i / 12), b2 = cv.getPoint((i + 0.55) / 12), d = b2.clone().sub(a2);
       const m = mesh(new THREE.CylinderGeometry(0.03, 0.03, d.length(), 8), clay(col), { cast: false }); m.position.copy(a2).addScaledVector(d, 0.5); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); scene.add(m); } };
-  dash([[0.7, deckY + 2.7, 0.3], [0.4, deckY + 3.1, 0.4], [nnX + 0.75 + 0.15, nnY, 0.4]], C.orange);
-  dash([[nnX - 0.75 - 0.15, nnY, 0.4], [-2.4, nnY - 0.4, 0.4], [-3.0, deckY + 2.05, 0.2]], C.flow);
+  dash([[mastX, mastTop + 0.12, 0.14], [mastX - 0.1, mastTop + 0.8, 0.3], [nnX + 0.75 + 0.15, nnY, 0.4]], C.orange);
+  dash([[nnX - 0.75 - 0.15, nnY, 0.4], [hangarX - 0.6, nnY - 0.3, 0.3], [hangarX - 1.1, deckY + 1.35, 0.1]], C.flow);
   // inferred airwake: centerline velocity map over the flight deck (recirculation behind the hangar)
   const cvs = document.createElement('canvas'); cvs.width = 640; cvs.height = 400; const g = cvs.getContext('2d');
   const W = 640, H = 400, img = g.createImageData(W, H);
@@ -80,14 +75,14 @@ export default async function () {
     img.data.set([...cmap(Math.min(1, Math.max(0, t))).map(Math.round), 225], (j * W + i) * 4);
   }
   g.putImageData(img, 0, 0); const tex = new THREE.CanvasTexture(cvs); tex.colorSpace = THREE.SRGBColorSpace;
-  const wakeW = 2.6, wakeH = 1.8;
-  scene.add(mesh(new THREE.PlaneGeometry(wakeW, wakeH), new THREE.MeshStandardMaterial({ map: tex, transparent: true, opacity: 0.9, side: THREE.DoubleSide, roughness: 0.9 }), { pos: [-1.95 - wakeW / 2, deckY + 0.06 + wakeH / 2, 0.0], cast: false }));
+  const wakeW = 2.3, wakeH = 1.15;
+  scene.add(mesh(new THREE.PlaneGeometry(wakeW, wakeH), new THREE.MeshStandardMaterial({ map: tex, transparent: true, opacity: 0.9, side: THREE.DoubleSide, roughness: 0.9 }), { pos: [hangarX - 0.05 - wakeW / 2, deckY + 0.02 + wakeH / 2, 0.0], cast: false }));
 
   finish(ctx, [
-    { t: 'NATO Generic Destroyer', at: [2.6, deckY - 0.35, 0.66], dx: 120, dy: 130 },
-    { t: 'Inferred airwake', at: [-3.4, deckY + 0.5, 0.0], dx: -40, dy: 190 },
+    { t: 'NATO Generic Destroyer', at: [X(600), Zt(120), 0.5], dx: 120, dy: 150 },
+    { t: 'Inferred airwake', at: [hangarX - 1.2, deckY + 0.3, 0.0], dx: -60, dy: 200 },
     { t: 'Helicopter approach', at: hp, dx: -40, dy: -150 },
     { t: 'Neural network', at: [nnX, nnY + 0.95, 0.4], dx: 0, dy: -60 },
-    { t: 'Anemometers', at: [0.7, deckY + 2.62, 0.3], dx: 190, dy: -40 },
+    { t: 'Anemometers', at: [mastX, mastTop + 0.06, 0.14], dx: 190, dy: -40 },
   ]);
 }

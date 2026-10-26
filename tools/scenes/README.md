@@ -25,5 +25,8 @@ Then convert `out/<name>.png` to `../../assets/research/sketch-<name>.jpg` (1200
 | hypersonic | sketch-hypersonic.jpg | NASA OK EPSCoR |
 | swj | sketch-sweeping-jets.jpg | Sweeping jets |
 
+`models/natogd.stl` is the NATO Generic Destroyer 1:50 baseline geometry (STEP, meshed with gmsh). The `airwise` scene maps
+its waterline (CAD z = 0) to the water surface, so the submerged hull is hidden inside the tile.
+
 Style: soft clay materials, OSU orange for hardware accents and jets, blue for flow, orange for disturbances and wakes,
 sage/teal diorama tiles. Keep label text to 1–3 words in precise terms (see AGENTS.md).
