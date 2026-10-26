@@ -30,8 +30,16 @@ export default async function () {
   for (const [x, y] of [[-3.0, 1.2], [0.0, 2.4], [3.2, 1.4], [-1.0, 4.6], [2.6, 5.2]]) {
     streamline(scene, [[x, top + y, -5.6], [x, top + y, -4.2], [x + 0.6, top + y + 0.5, -2.6], [x + 0.2, top + y + 0.2, -0.6], [x - 0.3, top + y - 0.1, 1.4], [x - 0.2, top + y, 3.6], [x, top + y, 5.2]], { r: 0.045, color: C.flow, opacity: 0.85 });
   }
-  swirl(scene, [2.0, top + 2.4, -1.3], { axis: [0, 0, 1], radius: 0.45, turns: 2.2, length: 1.1, color: C.flow, opacity: 0.75 });
-  swirl(scene, [-3.4, top + 1.8, -1.2], { axis: [0, 0, 1], radius: 0.38, turns: 2, length: 1.0, color: C.flow, opacity: 0.75 });
+  // building-induced wake turbulence: eddies shed behind each tall building (wind along +z)
+  let sd = 5; const rnd = () => (sd = (sd * 16807) % 2147483647) / 2147483647;
+  for (const b of B) {
+    if (b.h < 1.9) continue;
+    const n = b.h > 3.5 ? 4 : 3;
+    for (let k = 0; k < n; k++) {
+      const y = top + 0.5 + rnd() * (b.h - 0.4), zc = b.z + b.d / 2 + 0.45 + k * 0.55 + rnd() * 0.3;
+      swirl(scene, [b.x + (rnd() - 0.5) * b.w * 0.8, y, zc], { axis: [(rnd() - 0.5) * 0.5, (rnd() - 0.5) * 0.4, 1], radius: 0.18 + rnd() * 0.16, turns: 2.2, length: 0.55, r: 0.03, color: k % 2 ? C.flow : C.hot, opacity: 0.9, grow: 0.3 });
+    }
+  }
 
   // wind-aware path: dashed route with waypoints, and the drone
   const path = new THREE.CatmullRomCurve3([[5.2, 4.2, -4.2], [3.0, 3.5, -1.0], [0.3, 3.3, 0.0], [-1.9, 3.5, 1.2], [-4.6, 4.0, 3.6]].map(p => new THREE.Vector3(p[0], top + p[1], p[2])));
@@ -51,6 +59,7 @@ export default async function () {
 
   finish(ctx, [
     { t: 'LES wind field', at: [0, top + 5.6, -4.6], dx: -60, dy: -70 },
+    { t: 'Building wakes', at: [2.0, top + 3.0, -1.4], dx: 210, dy: 60 },
     { t: 'Reduced-order model', at: [-6.4, top + 5.2, 2.6], dx: 0, dy: -60 },
     { t: 'Wind-aware path', at: path.getPoint(0.2).toArray(), dx: 120, dy: -150 },
     { t: 'Fixed-wing drone', at: p0.toArray(), dx: -60, dy: 190 },

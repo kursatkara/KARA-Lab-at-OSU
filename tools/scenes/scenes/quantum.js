@@ -1,4 +1,4 @@
-import { THREE, C, setup, clay, glass, glow, mesh, rbox, tile, streamline, finish } from './lib.js';
+import { THREE, C, setup, clay, glass, glow, mesh, rbox, tile, streamline, swirl, finish } from './lib.js';
 
 function screenTexture() {
   const cv = document.createElement('canvas'); cv.width = 1024; cv.height = 1024; const g = cv.getContext('2d');
@@ -20,7 +20,7 @@ function screenTexture() {
 }
 
 export default async function () {
-  const ctx = setup({ cam: [10.5, 8.6, 14.2], target: [0.5, 2.3, 0], fov: 30, lightPos: [6, 13, 7], shadowSize: 9 });
+  const ctx = setup({ cam: [9.5, 8.8, 16.0], target: [-0.3, 2.0, 0.6], fov: 30, lightPos: [6, 13, 7], shadowSize: 9 });
   const { scene } = ctx;
   const top = tile(scene, { w: 11, d: 7.5, top: '#e4ddd0', base: '#d6ccbb' });
 
@@ -52,10 +52,30 @@ export default async function () {
   scene.add(mesh(rbox(1.2, 0.1, 0.8, 0.04), metal, { pos: [3.2, top + 0.05, 0.6] }));
   streamline(scene, [[cx + 0.4, top + 1.9, cz + 0.2], [0.6, top + 1.2, 0.2], [2.0, top + 1.3, 0.6]], { r: 0.03, color: C.flow, opacity: 0.9 });
 
+  // Toward realistic aerodynamics: a 3D aircraft model with tip vortices and a turbulent wake
+  const ac = new THREE.Group(), body = clay('#eceae5');
+  ac.add(mesh(new THREE.CapsuleGeometry(0.16, 1.9, 10, 20), body, { rot: [0, 0, Math.PI / 2] }));
+  const wp = new THREE.Shape(); wp.moveTo(0.35, 0); wp.lineTo(-0.35, 1.55); wp.lineTo(-0.7, 1.55); wp.lineTo(-0.45, 0); wp.closePath();
+  for (const sgn of [1, -1]) {
+    const g = new THREE.ExtrudeGeometry(wp, { depth: 0.05, bevelEnabled: true, bevelThickness: 0.02, bevelSize: 0.02, bevelSegments: 2 });
+    const m = mesh(g, body); m.rotation.x = sgn * Math.PI / 2; m.position.y = sgn > 0 ? 0.03 : -0.03; ac.add(m);
+  }
+  ac.add(mesh(rbox(0.32, 0.5, 0.04, 0.02), clay(C.orange), { pos: [-0.95, 0.25, 0] }));
+  ac.scale.setScalar(1.2); ac.position.set(-3.1, top + 1.9, 2.3); ac.rotation.set(0, Math.PI + 0.1, -0.08); scene.add(ac);
+  scene.add(mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.8, 12), clay('#9aa3ad'), { pos: [-3.0, top + 0.95, 2.3] }));
+  scene.add(mesh(rbox(0.8, 0.08, 0.8, 0.04), clay('#9aa3ad'), { pos: [-3.0, top + 0.04, 2.3] }));
+  for (const sz of [1, -1]) swirl(scene, [-1.1, top + 1.95, 2.3 + sz * 1.95], { axis: [1, 0, 0], radius: 0.2, turns: 3.4, length: 2.6, r: 0.03, color: C.flow, opacity: 0.9, grow: 0.6 });
+  let sd = 3; const rnd = () => (sd = (sd * 16807) % 2147483647) / 2147483647;
+  for (let k = 0; k < 8; k++) swirl(scene, [-1.6 + rnd() * 1.6, top + 1.7 + rnd() * 0.45, 1.95 + rnd() * 0.75], { axis: [1, (rnd() - 0.5) * 0.5, (rnd() - 0.5) * 0.5], radius: 0.08 + rnd() * 0.08, turns: 2, length: 0.4, r: 0.018, color: C.hot, opacity: 0.85 });
+  for (const y of [0.25, -0.25]) streamline(scene, [[-5.4, top + 1.9 + y, 2.3], [-4.6, top + 1.9 + y, 2.3]], { r: 0.035, color: C.ink, opacity: 1 });
+  // increasing complexity: from the 1D Burgers' display to the 3D flow
+  streamline(scene, [[2.0, top + 0.9, 2.0], [0.6, top + 0.7, 3.0], [-1.4, top + 0.9, 3.2]], { r: 0.07, color: C.orange, opacity: 1 });
+
   finish(ctx, [
-    { t: 'Dilution refrigerator', at: [cx - 1.25, top + 4.35, cz], dx: -110, dy: -60 },
-    { t: 'Qubits', at: [cx, top + 1.85, cz + 0.3], dx: -140, dy: 70 },
+    { t: 'Qubits', at: [cx + 0.3, top + 1.85, cz + 0.2], dx: 120, dy: -20 },
     { t: 'Quantum circuit', at: [3.0, top + 3.7, 0.7], dx: 110, dy: -90 },
-    { t: 'Burgers’ shock', at: [3.4, top + 1.6, 0.6], dx: 130, dy: 60 },
+    { t: '1D Burgers’ shock', at: [3.4, top + 1.6, 0.6], dx: 120, dy: 70 },
+    { t: '3D turbulent aerodynamics', at: [-3.0, top + 2.3, 2.3], dx: -40, dy: -150 },
+    { t: 'Increasing complexity', at: [0.6, top + 0.7, 3.0], dx: 30, dy: 110 },
   ]);
 }
