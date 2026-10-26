@@ -39,6 +39,16 @@ export default async function () {
   swirl(scene, [hangarX - 0.65, deckY + 0.4, 0.0], { axis: [0, 0, 1], radius: 0.36, turns: 2.6, length: 1.2, color: C.hot, opacity: 0.9 });
   swirl(scene, [hangarX - 1.5, deckY + 0.45, 0.55], { axis: [-1, 0, 0.2], radius: 0.22, turns: 2.2, length: 0.9, color: C.hot, opacity: 0.8 });
 
+  // superstructure-induced turbulence: small eddies shed from the bridge, mast, funnel, and hangar edges, both sides of the ship
+  let sd = 17; const rnd = () => (sd = (sd * 16807) % 2147483647) / 2147483647;
+  for (let k = 0; k < 20; k++) {
+    const x = hangarX - 0.2 + rnd() * (mastX + 0.8 - hangarX), side = k % 2 ? 1 : -1;
+    const yTop = x > mastX - 0.4 && x < mastX + 0.4 ? mastTop : hangarTop + 0.15;
+    const y = deckY + 0.5 + rnd() * (yTop - deckY - 0.4), z = side * (0.62 + rnd() * 0.45);
+    swirl(scene, [x, y, z], { axis: [-1, (rnd() - 0.5) * 0.6, side * rnd() * 0.5], radius: 0.07 + rnd() * 0.1, turns: 2.2, length: 0.4 + rnd() * 0.25, r: 0.022, color: rnd() > 0.45 ? C.hot : C.flow, opacity: 0.9, grow: 0.3 });
+  }
+  for (let k = 0; k < 4; k++) swirl(scene, [mastX - 0.45 - k * 0.55, mastTop - 0.25 - k * 0.22 - rnd() * 0.1, (rnd() - 0.5) * 0.4], { axis: [-1, -0.25, 0], radius: 0.14 + 0.03 * k, turns: 2.2, length: 0.45, r: 0.024, color: k % 2 ? C.flow : C.hot, opacity: 0.9, grow: 0.3 });
+
   // helicopter approaching the stern
   const h = new THREE.Group(), hp = [X(2818) - 1.4, deckY + 1.3, 0.35];
   h.add(mesh(new THREE.SphereGeometry(0.5, 32, 20), clay(C.charcoal), { scale: [1.25, 0.6, 0.6] }));
@@ -82,7 +92,7 @@ export default async function () {
     { t: 'NATO Generic Destroyer', at: [X(600), Zt(120), 0.5], dx: 120, dy: 150 },
     { t: 'Inferred airwake', at: [hangarX - 1.2, deckY + 0.3, 0.0], dx: -60, dy: 200 },
     { t: 'Helicopter approach', at: hp, dx: -40, dy: -150 },
-    { t: 'Neural network', at: [nnX, nnY + 0.95, 0.4], dx: 0, dy: -60 },
+    { t: 'AIRWISE', at: [nnX, nnY + 0.95, 0.4], dx: 0, dy: -60 },
     { t: 'Anemometers', at: [mastX, mastTop + 0.06, 0.14], dx: 190, dy: -40 },
   ]);
 }
