@@ -1,0 +1,6 @@
+{
+  "name": "kara-lab-scenes",
+  "private": true,
+  "description": "Clay-style 3D illustrations for the KARA Lab research panels (three.js, rendered with Playwright).",
+  "dependencies": { "three": "0.160.0", "@fontsource/ibm-plex-sans": "5.0.20", "@fontsource/ibm-plex-mono": "5.0.13" }
+}

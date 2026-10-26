@@ -4,7 +4,7 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 
 ## What this is
 - One static page, `index.html`. Plain HTML + inline CSS + a small inline script. No build step, no framework.
-- Hosted on Netlify. `netlify.toml` copies `index.html` and `assets/` into `public/`, which Netlify deploys. A new top-level file
+- Hosted on Netlify. `netlify.toml` copies `index.html` and `assets/` into `public/`, which Netlify deploys (`tools/` is not deployed). A new top-level file
   that must be online has to be added to that copy command. `.nojekyll` lets the same files run on GitHub Pages.
 - Images live in `assets/`. Keep the repo small: resize photos before committing (sizes below).
 
@@ -45,10 +45,11 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - **Graduate → alumni:** delete the person's card and add an `<li>` under Alumni with their current position.
 - **Research projects:** one `<article class="proj">` panel per funded project in `.projects`, newest first, plus a link
   in the `.pindex` list above it. Each panel: sponsor · role · years (label), a plain-language title (h3), the official
-  award title and number (`.award`), a 2–3 sentence summary, then Team and Papers. Figure: `assets/research/<name>.jpg`,
-  the whole figure on a white 800×600 canvas (letterbox, don't crop away axes or colorbars), with a credit line in
-  `<figcaption>` (authors, venue + DOI link, and license for open-access figures). A project with no public figure yet
-  uses the `<div class="dataplate">` variant listing real simulation conditions; replace it when a figure is available.
+  award title and number (`.award`), a 2–3 sentence summary, an optional "From the paper" inset (`.pinset`), then Setup
+  (if useful), Team, and Papers. The main image is an illustration, `assets/research/sketch-<name>.jpg` (1200×900), made
+  with the three.js scenes in `tools/scenes/` (see its README); describe the scene fully in the `alt` text.
+  The inset is a real paper figure on a white 800×600 canvas (letterbox, don't crop away axes or colorbars) with a
+  credit: authors, venue + DOI link, and license for open-access figures.
   Smaller grants (curriculum, state seed funds) go in the "Other support" list below the panels.
 - **Publications list** shows the 10 newest by default; "Show all" reveals the rest. Keep it to about 25 selected papers.
 - **Other support:** add an `<li>` at the top of `.grants` (role, title + sponsor, years). Only funded awards;
