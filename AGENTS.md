@@ -51,10 +51,16 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   The inset is a real paper figure on a white 800×600 canvas (letterbox, don't crop away axes or colorbars) with a
   credit: authors, venue + DOI link, and license for open-access figures.
   Smaller grants (curriculum, state seed funds) go in the "Other support" list below the panels.
+- **Publication counts** (By the numbers and the Publications lede): peer-reviewed = published journal articles plus
+  peer-reviewed conference papers (AIAA, AMS, IEEE; `keywords` contains `peer-reviewed` in `publications.bib`).
+  APS DFD and other abstracts and posters are not peer-reviewed; count them separately.
 - **Publications list** shows the 10 newest by default; "Show all" reveals the rest. Keep it to about 25 selected papers.
+- **Sponsors and funding:** one `<li>` in `.sponsors` per funding organization (name + programs). Put the official logo in
+  `assets/sponsors/<name>.svg` (or a PNG at least 128 px tall) and replace the `<span class="smark">` text mark with
+  `<img src="assets/sponsors/<name>.svg" alt="<Sponsor> logo">`. Only organizations that funded an award.
 - **Other support:** add an `<li>` at the top of `.grants` (role, title + sponsor, years). Only funded awards;
   memberships and computing allocations go in the note under the list.
-- **Honors** (in `#outreach`) and **Professional service** are separate lists; an elected member grade is an honor, not service.
+- **Honors and awards** (in `#outreach`) and **Professional service** are separate lists; an elected member grade is an honor, not service.
 - **Old addresses:** `netlify.toml` redirects the old Hugo paths (`/publication/*`, `/author/*`, …) to page sections.
 - **Course:** copy an `<article class="course">`; link the course site in the `<h3>` if there is one.
 - **Gallery photo:** `assets/gallery/<name>.jpg`, 720×540 JPEG (< 100 KB), add a `<figure>` in `.gallery`. Keep 9 or 12 photos.
