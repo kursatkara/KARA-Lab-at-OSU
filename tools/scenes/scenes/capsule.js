@@ -1,4 +1,4 @@
-import { THREE, C, setup, clay, glass, mesh, lathe, streamline, swirl, finish } from './lib.js';
+import { THREE, C, setup, clay, glass, mesh, lathe, streamline, swirl, finish, inset } from './lib.js';
 
 // Blunt reentry capsule (60° sphere-cone) pitching in a supersonic stream; flow along +x.
 function capsuleGroup(op = 1) {
@@ -23,7 +23,7 @@ function capsuleGroup(op = 1) {
 }
 
 export default async function () {
-  const ctx = setup({ cam: [2.2, 2.4, 17], target: [0.2, 0.1, 0], fov: 28, lightPos: [3, 12, 9], shadowSize: 9 });
+  const ctx = setup({ cam: [3.4, 2.2, 17.5], target: [1.4, -0.45, 0], fov: 28, lightPos: [3, 12, 9], shadowSize: 9 });
   const { scene } = ctx;
   // soft contact shadow on an invisible floor
 
@@ -38,7 +38,7 @@ export default async function () {
   const shockX = r => -1.1 + (-0.95 + 0.105 * r * r) * -1 * -1; // x of shock surface at radius r
 
   // Free stream, then streamlines kinked at the shock, deflected around the body, converging into the wake
-  for (const y of [-2.2, -1.1, 0, 1.1, 2.2]) streamline(scene, [[-5.6, y, 0], [-4.4, y, 0]], { r: 0.055, color: C.ink, opacity: 1 });
+  for (const y of [-0.7, 0.7]) streamline(scene, [[-5.9, y, 0], [-4.3, y, 0]], { r: 0.06, color: C.ink, opacity: 1 });
   for (const y0 of [1.55, 2.5, -1.55, -2.5]) {
     const s = Math.sign(y0), ay = Math.abs(y0), xs = shockX(ay);
     streamline(scene, [[-4.1, y0, -0.3], [xs - 0.05, y0, -0.3], [xs + 0.35, y0 + s * 0.18, -0.3], [1.2, y0 + s * 0.12, -0.3], [3.0, y0 * 0.62, -0.3], [4.8, y0 * 0.42, -0.3]], { r: 0.042, color: C.flow, opacity: 0.85 });
@@ -54,11 +54,32 @@ export default async function () {
   streamline(scene, [...arc].reverse(), { r: 0.06, color: C.orange, opacity: 1 });
   scene.add(mesh(new THREE.SphereGeometry(0.1, 24, 16), clay(C.white), { pos: [cg[0], cg[1], 1.7] }));
 
+  // Sub-figure: total angle of attack for a dynamically unstable capsule (free oscillation grows to a limit cycle)
+  const w = 500, h = 300, px0 = 74, px1 = w - 26, py0 = h - 58, py1 = 104;
+  let path = '', env = '';
+  for (let i = 0; i <= 600; i++) {
+    const t = i / 600, A = 0.06 + 0.94 / (1 + Math.exp(-11 * (t - 0.45)));
+    const aT = A * Math.abs(Math.sin(2 * Math.PI * 7.5 * t));
+    const X = px0 + (px1 - px0) * t, Y = py0 - (py0 - py1) * aT;
+    path += (i ? 'L' : 'M') + X.toFixed(1) + ',' + Y.toFixed(1);
+    env += (i ? 'L' : 'M') + X.toFixed(1) + ',' + (py0 - (py0 - py1) * A).toFixed(1);
+  }
+  inset(ctx.stage, { x: 1200 - w - 26, y: 900 - h - 26, w, h, svg: `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <text x="26" y="44" font-family="Plex" font-weight="600" font-size="25" letter-spacing="1.5" fill="#3d4148">DYNAMICALLY UNSTABLE</text>
+      <line x1="${px0}" y1="${py1 - 12}" x2="${px0}" y2="${py0}" stroke="#b9b0a4" stroke-width="3"/>
+      <line x1="${px0}" y1="${py0}" x2="${px1}" y2="${py0}" stroke="#b9b0a4" stroke-width="3"/>
+      <path d="${env}" fill="none" stroke="#9aa3ad" stroke-width="2.5" stroke-dasharray="9 7"/>
+      <path d="${path}" fill="none" stroke="#ff7a1a" stroke-width="4" stroke-linejoin="round"/>
+      <text x="22" y="${(py0 + py1) / 2 + 10}" font-family="PlexMono" font-size="28" fill="#3d4148">α<tspan font-size="19" dy="7">T</tspan></text>
+      <text x="${px1}" y="${h - 18}" text-anchor="end" font-family="PlexMono" font-size="23" fill="#5a6068">time</text>
+      <text x="${px1}" y="${py1 - 18}" text-anchor="end" font-family="Plex" font-weight="600" font-size="19" letter-spacing="1" fill="#7a8088" dy="4">LIMIT CYCLE</text>
+    </svg>` });
+
   finish(ctx, [
     { t: 'Bow shock', at: [shockX(2.9), 2.9, 0], dx: -40, dy: -70 },
-    { t: 'Heat shield', at: [-0.95, -0.75, 0.75], dx: -170, dy: 150 },
-    { t: 'Pitch oscillation <span class="nc">θ(t)</span>', at: [-0.05, 2.15, 1.25], dx: 150, dy: -95 },
-    { t: 'Turbulent wake', at: [3.0, -0.6, 0], dx: 40, dy: 150 },
-    { t: 'M<sub>∞</sub> = 1.44', at: [-5.0, 2.2, 0], dy: -55, math: true },
+    { t: 'Pitch oscillation', at: [-0.05, 2.15, 1.25], dx: 150, dy: -95 },
+    { t: 'Turbulent wake', at: [3.2, 0.5, 0], dx: 60, dy: -150 },
+    { t: 'M<sub>∞</sub> = 1.44', at: [-5.1, 0.7, 0], dy: -62, math: true },
   ]);
 }

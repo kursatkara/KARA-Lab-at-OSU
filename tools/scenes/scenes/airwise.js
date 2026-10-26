@@ -55,19 +55,39 @@ export default async function () {
   h.add(mesh(rbox(0.5, 0.06, 0.06, 0.02), clay(C.orange), { pos: [0.4, 0.05, 0.3] }));
   h.scale.setScalar(1.3); h.position.set(...hp); h.rotation.set(0, 0.25, 0.06); scene.add(h);
 
-  // AI wake inference: sensor data -> learned surrogate -> airwake estimate over the deck
-  const pan = new THREE.Mesh(rbox(2.1, 1.5, 0.1, 0.05), [clay('#e2ddd4'), clay('#e2ddd4'), clay('#e2ddd4'), clay('#e2ddd4'), new THREE.MeshStandardMaterial({ map: wakeTexture(), roughness: 0.7 }), clay('#e2ddd4')]);
-  pan.geometry.clearGroups(); pan.geometry.addGroup(0, Infinity, 4);
-  pan.position.set(0.9, deckY + 4.4, 1.0); pan.rotation.y = 0.45; pan.castShadow = true; scene.add(pan);
-  const dash = new THREE.CatmullRomCurve3([new THREE.Vector3(0.7, deckY + 2.7, 0.3), new THREE.Vector3(0.75, deckY + 3.2, 0.6), new THREE.Vector3(0.85, deckY + 3.62, 0.9)]);
-  for (let i = 0; i < 8; i++) { const a = dash.getPoint(i / 8), b = dash.getPoint((i + 0.55) / 8), d = b.clone().sub(a);
-    const m = mesh(new THREE.CylinderGeometry(0.03, 0.03, d.length(), 8), clay(C.orange), { cast: false }); m.position.copy(a).addScaledVector(d, 0.5); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); scene.add(m); }
+  // AI wake inference: mast anemometers -> neural network -> inferred airwake over the flight deck
+  const nnX = -0.9, nnY = deckY + 3.6, layers = [[-0.75, 3], [0, 5], [0.75, 3]], nodes = [];
+  layers.forEach(([dx, n], li) => { const col = []; for (let k = 0; k < n; k++) { const p = new THREE.Vector3(nnX + dx, nnY + (k - (n - 1) / 2) * 0.32, 0.4);
+    scene.add(mesh(new THREE.SphereGeometry(0.085, 18, 12), glow(li === 1 ? C.flow : C.orange), { pos: p.toArray(), cast: false })); col.push(p); } nodes.push(col); });
+  const link = (a, b) => { const d = b.clone().sub(a); const m = mesh(new THREE.CylinderGeometry(0.012, 0.012, d.length(), 6), clay('#9aa3ad'), { cast: false });
+    m.position.copy(a).addScaledVector(d, 0.5); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); scene.add(m); };
+  for (let l = 0; l < 2; l++) for (const a2 of nodes[l]) for (const b2 of nodes[l + 1]) link(a2, b2);
+  scene.add(mesh(rbox(2.05, 1.85, 0.06, 0.08), glass('#ffffff', 0.55), { pos: [nnX, nnY, 0.33], cast: false }));
+  const dash = (pts, col) => { const cv = new THREE.CatmullRomCurve3(pts.map(p => new THREE.Vector3(...p)));
+    for (let i = 0; i < 12; i++) { const a2 = cv.getPoint(i / 12), b2 = cv.getPoint((i + 0.55) / 12), d = b2.clone().sub(a2);
+      const m = mesh(new THREE.CylinderGeometry(0.03, 0.03, d.length(), 8), clay(col), { cast: false }); m.position.copy(a2).addScaledVector(d, 0.5); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); scene.add(m); } };
+  dash([[0.7, deckY + 2.7, 0.3], [0.4, deckY + 3.1, 0.4], [nnX + 0.75 + 0.15, nnY, 0.4]], C.orange);
+  dash([[nnX - 0.75 - 0.15, nnY, 0.4], [-2.4, nnY - 0.4, 0.4], [-3.0, deckY + 2.05, 0.2]], C.flow);
+  // inferred airwake: centerline velocity map over the flight deck (recirculation behind the hangar)
+  const cvs = document.createElement('canvas'); cvs.width = 640; cvs.height = 400; const g = cvs.getContext('2d');
+  const W = 640, H = 400, img = g.createImageData(W, H);
+  const cmap = t => { const a2 = [59, 76, 192], b2 = [235, 236, 240], c2 = [222, 96, 40]; const m2 = (p, q, u) => p.map((v, i) => v + (q[i] - v) * u); return t < 0.5 ? m2(a2, b2, t * 2) : m2(b2, c2, (t - 0.5) * 2); };
+  for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {
+    const X = i / W, Y = 1 - j / H;                       // X: 0 = stern, 1 = hangar face; Y: 0 = deck, 1 = top
+    const shear = 0.5 + 0.5 * Math.tanh((Y - (0.55 - 0.25 * (1 - X))) / 0.08);
+    const bubble = Math.exp(-((X - 0.72) ** 2) / 0.05 - ((Y - 0.28) ** 2) / 0.04);
+    let t = 0.15 + 0.7 * shear - 0.25 * bubble + 0.05 * Math.sin(22 * X + 9 * Y);
+    img.data.set([...cmap(Math.min(1, Math.max(0, t))).map(Math.round), 225], (j * W + i) * 4);
+  }
+  g.putImageData(img, 0, 0); const tex = new THREE.CanvasTexture(cvs); tex.colorSpace = THREE.SRGBColorSpace;
+  const wakeW = 2.6, wakeH = 1.8;
+  scene.add(mesh(new THREE.PlaneGeometry(wakeW, wakeH), new THREE.MeshStandardMaterial({ map: tex, transparent: true, opacity: 0.9, side: THREE.DoubleSide, roughness: 0.9 }), { pos: [-1.95 - wakeW / 2, deckY + 0.06 + wakeH / 2, 0.0], cast: false }));
 
   finish(ctx, [
     { t: 'NATO Generic Destroyer', at: [2.6, deckY - 0.35, 0.66], dx: 120, dy: 130 },
-    { t: 'Ship airwake', at: [-2.5, deckY + 0.6, 0.65], dx: -60, dy: 170 },
-    { t: 'Helicopter approach', at: hp, dx: -40, dy: -140 },
-    { t: 'AI wake inference', at: [0.9, deckY + 5.15, 1.0], dx: 0, dy: -55 },
+    { t: 'Inferred airwake', at: [-3.4, deckY + 0.5, 0.0], dx: -40, dy: 190 },
+    { t: 'Helicopter approach', at: hp, dx: -40, dy: -150 },
+    { t: 'Neural network', at: [nnX, nnY + 0.95, 0.4], dx: 0, dy: -60 },
     { t: 'Anemometers', at: [0.7, deckY + 2.62, 0.3], dx: 190, dy: -40 },
   ]);
 }

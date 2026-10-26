@@ -131,3 +131,11 @@ export function finish({ renderer, scene, camera, stage }, labels = []) {
 export function lathe(profile, seg = 96) {
   return new THREE.LatheGeometry(profile.map(([r, y]) => new THREE.Vector2(Math.max(r, 1e-4), y)), seg);
 }
+
+// A 2D sub-figure card drawn over the render (SVG plot), positioned in pixels.
+export function inset(stage, { x, y, w, h, svg }) {
+  const d = document.createElement('div');
+  Object.assign(d.style, { position: 'absolute', left: x + 'px', top: y + 'px', width: w + 'px', height: h + 'px',
+    background: '#fffdfa', border: '2px solid #ddd6cc', borderRadius: '22px', boxShadow: '0 6px 16px rgba(40,30,20,.14)', overflow: 'hidden' });
+  d.innerHTML = svg; stage.appendChild(d); return d;
+}
