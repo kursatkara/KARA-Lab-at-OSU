@@ -14,6 +14,7 @@
 <meta property="og:description" content="Kara Aerodynamics Research Laboratory at Oklahoma State University.">
 <meta property="og:image" content="https://www.kursatkara.com/assets/kursat-kara.jpg">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
@@ -27,10 +28,10 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P8T3Q2RL0T');</script>
 <style>
   /* Layout: one long page; a sticky top bar, a hero, then sections separated by hairlines.
-     A wind-tunnel-style flow banner (live Joukowski airfoil) opens the Research section. */
+     Light and dark themes follow the system setting unless the visitor picks one with the toggle in the top bar. */
   :root {
     --orange: #d55a00;      /* OSU orange, darkened so text links pass WCAG AA on white */
-    --orange-hi: #ff7300;   /* OSU orange for fills, rules, and the flow banner */
+    --orange-hi: #ff7300;   /* OSU orange for fills and rules */
     --bg: #f6f7f8;
     --surface: #ffffff;
     --ink: #17191c;
@@ -40,7 +41,7 @@
     --plate: #ffffff;       /* research figures sit on white in both themes, like a printed figure */
     --sketch-top: #f3f5f8; --sketch-bot: #e6eaef;   /* the illustration backdrop gradient, so the panel has no seam */
     --plate-ink: #5a6068; --plate-link: #a24600; --plate-line: #e6e8eb;   /* caption text on the white plate, same in both themes */
-    --tunnel-bg: #101215; --tunnel-ink: #e9ecef; --tunnel-muted: #9aa1a9; --tunnel-body: #2a2e34;
+    --tunnel-bg: #101215;   /* dark backdrop behind outreach banners */
     --radius: 12px;
     --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
     --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -87,9 +88,15 @@
   .nav ul a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; }
   .nav ul a:hover { color: var(--orange); }
   .nav ul a[aria-current="true"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--orange-hi); }
+  .nav nav { margin-left: auto; }
+  .theme-btn { flex: none; width: 36px; height: 36px; display: grid; place-items: center; padding: 0; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 50%; cursor: pointer; }
+  .theme-btn:hover { color: var(--orange); border-color: var(--orange-hi); }
+  .theme-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .theme-btn .sun, .theme-btn[data-mode="dark"] .moon { display: none; }
+  .theme-btn[data-mode="dark"] .sun { display: block; }
   .menu-btn { display: none; font: 600 .88rem var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
-  @media (max-width: 880px) {
-    .menu-btn { display: inline-block; }
+  @media (max-width: 960px) {
+    .menu-btn { display: inline-block; margin-left: auto; }
     .nav nav { position: absolute; left: 0; right: 0; top: 64px; background: var(--bg); border-bottom: 1px solid var(--line); display: none; }
     header.nav.open nav { display: block; }
     .nav ul { flex-direction: column; gap: 0; padding: 8px max(20px, env(safe-area-inset-left, 0px)) 14px; }
@@ -145,15 +152,6 @@
   @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } .path { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 480px) { .news li { grid-template-columns: 1fr; gap: 0; } }
 
-  /* Flow banner (Research) */
-  .tunnel { margin: 6px 0 30px; border-radius: var(--radius); background: var(--tunnel-bg); color: var(--tunnel-ink); overflow: hidden; border: 1px solid var(--line); }
-  .tunnel canvas { display: block; width: 100%; height: 340px; }
-  .tunnel .bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding: 12px 16px; border-top: 1px solid var(--tunnel-body); font: 400 .82rem var(--mono); color: var(--tunnel-muted); }
-  .tunnel .bar label { display: inline-flex; align-items: center; gap: 10px; color: var(--tunnel-ink); white-space: nowrap; }
-  .tunnel input[type=range] { width: 160px; accent-color: var(--orange-hi); }
-  .tunnel output { color: var(--tunnel-ink); font-variant-numeric: tabular-nums; min-width: 6ch; display: inline-block; }
-  .tunnel .note { flex: 1 1 260px; min-width: 0; }
-  @media (max-width: 640px) { .tunnel canvas { height: 240px; } .tunnel input[type=range] { width: 120px; } .tunnel .note { font-size: .74rem; } }
 
   /* Research projects: one panel per funded project; figure and text alternate sides on wide screens */
   .projects { display: grid; gap: 22px; }
@@ -301,6 +299,10 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <button class="theme-btn" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.3M12 19.2v2.3M2.5 12h2.3M19.2 12h2.3M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    </button>
   </div>
 </header>
 
@@ -377,16 +379,8 @@
 <section id="research" aria-labelledby="research-h">
   <div class="wrap">
     <h2 id="research-h">Research</h2>
-    <p class="lede">Our work spans Mach 6 boundary-layer transition, the dynamic stability of reentry capsules, and turbulence in urban and shipboard airwakes. Each project couples high-fidelity simulation with reduced-order or machine-learning models fast enough for design, uncertainty quantification, or real-time use.</p>
+    <p class="lede">Our research bridges high-fidelity flow simulation, physics-guided modeling, and scientific machine learning to advance the understanding and prediction of complex unsteady aerodynamics. By integrating DNS and LES with reduced-order and multifidelity learning methods, we develop predictive tools for reentry-vehicle dynamics, shipboard and urban flight environments, and hypersonic boundary-layer transition.</p>
 
-    <figure class="tunnel" aria-labelledby="tunnel-cap">
-      <canvas id="tunnel" role="img" aria-label="Animated streamlines of potential flow past a Joukowski airfoil"></canvas>
-      <figcaption class="bar">
-        <label for="alpha">Angle of attack <input id="alpha" type="range" min="-4" max="14" step="0.5" value="6"> <output id="alpha-out" for="alpha">6.0°</output></label>
-        <span>C<sub>l</sub> = <output id="cl-out">0.00</output></span>
-        <span class="note" id="tunnel-cap">Inviscid, incompressible potential flow past a Joukowski airfoil with the Kutta condition enforced; C<sub>l</sub> follows from the Kutta–Joukowski theorem. Particles move with the exact velocity field.</span>
-      </figcaption>
-    </figure>
 
     <!-- One panel per funded project, newest first. Copy one <article class="proj"> block to add a project.
          Main image: an illustration, assets/research/sketch-<name>.jpg (1200×900), rendered from tools/scenes/.
@@ -797,98 +791,17 @@
   links.forEach((a, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
 })();
 
-/* Flow banner: potential flow past a Joukowski airfoil, z = ζ + 1/ζ.
-   Circle in the ζ-plane: centre μ, radius a, passing through ζ = 1 (trailing edge).
-   Kutta condition: Γ = 4π U a sin(α + β), with 1 − μ = a e^{−iβ}. */
+/* Light/dark toggle: follows the system until the visitor picks a theme; the choice is kept in this browser only */
 (() => {
-  const cv = document.getElementById('tunnel'); if (!cv) return;
-  const ctx = cv.getContext('2d');
-  const slider = document.getElementById('alpha'), aOut = document.getElementById('alpha-out'), clOut = document.getElementById('cl-out');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-  const MU = [-0.09, 0.07];                                  // thickness and camber
-  const A = Math.hypot(1 - MU[0], MU[1]);
-  const BETA = Math.atan2(MU[1], 1 - MU[0]);
-  let alpha = 6 * Math.PI / 180, G = 0;
-  // complex helpers on [re, im]
-  const mul = (p, q) => [p[0]*q[0] - p[1]*q[1], p[0]*q[1] + p[1]*q[0]];
-  const div = (p, q) => { const d = q[0]*q[0] + q[1]*q[1]; return [(p[0]*q[0] + p[1]*q[1]) / d, (p[1]*q[0] - p[0]*q[1]) / d]; };
-  const csqrt = p => { const r = Math.hypot(p[0], p[1]); const re = Math.sqrt((r + p[0]) / 2); const im = Math.sign(p[1] || 1) * Math.sqrt(Math.max(0, (r - p[0]) / 2)); return [re, im]; };
-  const toZ = s => { const inv = div([1, 0], s); return [s[0] + inv[0], s[1] + inv[1]]; };
-  function toZeta(z) {                                       // pick the root outside the circle
-    const r = csqrt([z[0]*z[0] - z[1]*z[1] - 4, 2*z[0]*z[1]]);
-    const s1 = [(z[0] + r[0]) / 2, (z[1] + r[1]) / 2], s2 = [(z[0] - r[0]) / 2, (z[1] - r[1]) / 2];
-    return Math.hypot(s1[0] - MU[0], s1[1] - MU[1]) >= Math.hypot(s2[0] - MU[0], s2[1] - MU[1]) ? s1 : s2;
-  }
-  function vel(z) {                                          // returns [u, v] in the z-plane, U∞ = 1
-    const s = toZeta(z), d = [s[0] - MU[0], s[1] - MU[1]];
-    if (Math.hypot(d[0], d[1]) < A * 1.001) return null;
-    const ea = [Math.cos(alpha), Math.sin(alpha)], ema = [Math.cos(alpha), -Math.sin(alpha)];
-    const t2 = div(mul([A*A, 0], ea), mul(d, d));
-    const t3 = div([0, G / (2*Math.PI)], d);
-    const dW = [ema[0] - t2[0] + t3[0], ema[1] - t2[1] + t3[1]];
-    const dz = [1 - div([1, 0], mul(s, s))[0], -div([1, 0], mul(s, s))[1]];
-    if (Math.hypot(dz[0], dz[1]) < 1e-3) return [1, 0];
-    const w = div(dW, dz);                                   // w = u − i v
-    return [w[0], -w[1]];
-  }
-  // airfoil outline and chord
-  let foil = [], chord = 4;
-  function setAlpha(deg) {
-    alpha = deg * Math.PI / 180;
-    G = 4 * Math.PI * A * Math.sin(alpha + BETA);
-    foil = []; for (let k = 0; k <= 160; k++) { const t = 2*Math.PI*k/160; foil.push(toZ([MU[0] + A*Math.cos(t), MU[1] + A*Math.sin(t)])); }
-    const xs = foil.map(p => p[0]); chord = Math.max(...xs) - Math.min(...xs);
-    aOut.textContent = deg.toFixed(1) + '°';
-    clOut.textContent = (2 * G / chord).toFixed(2);           // C_l = 2Γ / (U c)
-  }
-  // view: z ∈ [−3.6, 3.6] horizontally; airfoil drawn level, free stream rotates with α
-  let W = 0, H = 0, S = 1, dpr = 1;
-  const X0 = -3.6, X1 = 3.6;
-  function resize() { dpr = Math.min(2, devicePixelRatio || 1); W = cv.clientWidth; H = cv.clientHeight; cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); S = W / (X1 - X0); clear(); }
-  const px = z => [(z[0] - X0) * S, H/2 - z[1] * S];
-  const yMax = () => H / 2 / S;
-  let parts = [];
-  function spawn(p, initial) {
-    // most particles enter at the left edge; some start anywhere so the region below the wake stays filled
-    p.x = initial || Math.random() < 0.3 ? X0 + Math.random() * (X1 - X0) : X0 - Math.random() * 0.3;
-    p.y = (Math.random() * 2 - 1) * yMax() * 1.05; p.age = 0; p.life = 260 + Math.random() * 260;
-  }
-  function init() { parts = []; const n = Math.round(W * H / 900); for (let i = 0; i < n; i++) { const p = {}; spawn(p, true); parts.push(p); } }
-  function clear() { ctx.fillStyle = css('--tunnel-bg'); ctx.fillRect(0, 0, W, H); }
-  function drawFoil() {
-    ctx.beginPath(); foil.forEach((q, i) => { const p = px(q); i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]); });
-    ctx.closePath(); ctx.fillStyle = css('--tunnel-body'); ctx.fill(); ctx.lineWidth = 1.2; ctx.strokeStyle = css('--orange-hi'); ctx.stroke();
-  }
-  const dt = 0.012;
-  function step(fade) {
-    ctx.fillStyle = css('--tunnel-bg'); ctx.globalAlpha = fade; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1;
-    const hi = css('--orange-hi'), lo = css('--tunnel-ink');
-    ctx.lineWidth = 1.1;
-    for (const p of parts) {
-      const v = vel([p.x, p.y]);
-      if (!v || p.x > X1 + 0.2 || Math.abs(p.y) > yMax() * 1.2 || p.age > p.life) { spawn(p, false); continue; }
-      const sp = Math.hypot(v[0], v[1]);
-      const a = px([p.x, p.y]);
-      p.x += v[0] * dt * 6; p.y += v[1] * dt * 6; p.age++;
-      const b = px([p.x, p.y]);
-      ctx.strokeStyle = sp > 1.25 ? hi : lo; ctx.globalAlpha = Math.min(0.85, 0.25 + 0.35 * sp);
-      ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
-    }
-    ctx.globalAlpha = 1; drawFoil();
-  }
-  let running = false, raf = 0;
-  function loop() { step(0.06); raf = requestAnimationFrame(loop); }
-  function still() { clear(); init(); for (let i = 0; i < 140; i++) step(0.02); }
-  function start() { if (running || reduce) return; running = true; loop(); }
-  function stop() { running = false; cancelAnimationFrame(raf); }
-  setAlpha(+slider.value); resize(); init();
-  if (reduce) still(); else { for (let i = 0; i < 40; i++) step(0.06); start(); }
-  slider.addEventListener('input', () => { setAlpha(+slider.value); clear(); init(); if (reduce) still(); else warm(); });
-  const warm = () => { for (let k = 0; k < 40; k++) step(0.06); };   // draw streaks at once so the banner is never an empty box
-  addEventListener('resize', () => { resize(); init(); if (reduce) still(); else warm(); });
-  new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() : stop())).observe(cv);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { clear(); if (reduce) still(); });
+  const btn = document.querySelector('.theme-btn'), root = document.documentElement, mq = matchMedia('(prefers-color-scheme: dark)');
+  const mode = () => root.dataset.theme || (mq.matches ? 'dark' : 'light');
+  const sync = () => { const m = mode(); btn.dataset.mode = m; const t = m === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'; btn.setAttribute('aria-label', t); btn.title = t; };
+  btn.addEventListener('click', () => {
+    const next = mode() === 'dark' ? 'light' : 'dark'; root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    sync();
+  });
+  mq.addEventListener('change', sync); sync();
 })();
 </script>
 </body>

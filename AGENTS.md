@@ -71,7 +71,8 @@ Resize a photo (Python + Pillow):
 
     python3 -c "from PIL import Image,ImageOps;im=ImageOps.fit(Image.open('in.jpg').convert('RGB'),(720,540));im.save('out.jpg',quality=80,optimize=True)"
 
-## Flow banner
-- The canvas at the top of `#research` is potential flow past a Joukowski airfoil (z = ζ + 1/ζ) with the Kutta condition;
-  the slider sets α and the readout shows C_l = 2Γ/(U c). Code is the last block of the inline script.
-  `MU` sets thickness/camber. It pauses off screen and draws one still frame under prefers-reduced-motion.
+## Light and dark themes
+- The page follows the visitor's system setting; the round button at the right of the top bar switches themes and stores
+  the choice in `localStorage` (`theme`). A one-line script in `<head>` applies it before the first paint.
+- Every color is a token in `:root`, repeated in both dark blocks (`@media (prefers-color-scheme: dark)` and
+  `:root[data-theme="dark"]`), so the toggle and the system setting give the same colors.
