@@ -1,4 +1,4 @@
-import { THREE, C, setup, clay, glass, mesh, lathe, streamline, swirl, finish } from './lib.js';
+import { THREE, C, setup, clay, glass, mesh, lathe, streamline, swirl, arrow, finish } from './lib.js';
 
 // Mach 6 blunt cones, side by side.
 // Top, uncontrolled: free-stream acoustic disturbances excite first- and second-mode waves that grow, break down,
@@ -85,10 +85,12 @@ export default async function () {
     const pts = []; for (let i = 0; i <= 60; i++) { const x = -6.9 + 2.4 * i / 60; pts.push([x, y + 0.11 * Math.sin(i / 60 * Math.PI * 5), 0.3]); }
     streamline(scene, pts, { r: 0.032, color: C.hot, opacity: 0.95 });
   }
+  // Mach 6 free stream, one arrow on each cone axis
+  for (const y0 of [1.75, -1.85]) arrow(scene, [-7.1, y0, 0.3], [-4.3, y0, 0.3], { r: 0.07, color: C.ink });
   finish(ctx, [
     { t: 'Acoustic disturbances', at: [-5.6, 2.62, 0.3], dx: 10, dy: -75 },
-    { t: 'Mach 6', at: [-5.7, -0.05, 0.3] },
-    { t: 'No control: transition', at: [-3.4 + 4.6, 1.75 + top.R(4.6) + 0.25, 0.3], dx: 0, dy: -125 },
+    { t: 'Mach 6', at: [-5.9, -0.05, 0.3] },
+    { t: 'Transition from laminar to turbulent flow', at: [-3.4 + 4.6, 1.75 + top.R(4.6) + 0.25, 0.3], dx: 0, dy: -125 },
     { t: 'High heat flux', at: [-3.4 + 6.4, 1.75 + top.R(6.4) * 0.2, 0.7], dx: 140, dy: 70 },
     { t: 'Cooling strip', at: [-3.4 + 1.8, -1.85 - bot.R(1.8), 0.3], dx: -150, dy: 105 },
     { t: 'Acoustic metasurface', at: [-3.4 + 4.0, -1.85 - bot.R(4.0), 0.4], dx: 60, dy: 125 },
