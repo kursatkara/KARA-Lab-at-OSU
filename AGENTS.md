@@ -56,7 +56,7 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   APS DFD and other abstracts and posters are not peer-reviewed; count them separately.
 - **Publications list** shows the 10 newest by default; "Show all" reveals the rest. Keep it to about 25 selected papers.
 - **Sponsors and funding:** one `<li>` in `.sponsors` per funding organization (name + programs). Put the official logo in
-  `assets/sponsors/<name>.svg` (or a PNG at least 128 px tall) and replace the `<span class="smark">` text mark with
+  `assets/sponsors/<name>.svg` (or a PNG at least 120 px tall; square seals and wide wordmarks both fit) and replace the `<span class="smark">` text mark with
   `<img src="assets/sponsors/<name>.svg" alt="<Sponsor> logo">`. Only organizations that funded an award.
 - **Other support:** add an `<li>` at the top of `.grants` (role, title + sponsor, years). Only funded awards;
   memberships and computing allocations go in the note under the list.
