@@ -1,2 +1,4 @@
 public/
 .DS_Store
+tools/scenes/node_modules/
+tools/scenes/out/
