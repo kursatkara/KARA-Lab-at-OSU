@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Link-preview image (Open Graph) for www.kursatkara.com. Render at 1200×630 with render.js; output assets/og-card.jpg. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KARA Lab link preview</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root { --orange: #b34b00; --orange-hi: #ff7300; --bg: #f6f7f8; --ink: #17191c; --muted: #5a6068; --line: #e1e4e8; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; }
+  .card { display: grid; grid-template-columns: 640px 560px; height: 630px; }
+  .text { padding: 56px 48px 48px 64px; display: flex; flex-direction: column; border-top: 8px solid var(--orange-hi); }
+  .label { font: 500 17px "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); margin: 0 0 22px; }
+  .who { display: flex; align-items: center; gap: 22px; margin-bottom: 24px; }
+  .who img { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--orange-hi); }
+  h1 { font: 600 52px/1.05 "Source Serif 4", Georgia, serif; margin: 0; }
+  .role { font-size: 21px; color: var(--muted); margin: 8px 0 0; line-height: 1.35; }
+  .topics { font-size: 23px; line-height: 1.45; margin: 4px 0 0; }
+  .url { margin-top: auto; font: 500 20px "IBM Plex Mono", monospace; color: var(--ink); display: flex; align-items: center; gap: 12px; }
+  .url svg { width: 44px; height: 28px; }
+  .mosaic { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 4px; background: var(--line); }
+  .mosaic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="text">
+    <p class="label">Kara Aerodynamics Research Laboratory</p>
+    <div class="who">
+      <img src="../../assets/kursat-kara.jpg" alt="">
+      <div>
+        <h1>Kursat Kara</h1>
+        <p class="role">Associate Professor<br>AIAA Associate Fellow<br>Oklahoma State University</p>
+      </div>
+    </div>
+    <p class="topics">High-fidelity CFD (DNS, LES), reduced-order modeling, and scientific machine learning for reentry-capsule stability, ship airwakes, urban turbulence, and hypersonic transition.</p>
+    <div class="url">
+      <svg viewBox="0 0 34 22" aria-hidden="true"><path d="M2 13 C 8 4, 22 4, 32 12 C 22 10, 10 12, 2 13 Z" fill="#ff7300"/><path d="M1 18 C 10 15, 22 15, 33 17" fill="none" stroke="#17191c" stroke-width="1.6" stroke-linecap="round"/></svg>
+      www.kursatkara.com
+    </div>
+  </div>
+  <div class="mosaic">
+    <img src="../../assets/research/sketch-reentry-capsule.jpg" alt="">
+    <img src="../../assets/research/sketch-ship-airwake.jpg" alt="">
+    <img src="../../assets/research/sketch-aam-turbulence.jpg" alt="">
+    <img src="../../assets/research/sketch-hypersonic.jpg" alt="">
+  </div>
+</div>
+</body>
+</html>
