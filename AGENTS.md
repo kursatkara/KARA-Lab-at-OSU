@@ -6,8 +6,7 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - One static page, `index.html`. Plain HTML + inline CSS + a small inline script. No build step, no framework.
 - Hosted on GitHub Pages from the `main` branch (repository root); every merge to `main` goes live in about a minute.
   `CNAME` holds the custom domain (www.kursatkara.com). `404.html` forwards the old Hugo addresses (`/publication/*`,
-  `/author/*`, …) to page sections; add new mappings there. `.nojekyll` makes Pages serve the files as they are.
-  `netlify.toml` is left over from the earlier Netlify hosting and is not used by GitHub Pages.
+  `/author/*`, …) to page sections; add new mappings there. `.nojekyll` makes Pages serve the files as they are. HTTPS is enforced in Settings → Pages.
 - Images live in `assets/`. Keep the repo small: resize photos before committing (sizes below).
 
 ## Source of truth
