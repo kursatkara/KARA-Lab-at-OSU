@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page moved · KARA Lab</title>
+<meta name="robots" content="noindex">
+<script>
+  /* GitHub Pages serves this file for any missing path. Old Hugo/Wowchemy addresses (before October 2026)
+     go to the matching section of the new single page; anything else goes to the home page. */
+  (function () {
+    var p = location.pathname.toLowerCase(), map = [
+      ['/uploads/resume.pdf', '/assets/Kursat_Kara_CV.pdf'],
+      ['/publication-type/', '/#publications'], ['/publication/', '/#publications'],
+      ['/project/', '/#research'], ['/authors/', '/#team'], ['/author/', '/#team'],
+      ['/talk/', '/#outreach'], ['/event/', '/#outreach']
+    ];
+    for (var i = 0; i < map.length; i++) if (p.indexOf(map[i][0]) === 0) { location.replace(map[i][1]); return; }
+    location.replace('/');
+  })();
+</script>
+<style>
+  :root { --bg: #f6f7f8; --ink: #17191c; --muted: #5a6068; --orange: #d55a00; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111316; --ink: #e8eaed; --muted: #a0a7af; --orange: #ff9a4d; } }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  p { margin: 0; color: var(--muted); } a { color: var(--orange); }
+</style>
+</head>
+<body>
+  <p>This page has moved. Continue to the <a href="/">KARA Lab home page</a>.</p>
+</body>
+</html>
