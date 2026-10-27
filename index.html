@@ -4,15 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>KARA Lab at OSU</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Kara Aerodynamics Research Laboratory (KARA Lab) at Oklahoma State University, led by Kursat Kara: data-driven aerodynamics, entry-capsule dynamic stability, ship airwakes and urban winds for drones, hypersonic boundary-layer transition, flow control, and quantum computing for fluid dynamics.">
 <link rel="canonical" href="https://www.kursatkara.com/">
 <meta property="og:url" content="https://www.kursatkara.com/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#d55a00">
+<meta name="theme-color" content="#b34b00">
+<meta property="og:site_name" content="KARA Lab">
 <meta property="og:title" content="KARA Lab at OSU · Kursat Kara">
-<meta property="og:description" content="Kara Aerodynamics Research Laboratory at Oklahoma State University.">
-<meta property="og:image" content="https://www.kursatkara.com/assets/kursat-kara.jpg">
+<meta property="og:description" content="Kursat Kara's lab at Oklahoma State University: high-fidelity CFD (DNS, LES), reduced-order modeling, and scientific machine learning for reentry-capsule dynamic stability, ship airwakes, urban turbulence, and hypersonic boundary-layer transition.">
+<meta property="og:image" content="https://www.kursatkara.com/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KARA Lab: Kursat Kara, Oklahoma State University, with illustrations of reentry-capsule, ship-airwake, urban-turbulence, and hypersonic-transition research">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KARA Lab at OSU · Kursat Kara">
+<meta name="twitter:description" content="Kursat Kara's lab at Oklahoma State University: high-fidelity CFD (DNS, LES), reduced-order modeling, and scientific machine learning for reentry-capsule dynamic stability, ship airwakes, urban turbulence, and hypersonic boundary-layer transition.">
+<meta name="twitter:image" content="https://www.kursatkara.com/assets/og-card.jpg">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +37,7 @@
   /* Layout: one long page; a sticky top bar, a hero, then sections separated by hairlines.
      Light and dark themes follow the system setting unless the visitor picks one with the toggle in the top bar. */
   :root {
-    --orange: #d55a00;      /* OSU orange, darkened so text links pass WCAG AA on white */
+    --orange: #b34b00;      /* OSU orange, darkened so text passes WCAG AA (4.5:1) on --bg, --surface, and --chip */
     --orange-hi: #ff7300;   /* OSU orange for fills and rules */
     --bg: #f6f7f8;
     --surface: #ffffff;
@@ -337,8 +344,8 @@
   <div class="wrap">
     <h2 id="glance-h">At a glance</h2>
     <div class="bio">
-      <p>Kursat Kara directs the Kara Aerodynamics Research Laboratory (KARA Lab) at Oklahoma State University. The lab works on data-driven aerodynamics and reduced-order modeling, entry-capsule dynamic stability, ship airwakes and urban winds for drones and advanced air mobility, hypersonic boundary-layer transition, flow control, and quantum computing for fluid dynamics. The lab's tools are high-fidelity simulation (DNS, LES, high-order methods) combined with scientific machine learning. The work is funded by NASA, the U.S. Navy (NAWCAD), NSF, the FAA, and IBM Quantum.</p>
-      <p>He earned his Ph.D. at Old Dominion University, supported by NASA Langley, with a dissertation on hypersonic boundary-layer receptivity. He worked as a CFD engineer at New England Analytics on projects for Sikorsky Aircraft, was a postdoctoral scholar at Penn State on large-eddy simulation of hot supersonic jets, and was a founding faculty member of the first aerospace engineering program in the UAE at Khalifa University before joining OSU in 2019. He was elected an AIAA Associate Fellow in 2026. He serves on the editorial board of <i>Scientific Reports</i> and guest-edits its Quantum Computing collection.</p>
+      <p>Kursat Kara directs the Kara Aerodynamics Research Laboratory (KARA Lab) at Oklahoma State University. Beyond the four areas above, the lab works on active flow control with sweeping jet actuators and on quantum computing for fluid dynamics. Its work has been funded by NASA, the U.S. Navy (NAWCAD), the FAA, NSF, and IBM Quantum.</p>
+      <p>He earned his Ph.D. at Old Dominion University, supported by NASA Langley, with a dissertation on hypersonic boundary-layer receptivity. He worked as a CFD engineer at New England Analytics on projects for Sikorsky Aircraft, was a postdoctoral scholar at Penn State on large-eddy simulation of hot supersonic jets, and was a founding faculty member of the first aerospace engineering program in the UAE at Khalifa University before joining OSU in 2019. He was elected an AIAA Associate Fellow in 2026. He serves on the editorial board of <i>Scientific Reports</i> and guest-edited its Quantum Computing collection (2024–2025).</p>
     </div>
 
     <h3 class="sub">Career path</h3>
@@ -356,7 +363,7 @@
       <div class="stat"><b>$3.5M+</b><span>external research funding as PI or Co-PI</span></div>
       <div class="stat"><b>84</b><span>peer-reviewed articles, including 42 journal papers</span></div>
       <div class="stat"><b>14</b><span>journal papers in 2025–2026</span></div>
-      <div class="stat"><b>25</b><span>undergraduate researchers since 2019</span></div>
+      <div class="stat"><b>29</b><span>undergraduate researchers since 2019</span></div>
     </div>
     <p class="asof">Counts from the CV and Google Scholar, October 2026.</p>
 
@@ -380,7 +387,7 @@
 <section id="research" aria-labelledby="research-h">
   <div class="wrap">
     <h2 id="research-h">Research</h2>
-    <p class="lede">Our work spans Mach 6 boundary-layer transition, the dynamic stability of reentry capsules, and turbulence in urban and shipboard airwakes. Each project couples high-fidelity simulation with reduced-order or machine-learning models fast enough for design, uncertainty quantification, or real-time use.</p>
+    <p class="lede">Each project below pairs high-fidelity simulation with reduced-order or machine-learning models fast enough for design, uncertainty quantification, or real-time use.</p>
 
 
     <!-- One panel per funded project, newest first. Copy one <article class="proj"> block to add a project.
@@ -420,7 +427,7 @@
           <dl class="pmeta">
             <dt>Setup</dt><dd>NATO Generic Destroyer; GPU-accelerated LES with <a href="https://volcanoplatforms.com/">Volcano ScaLES</a> (in-kind licenses, Volcano Platforms), validated against 1:50-scale wind-over-deck velocities (NRC) and 1:200-scale surface pressure at several yaw angles.</dd>
             <dt>Team</dt><dd>Mashrur Shejan (Ph.D.), Sabbir Hossain (M.Sc.), Gabe Kindt (undergraduate). Collaborator: Ryan Paul.</dd>
-            <dt>Papers</dt><dd>Validation and airwake results presented at NAWCAD quarterly reviews, 2026.</dd>
+            <dt>Status</dt><dd>Validation and airwake results presented at NAWCAD quarterly reviews, 2026.</dd>
           </dl>
         </div>
       </article>
@@ -435,7 +442,7 @@
           <dl class="pmeta">
             <dt>Setup</dt><dd>LES of the urban atmospheric boundary layer with <a href="https://volcanoplatforms.com/">Volcano ScaLES</a> (in-kind licenses, Volcano Platforms).</dd>
             <dt>Team</dt><dd>Mashrur Shejan (Ph.D.), Drew Moguin (undergraduate).</dd>
-            <dt>Papers</dt><dd><a href="https://doi.org/10.3390/aerospace11100830">Krawczyk et al., <i>Aerospace</i> 2024</a>, <a href="https://doi.org/10.1038/s41598-023-50719-8">Vuppala et al., <i>Sci. Rep.</i> 2024</a></dd>
+            <dt>Related papers</dt><dd><a href="https://doi.org/10.3390/aerospace11100830">Krawczyk et al., <i>Aerospace</i> 2024</a>, <a href="https://doi.org/10.1038/s41598-023-50719-8">Vuppala et al., <i>Sci. Rep.</i> 2024</a></dd>
           </dl>
         </div>
       </article>
@@ -449,7 +456,7 @@
           <figure class="pinset"><a href="assets/research/urban-les.jpg?v=20261027" aria-label="Open the paper figure at full size"><img src="assets/research/urban-les.jpg?v=20261027" alt="Large-eddy simulation of wind over a city block: translucent iso-volumes of velocity magnitude, 0 to 8 meters per second, wrap the buildings for a 135-degree inflow" loading="lazy" width="800" height="600"></a><figcaption><b>From the paper.</b> LES of the urban wind field: instantaneous iso-volumes of velocity magnitude for a 135° inflow. Fig. 9(d), Krawczyk, Vuppala, Paul &amp; Kara, <a href="https://doi.org/10.3390/drones9050362"><i>Drones</i> 2025</a>, CC BY 3.0.</figcaption></figure>
           <dl class="pmeta">
             <dt>Team</dt><dd>Alumnus Rohit Vuppala (Ph.D. 2024); undergraduates Tyler Landua, Zack Osborne, Gavin Sockey, Serge Amangoua, and Romain Bailey. Collaborators: He Bai, Jamey Jacob, Rushikesh Kamalapurkar, Samuel Vance, Ryan Paul.</dd>
-            <dt>Papers</dt><dd><a href="https://doi.org/10.1063/5.0098835">Vuppala &amp; Kara, <i>AIP Adv.</i> 2022</a>, <a href="https://doi.org/10.1038/s41598-023-50719-8">Vuppala et al., <i>Sci. Rep.</i> 2024</a>, <a href="https://doi.org/10.3390/drones9050362">Krawczyk et al., <i>Drones</i> 2025</a>, <a href="https://doi.org/10.3390/drones9110802">Krawczyk et al., <i>Drones</i> 2025</a></dd>
+            <dt>Papers</dt><dd><a href="https://doi.org/10.1063/5.0098835">Vuppala &amp; Kara, <i>AIP Adv.</i> 2022</a>, <a href="https://doi.org/10.1038/s41598-023-50719-8">Vuppala et al., <i>Sci. Rep.</i> 2024</a>, <a href="https://doi.org/10.3390/drones9050362">Krawczyk et al., <i>Drones</i> 9(5) 2025</a>, <a href="https://doi.org/10.3390/drones9110802">Krawczyk et al., <i>Drones</i> 9(11) 2025</a></dd>
           </dl>
         </div>
       </article>
@@ -459,7 +466,7 @@
           <span class="label">IBM Quantum · PI · 2025</span>
           <h3>Quantum computing for fluid dynamics</h3>
           <p class="award">Exploring Quantum Computing Paradigms for Fluid Dynamics ($70,000 in IBM Quantum credits)</p>
-          <p>Quantum algorithms may speed up the solution of the partial differential equations behind CFD. The lab developed a quantum PDE solver for the viscous Burgers’ equation and a Chebyshev-point formulation that improves its efficiency, and now builds hybrid classical–quantum lattice Boltzmann methods that run on IBM quantum hardware rather than classical emulators.</p>
+          <p>Quantum algorithms may speed up the solution of the partial differential equations behind CFD. The lab developed a quantum PDE solver for the viscous Burgers’ equation and a Chebyshev-point formulation that improves its efficiency, and now builds hybrid classical–quantum lattice Boltzmann methods that target IBM quantum hardware.</p>
           <figure class="pinset"><a href="assets/research/qcfd.jpg?v=20261027" aria-label="Open the paper figure at full size"><img src="assets/research/qcfd.jpg?v=20261027" alt="Four snapshots of a Burgers’ equation shock: quantum (Q-CFD) and classical (C-CFD) solutions overlap" loading="lazy" width="800" height="600"></a><figcaption><b>From the paper.</b> Shock propagation in the viscous Burgers’ equation: quantum algorithm (Q-CFD) versus classical CFD (C-CFD). Oz et al., <a href="https://doi.org/10.1007/s11128-021-03391-8"><i>QIP</i> 2022</a>.</figcaption></figure>
           <dl class="pmeta">
             <dt>Team</dt><dd>Shafi Al-Salman Romeo (Ph.D.); alumnus Furkan Oz. Outreach: <a href="#outreach">Qiskit Fall Fest</a>.</dd>
@@ -484,7 +491,7 @@
       <article class="proj" id="project-swj">
         <figure class="pfig"><img src="assets/research/sketch-sweeping-jets.jpg?v=20261027" alt="Illustration: two wings beyond the stall angle of attack. The free stream approaches each leading edge. With actuators off, the flow separates from the leading edge into large eddies. With sweeping jet actuators on, fan-shaped jets keep the flow attached to the trailing edge. A fluidic oscillator shows the internal feedback channels, and an inset lift curve shows that the actuators delay stall to a higher angle of attack and raise the maximum lift coefficient" loading="lazy" width="1200" height="900"></figure>
         <div class="pbody">
-          <span class="label">Khalifa University and KAIST · PI and Co-PI · 2016–</span>
+          <span class="label">Khalifa University and KAIST · PI and Co-PI · 2016</span>
           <h3>Flow-separation control with sweeping jet actuators</h3>
           <p class="award">Sweeping Jet Actuator: An Innovative Approach for Separated Flow Control (Khalifa University Internal Research Fund); Design of Fluidic Oscillators for Active Flow Control (Khalifa University–KAIST Seed Project)</p>
           <p>Sweeping jet actuators are fluidic oscillators with no moving parts: feedback channels make the exit jet sweep side to side. Without actuation, the flow over a wing separates; with the sweeping jets on, it stays attached even beyond the stall angle of attack. The lab studies how internal geometry and mass flow rate set the oscillation frequency and models the actuator with DMD-based and causal state-space reduced-order models.</p>
@@ -593,10 +600,10 @@
 
     <h3 class="sub">High school researchers</h3>
     <div class="people compact">
-      <article class="person"><span class="ini" aria-hidden="true">AI</span><div><b>Aditya Itnal</b><span class="topics">Quantum computing, fluid dynamics</span></div></article>
-      <article class="person"><span class="ini" aria-hidden="true">BA</span><div><b>Berrin Altinsoy</b><span class="topics">Quantum computing, dynamical systems</span></div></article>
-      <article class="person"><span class="ini" aria-hidden="true">CK</span><div><b>Ceyda Kara</b><span class="topics">Flow separation control, graphic design</span></div></article>
-      <article class="person"><span class="ini" aria-hidden="true">OH</span><div><b>Otis Hodson</b><span class="topics">Unmanned aerial systems, CFD</span></div></article>
+      <article class="person"><span class="ini" aria-hidden="true">AI</span><div><b>Aditya I.</b><span class="topics">Quantum computing, fluid dynamics</span></div></article>
+      <article class="person"><span class="ini" aria-hidden="true">BA</span><div><b>Berrin A.</b><span class="topics">Quantum computing, dynamical systems</span></div></article>
+      <article class="person"><span class="ini" aria-hidden="true">CK</span><div><b>Ceyda K.</b><span class="topics">Flow separation control, graphic design</span></div></article>
+      <article class="person"><span class="ini" aria-hidden="true">OH</span><div><b>Otis H.</b><span class="topics">Unmanned aerial systems, CFD</span></div></article>
     </div>
 
     <h3 class="sub">Alumni</h3>
@@ -693,12 +700,12 @@
     <h3 class="sub">Professional service</h3>
     <ul class="news">
       <li><time>2026–</time><span>MAE representative, CEAT Academic Council</span></li>
-      <li><time>2023–</time><span>Editorial Board, <i>Scientific Reports</i>; Guest Editor, Quantum Computing collection (2024–)</span></li>
+      <li><time>2023–</time><span>Editorial Board, <i>Scientific Reports</i>; Guest Editor, Quantum Computing collection (2024–2025)</span></li>
       <li><time>2022–</time><span>NSF ACCESS Allocation Review Committee; NSF NAIRR Pilot Review Committee (2024–); Executive Committee, NERSC Users Group (NUGEX)</span></li>
       <li><time>2022–2025</time><span>Review panels for NSF Fluids ERI, NASA TechLeap, NASA EPSCoR R3, NASA Next Gen STEM, DOE ASCR, and the Naval Research Laboratory</span></li>
       <li><time>2014–2021</time><span>Technical Chair, AIAA Applied Aerodynamics Conference at AVIATION 2016 and SciTech 2018; Technical Co-Chair at AVIATION 2014 and 2020; Co-Chair, 40th AIAA/ASME Symposium (2021)</span></li>
       <li><time>2012–2021</time><span>Member, AIAA Applied Aerodynamics Technical Committee</span></li>
-      <li><time>2019–</time><span>Member, American Physical Society</span></li>
+      <li><time></time><span>Member, American Physical Society</span></li>
     </ul>
   </div>
 </section>

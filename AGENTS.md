@@ -7,6 +7,7 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - Hosted on GitHub Pages from the `main` branch (repository root); every merge to `main` goes live in about a minute.
   `CNAME` holds the custom domain (www.kursatkara.com). `404.html` forwards the old Hugo addresses (`/publication/*`,
   `/author/*`, …) to page sections; add new mappings there. `.nojekyll` makes Pages serve the files as they are. HTTPS is enforced in Settings → Pages.
+- `robots.txt` and `sitemap.xml` help search engines; update the `<lastmod>` date in `sitemap.xml` when content changes.
 - Images live in `assets/`. Keep the repo small: resize photos before committing (sizes below).
 - When you replace an image but keep its file name, bump the `?v=` date on its `src`/`href` in `index.html`
   (e.g. `sketch-hypersonic.jpg?v=20261027`) so browsers that cached the old file load the new one.
@@ -24,7 +25,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 
 ## Style
 - Keep the design tokens in `:root` and the two dark-mode blocks in sync. Add new colors as tokens, never hard-coded.
-- Accent is OSU orange: `--orange-hi` (#ff7300) for fills and rules, `--orange` (darker) for text links so they pass WCAG AA.
+- Accent is OSU orange: `--orange-hi` (#ff7300) for fills and rules, `--orange` (#b34b00 in light mode) for text so it passes
+  WCAG AA (4.5:1) on every light background; check contrast before changing either.
 - Fonts: Source Serif 4 (headings), IBM Plex Sans (body), IBM Plex Mono (labels, dates, DOIs).
 - Do not use official OSU logos or wordmarks; the airfoil mark in the header and `assets/favicon.svg` is the lab's own.
 - Keep text short; this is a landing page, not the CV.
@@ -45,12 +47,13 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   `quantum hyper wind control numerics` (these drive the filter chips). Wrap lab-student authors in `<u>…</u>`.
   Link the DOI as `https://doi.org/<doi>`; never invent one.
 - **Team member:** copy an `<article class="person">` block. Photo: `assets/team/<first-last>.jpg`, square 200×200 JPEG.
-  Use only photos the student provided. High school researchers use initials (`<span class="ini">`) instead of photos.
+  Use only photos the student provided. High school researchers (minors) use initials (`<span class="ini">`) instead of
+  photos and are named by first name and last initial (e.g., "Ceyda K.").
 - **Graduate → alumni:** delete the person's card and add an `<li>` under Alumni with their current position.
 - **Research projects:** one `<article class="proj">` panel per funded project in `.projects`, newest first, plus a link
   in the `.pindex` list above it. Each panel: sponsor · role · years (label), a plain-language title (h3), the official
   award title and number (`.award`), a 2–3 sentence summary, an optional "From the paper" inset (`.pinset`), then Setup
-  (if useful), Team, and Papers. The main image is an illustration, `assets/research/sketch-<name>.jpg` (1200×900), made
+  (if useful), Team, and Papers ("Related papers" for earlier work, "Status" before the first paper). The main image is an illustration, `assets/research/sketch-<name>.jpg` (1200×900), made
   with the three.js scenes in `tools/scenes/` (see its README); describe the scene fully in the `alt` text.
   The inset is a real paper figure on a white 800×600 canvas (letterbox, don't crop away axes or colorbars) with a
   credit: authors, venue + DOI link, and license for open-access figures.
@@ -71,6 +74,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - **Gallery photo:** `assets/gallery/<name>.jpg`, 720×540 JPEG (< 100 KB), add a `<figure>` in `.gallery`. Keep 9 or 12 photos.
 - **CV:** overwrite `assets/Kursat_Kara_CV.pdf` (keep the name), then check the numbers in "By the numbers".
 - **Headshot:** overwrite `assets/kursat-kara.jpg` with a square JPEG (~480×480).
+- **Link preview** (LinkedIn, Slack, etc.): `assets/og-card.jpg`, 1200×630, built from `tools/og-card/og-card.html` with
+  `node tools/og-card/render.js` (see the comment in that file). Re-render after a title, headshot, or illustration change.
 
 Resize a photo (Python + Pillow):
 
