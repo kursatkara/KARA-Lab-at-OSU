@@ -49,7 +49,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - **Team member:** copy an `<article class="person">` block. Photo: `assets/team/<first-last>.jpg`, square 200×200 JPEG.
   Use only photos the student provided. High school researchers (minors) use initials (`<span class="ini">`) instead of
   photos and are named by first name and last initial (e.g., "Ceyda K.").
-- **Graduate → alumni:** delete the person's card and add an `<li>` under Alumni with their current position.
+- **Graduate → alumni:** delete the person's card and add an `<li>` under Alumni with their current position, plus a
+  `<span>Thesis: <a href="…">title</a></span>` line (Dissertation for Ph.D.) linking the thesis in the university repository.
 - **Research projects:** one `<article class="proj">` panel per funded project in `.projects`, newest first, plus a link
   in the `.pindex` list above it. Each panel: sponsor · role · years (label), a plain-language title (h3), the official
   award title and number (`.award`), a 2–3 sentence summary, an optional "From the paper" inset (`.pinset`), then Setup
