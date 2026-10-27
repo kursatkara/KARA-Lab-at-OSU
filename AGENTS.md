@@ -4,8 +4,10 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 
 ## What this is
 - One static page, `index.html`. Plain HTML + inline CSS + a small inline script. No build step, no framework.
-- Hosted on Netlify. `netlify.toml` copies `index.html` and `assets/` into `public/`, which Netlify deploys (`tools/` is not deployed). A new top-level file
-  that must be online has to be added to that copy command. `.nojekyll` lets the same files run on GitHub Pages.
+- Hosted on GitHub Pages from the `main` branch (repository root); every merge to `main` goes live in about a minute.
+  `CNAME` holds the custom domain (www.kursatkara.com). `404.html` forwards the old Hugo addresses (`/publication/*`,
+  `/author/*`, …) to page sections; add new mappings there. `.nojekyll` makes Pages serve the files as they are.
+  `netlify.toml` is left over from the earlier Netlify hosting and is not used by GitHub Pages.
 - Images live in `assets/`. Keep the repo small: resize photos before committing (sizes below).
 
 ## Source of truth
@@ -63,7 +65,7 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   memberships, computing allocations, and in-kind software licenses (e.g., Volcano ScaLES) go in the
   "Computing and software support" note under the list.
 - **Honors and awards** (in `#outreach`) and **Professional service** are separate lists; an elected member grade is an honor, not service.
-- **Old addresses:** `netlify.toml` redirects the old Hugo paths (`/publication/*`, `/author/*`, …) to page sections.
+- **Old addresses:** `404.html` forwards the old Hugo paths (`/publication/*`, `/author/*`, …) to page sections.
 - **Course:** copy an `<article class="course">`; link the course site in the `<h3>` if there is one.
 - **Gallery photo:** `assets/gallery/<name>.jpg`, 720×540 JPEG (< 100 KB), add a `<figure>` in `.gallery`. Keep 9 or 12 photos.
 - **CV:** overwrite `assets/Kursat_Kara_CV.pdf` (keep the name), then check the numbers in "By the numbers".
