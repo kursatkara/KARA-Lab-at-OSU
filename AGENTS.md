@@ -72,6 +72,12 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - **Old addresses:** `404.html` forwards the old Hugo paths (`/publication/*`, `/author/*`, …) to page sections.
 - **Course:** copy an `<article class="course">`; link the course site in the `<h3>` if there is one.
 - **Gallery photo:** `assets/gallery/<name>.jpg`, 720×540 JPEG (< 100 KB), add a `<figure>` in `.gallery`. Keep 9 or 12 photos.
+- **Recruiting flyer:** overwrite `assets/kara-lab-flyer.pdf` (keep the name so printed links and QR codes keep working)
+  and regenerate the preview `assets/kara-lab-flyer.jpg` (800×1035 JPEG, < 200 KB) from page 1; set the PDF Title/Author
+  metadata, bump the `?v=` dates in the `#join` section, and update the flyer's `<lastmod>` in `sitemap.xml`. The
+  "Join the lab" section (`#join`) sits above Contact: flyer on the left, text and buttons on the right. When not
+  recruiting, delete the `<a class="flyer">` and the download button, set `.joinlab` to one column, change the lede, and remove the News item that links to the flyer.
+  Shareable link: `https://www.kursatkara.com/#join`.
 - **CV:** overwrite `assets/Kursat_Kara_CV.pdf` (keep the name), then check the numbers in "By the numbers".
 - **Headshot:** overwrite `assets/kursat-kara.jpg` with a square JPEG (~480×480).
 - **Link preview** (LinkedIn, Slack, etc.): `assets/og-card.jpg`, 1200×630, built from `tools/og-card/og-card.html` with
