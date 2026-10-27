@@ -36,7 +36,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - Check at phone width (390 px): no horizontal scrolling.
 
 ## Common edits (each section in index.html starts with a `<!-- ===== NAME ===== -->` comment)
-- **News:** add an `<li>` at the top of the first `.news` list in `#glance`; keep about 8 items.
+- **News:** add an `<li>` at the top of the first `.news` list in `#glance`; keep about 8 items. Frequent updates go on
+  LinkedIn (linked under the list); link a news item to its LinkedIn post when there is one.
 - **Publication:** copy one `<li>` in `.pubs` to the top. Set `data-t` to one or more of
   `quantum hyper wind control numerics` (these drive the filter chips). Wrap lab-student authors in `<u>…</u>`.
   Link the DOI as `https://doi.org/<doi>`; never invent one.
@@ -59,7 +60,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   `assets/sponsors/<name>.svg` (or a PNG at least 120 px tall; square seals and wide wordmarks both fit) and replace the `<span class="smark">` text mark with
   `<img src="assets/sponsors/<name>.svg" alt="<Sponsor> logo">`. Only organizations that funded an award.
 - **Other support:** add an `<li>` at the top of `.grants` (role, title + sponsor, years). Only funded awards;
-  memberships and computing allocations go in the note under the list.
+  memberships, computing allocations, and in-kind software licenses (e.g., Volcano ScaLES) go in the
+  "Computing and software support" note under the list.
 - **Honors and awards** (in `#outreach`) and **Professional service** are separate lists; an elected member grade is an honor, not service.
 - **Old addresses:** `netlify.toml` redirects the old Hugo paths (`/publication/*`, `/author/*`, …) to page sections.
 - **Course:** copy an `<article class="course">`; link the course site in the `<h3>` if there is one.
