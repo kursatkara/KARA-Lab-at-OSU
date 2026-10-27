@@ -73,9 +73,10 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - **Course:** copy an `<article class="course">`; link the course site in the `<h3>` if there is one.
 - **Gallery photo:** `assets/gallery/<name>.jpg`, 720×540 JPEG (< 100 KB), add a `<figure>` in `.gallery`. Keep 9 or 12 photos.
 - **Recruiting flyer:** overwrite `assets/kara-lab-flyer.pdf` (keep the name so printed links and QR codes keep working)
-  and regenerate the preview `assets/kara-lab-flyer.jpg` (600×776 JPEG, < 150 KB) from page 1; set the PDF Title/Author
-  metadata, bump both `?v=` dates in the `#join` box, and update the flyer's `<lastmod>` in `sitemap.xml`. When not
-  recruiting, delete the `<a class="flyer">` thumbnail and the download line from `#join`, drop its `has-flyer` class, and remove the News item that links to it.
+  and regenerate the preview `assets/kara-lab-flyer.jpg` (800×1035 JPEG, < 200 KB) from page 1; set the PDF Title/Author
+  metadata, bump the `?v=` dates in the `#join` section, and update the flyer's `<lastmod>` in `sitemap.xml`. The
+  "Join the lab" section (`#join`) sits above Contact: flyer on the left, text and buttons on the right. When not
+  recruiting, delete the `<a class="flyer">` and the download button, set `.joinlab` to one column, change the lede, and remove the News item that links to the flyer.
   Shareable link: `https://www.kursatkara.com/#join`.
 - **CV:** overwrite `assets/Kursat_Kara_CV.pdf` (keep the name), then check the numbers in "By the numbers".
 - **Headshot:** overwrite `assets/kursat-kara.jpg` with a square JPEG (~480×480).
