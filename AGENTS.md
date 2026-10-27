@@ -8,6 +8,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   `CNAME` holds the custom domain (www.kursatkara.com). `404.html` forwards the old Hugo addresses (`/publication/*`,
   `/author/*`, …) to page sections; add new mappings there. `.nojekyll` makes Pages serve the files as they are. HTTPS is enforced in Settings → Pages.
 - Images live in `assets/`. Keep the repo small: resize photos before committing (sizes below).
+- When you replace an image but keep its file name, bump the `?v=` date on its `src`/`href` in `index.html`
+  (e.g. `sketch-hypersonic.jpg?v=20261027`) so browsers that cached the old file load the new one.
 
 ## Source of truth
 - Facts (titles, counts, grants, awards, courses, publications) come from Kursat Kara's CV repository,
