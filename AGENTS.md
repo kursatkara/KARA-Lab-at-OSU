@@ -28,11 +28,16 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - Keep the design tokens in `:root` and the two dark-mode blocks in sync. Add new colors as tokens, never hard-coded.
 - Palette: white paper (`--bg`), navy ink (`--ink` #12233d) for body text, headings, figures, and strong rules, slate
   (`--muted` #4a5667) for secondary text, and visible hairlines (`--line` #c9d1db). Navy and orange are the lab's colors.
+- Section bands: the hero and footer sit on a navy band (`--band`); `.heroband` and `footer` re-map `--ink`, `--muted`,
+  and `--line` so their contents adapt. Below the hero, sections alternate white and light gray (`class="alt"`, `--alt`
+  #f2f4f7); keep the alternation when adding or moving a section. Sections are separated by color, not rules.
+- Dark mode is a near-neutral graphite (`--bg` #141619) with only a faint cool hue; do not make it blue.
 - OSU orange is the signature, used sparingly: the 3px stripe on the top bar, the airfoil mark, link underlines, the
   current-position marker, the focus ring, and the "Join the lab" button. Do not color text, labels, dates, or numbers
   orange. `--orange-hi` (#ff7300) is for marks and rules; `--orange` (#b34b00) is the hover text color (passes WCAG AA).
-- Containers: research project panels are the only bordered boxes. Everything else (team, courses, sponsors, events,
-  lists) is set as ruled rows on the page. Secondary text is at least 0.86rem.
+- Containers: research project panels are the only bordered boxes. Rules are for larger entries only (publications,
+  Ph.D. and M.Sc. alumni, graduate students, the Research record). Short items (news, honors, service, sponsors, other
+  support, undergraduate and high school researchers) are separated by space, not lines. Secondary text is at least 0.86rem.
 - No middle dots (·) as separators. Use commas or structure instead: in `.pline`, the sponsor or course number sits on
   the left and role and years on the right; alumni show the graduation year after the name and the position below.
 - Fonts: Source Serif 4 (headings, figures in the Research record) and Source Sans 3 (body, labels, dates, DOIs). No monospace
@@ -52,7 +57,7 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - Check at phone width (390 px): no horizontal scrolling.
 
 ## Common edits (each section in index.html starts with a `<!-- ===== NAME ===== -->` comment)
-- **News:** add an `<li>` at the top of the first `.news` list in `#glance`; keep about 8 items. Frequent updates go on
+- **News:** add an `<li>` at the top of the `.news` list in `#news` (its own section, below About); keep about 8 items. Frequent updates go on
   LinkedIn (linked under the list); link a news item to its LinkedIn post when there is one.
 - **Publication:** copy one `<li>` in `.pubs` to the top. Set `data-t` to one or more of
   `quantum hyper wind control numerics` (these drive the filter chips). Wrap lab-student authors in `<u>…</u>`.
@@ -60,7 +65,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - **Team member:** copy an `<article class="person">` block. Photo: `assets/team/<first-last>.jpg`, square 200×200 JPEG.
   Use only photos the student provided. High school researchers (minors) use initials (`<span class="ini">`) instead of
   photos and are named by first name and last initial (e.g., "Ceyda K.").
-- **Graduate → alumni:** delete the person's card and add an `<li>` under Alumni with their current position, plus a
+- **Graduate → alumni:** delete the person's card and add an `<li>` under the matching Alumni column (Ph.D., M.Sc., or
+  Undergraduate researchers; graduation year in `<span class="when">` after the name) with their current position, plus a
   `<span>Thesis: <a href="…">title</a></span>` line (Dissertation for Ph.D.) linking the thesis in the university repository.
 - **Research projects:** one `<article class="proj">` panel per funded project in `.projects`, newest first, plus a link
   in the `.pindex` list above it. Each panel: a `.pline` with the sponsor on the left and "PI, years" on the right, a plain-language title (h3), the official

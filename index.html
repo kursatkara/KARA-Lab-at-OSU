@@ -45,6 +45,8 @@
     --muted: #4a5667;       /* secondary text, 7.4:1 on white */
     --line: #c9d1db;        /* hairlines that stay visible */
     --chip: #eef2f6;
+    --alt: #f2f4f7;         /* alternate section band: cool light gray, never cream */
+    --band: #12233d; --band-ink: #ffffff; --band-muted: #c2cbd7; --band-line: #34476a;   /* navy hero and footer bands */
     --plate: #ffffff;       /* research figures sit on white in both themes, like a printed figure */
     --sketch-top: #f3f5f8; --sketch-bot: #e6eaef;   /* the illustration backdrop gradient, so the panel has no seam */
     --plate-ink: #5a6068; --plate-link: #a24600; --plate-line: #e6e8eb;   /* caption text on the white plate, same in both themes */
@@ -57,16 +59,18 @@
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --orange: #ff9a4d; --orange-hi: #ff8a33;
-      --bg: #0d1624; --surface: #0d1624; --ink: #e9eef5; --muted: #a9b5c4;
-      --line: #2c3b50; --chip: #1a2940;
+      --bg: #141619; --surface: #1a1d21; --ink: #eceef1; --muted: #a8aeb7;
+      --line: #32373e; --chip: #24282e; --alt: #1a1d21;
+      --band: #1f2329; --band-ink: #eceef1; --band-muted: #a8aeb7; --band-line: #383e47;
       --logo-bg: #ffffff; --logo-pad: 6px;
       color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
     --orange: #ff9a4d; --orange-hi: #ff8a33;
-    --bg: #0d1624; --surface: #0d1624; --ink: #e9eef5; --muted: #a9b5c4;
-    --line: #2c3b50; --chip: #1a2940;
+    --bg: #141619; --surface: #1a1d21; --ink: #eceef1; --muted: #a8aeb7;
+    --line: #32373e; --chip: #24282e; --alt: #1a1d21;
+    --band: #1f2329; --band-ink: #eceef1; --band-muted: #a8aeb7; --band-line: #383e47;
     --logo-bg: #ffffff; --logo-pad: 6px;
     color-scheme: dark;
   }
@@ -113,8 +117,13 @@
     .nav ul a { display: block; padding: 9px 0; font-size: 1rem; }
   }
 
-  /* Hero */
-  .hero { padding-block: 64px 52px; display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: start; }
+  /* Hero: a navy band; the hero re-maps the color tokens so everything inside it adapts */
+  .heroband { --ink: var(--band-ink); --muted: var(--band-muted); --line: var(--band-line); --surface: transparent; --bg: var(--band); --orange: var(--orange-hi);
+    background: var(--band); color: var(--ink); }
+  .heroband .links a { border-color: var(--band-line); }
+  .heroband .links a:hover { border-color: var(--orange-hi); color: var(--band-ink); }
+  .heroband .links a.primary:hover { background: var(--orange-hi); border-color: var(--orange-hi); color: var(--band); }
+  .hero { padding-block: 72px 64px; display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: start; }
   .portrait { width: 220px; height: 220px; margin-top: 8px; border-radius: 2px; overflow: hidden; background: var(--chip); border: 1px solid var(--line); }
   .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
   h1 { font: 600 clamp(2.4rem, 6vw, 3.6rem)/1.05 var(--serif); margin: 0 0 14px; letter-spacing: -.015em; }
@@ -134,7 +143,8 @@
   }
 
   /* Sections */
-  section { padding-block: 64px; border-top: 1px solid var(--line); }
+  section { padding-block: 72px; }
+  section.alt { background: var(--alt); }
   h2 { font: 600 2.35rem/1.1 var(--serif); margin: 0 0 10px; letter-spacing: -.01em; }
   .lede { color: var(--muted); margin: 0 0 28px; max-width: 72ch; }
   h3 { font-size: 1.05rem; line-height: 1.35; margin: 0 0 6px; }
@@ -165,8 +175,9 @@
   .path b { font-size: .98rem; font-weight: 600; line-height: 1.35; }
   .path span { color: var(--muted); font-size: .92rem; line-height: 1.35; }
   .news { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
-  .news li { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); }
-  .news time { font: 600 .9rem/1.75 var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .news { row-gap: 14px; max-width: 900px; }
+  .news li { display: grid; grid-template-columns: 110px 1fr; gap: 20px; }
+  .news time { font: 600 .92rem/1.75 var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
     @media (max-width: 480px) { .news li { grid-template-columns: 1fr; gap: 0; } }
 
 
@@ -200,8 +211,8 @@
   .pmeta dd { margin: 0; min-width: 0; color: var(--ink); }
   @media (max-width: 820px) { .proj, .proj:nth-child(even) { grid-template-columns: 1fr; } .proj:nth-child(even) .pfig { order: 0; border-left: 0; } .pfig { border-right: 0; border-bottom: 1px solid var(--line); } }
 
-  .grants { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-  .grants li { display: grid; grid-template-columns: 110px 1fr auto; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .grants { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 12px; }
+  .grants li { display: grid; grid-template-columns: 110px 1fr auto; gap: 20px; align-items: baseline; }
   .grants .who { font: 600 .88rem var(--sans); color: var(--muted); }
   .grants .yrs { font: 400 .9rem var(--sans); color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
   @media (max-width: 600px) { .grants li { grid-template-columns: 1fr; gap: 2px; } }
@@ -226,9 +237,9 @@
   .more button:hover { border-color: var(--orange); color: var(--orange); }
   .more span { font-size: .85rem; color: var(--muted); }
   .key { font-size: .85rem; color: var(--muted); margin: 14px 0 0; }
-  .sponsors { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 28px; }
+  .sponsors { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 44px 32px; }
   @media (max-width: 860px) { .sponsors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  .sponsors > li { display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--line); padding: 18px 0 26px; }
+  .sponsors > li { display: flex; flex-direction: column; gap: 12px; }
   /* logo plate across the top of the card, so square seals and wide wordmarks both fit */
   .slogo { height: 64px; display: flex; align-items: center; }
   .slogo img { width: auto; height: auto; max-width: 150px; max-height: 60px; background: var(--logo-bg); padding: var(--logo-pad); border-radius: var(--radius); box-sizing: content-box; }
@@ -252,17 +263,19 @@
   .people.grad .person img { width: 96px; height: 96px; }
   @media (max-width: 700px) { .people.grad { grid-template-columns: 1fr; } }
   .people.compact { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px 20px; }
-  .people.compact .person { grid-template-columns: 56px 1fr; gap: 12px; padding: 14px 0 4px; }
+  .people.compact .person { grid-template-columns: 56px 1fr; gap: 12px; padding: 10px 0; border-top: 0; }
   .people.compact .person img, .people.compact .person .ini { width: 56px; height: 56px; font-size: .95rem; }
-  .alumni { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .alumni { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
   .alumni ul { list-style: none; padding: 0; margin: 0; }
-  .alumni li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: .97rem; }
+  .alumni li { padding: 12px 0; border-top: 1px solid var(--line); font-size: .97rem; }
   .alumni li span { display: block; color: var(--muted); font-size: .9rem; }
   .alumni li .when { display: inline; margin-left: 4px; font-variant-numeric: tabular-nums; }
-  .alumni .label { margin-bottom: 6px; }
-  .ug { columns: 2; column-gap: 20px; }
+  .alumni .label { margin: 0 0 6px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); font: 600 1.1rem var(--serif); color: var(--ink); }
+  .alumni .label + ul > li:first-child { border-top: 0; }
+  .alumni .ug li { padding: 4px 0; border-top: 0; }
+  .alumni .ug li:first-child { padding-top: 12px; }
   .ug li { break-inside: avoid; }
-  @media (max-width: 860px) { .alumni { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .alumni { grid-template-columns: 1fr; gap: 28px; } }
 
   /* Teaching / outreach */
   .courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px 32px; }
@@ -300,7 +313,7 @@
   .join-text .links { margin: 22px 0 16px; }
   @media (max-width: 760px) { .joinlab { grid-template-columns: 1fr; gap: 24px; } .flyer { max-width: 420px; } }
 
-  footer { border-top: 2px solid var(--ink); padding-block: 26px 40px; color: var(--muted); font-size: .92rem; }
+  footer { --ink: var(--band-ink); --muted: var(--band-muted); background: var(--band); padding-block: 30px 44px; color: var(--muted); font-size: .92rem; }
   footer nav { display: flex; flex-wrap: wrap; gap: 6px 16px; }
   footer a { color: var(--muted); }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; }
@@ -340,6 +353,7 @@
 <main id="main">
 
 <!-- ============================== HERO ============================== -->
+<div class="heroband">
 <div class="wrap hero">
   <div class="portrait"><img src="assets/kursat-kara.jpg" alt="Portrait of Kursat Kara" width="480" height="480"></div>
   <div>
@@ -361,6 +375,7 @@
       <a class="join-link" href="#join">Join the lab</a>
     </div>
   </div>
+</div>
 </div>
 
 <!-- ============================== AT A GLANCE ============================== -->
@@ -398,20 +413,27 @@
     </div>
     </div>
 
-    <h3 class="sub">News</h3>
-    <!-- Add new items at the top. Keep about 8. -->
-    <ul class="news">
-      <li><time>Oct 2026</time><span>The lab is <b>recruiting M.S. and Ph.D. students</b> in computational aerodynamics, LES, and scientific machine learning. See the <a href="#join">recruiting flyer</a>.</span></li>
-      <li><time>Sep 2026</time><span>The AIAA Oklahoma Section won second place in the AIAA Section–Student Branch Partnership Award, with Kursat Kara as Technical Symposium advisor.</span></li>
-      <li><time>Aug 2026</time><span>Kursat Kara was elected an <b>AIAA Associate Fellow</b> (Class of 2027).</span></li>
-      <li><time>Apr 2026</time><span>Ashraf Kassem received the CEAT Dean's Overall Outstanding Graduate Student Award and the MAE Outstanding Graduate Student Award.</span></li>
-      <li><time>Feb 2026</time><span>The U.S. Navy (NAWCAD) funded <b>AIRWISE</b>, our project on AI for real-time wake inference in ship environments.</span></li>
-      <li><time>Jan 2026</time><span>NASA extended our Early Stage Innovations project on blunt-body dynamic stability through January 2027.</span></li>
-      <li><time>2025–2026</time><span>The lab published 14 journal papers, including six in <i>Aerospace Science and Technology</i> on entry-capsule dynamics.</span></li>
-      <li><time>Oct 2025</time><span>The lab ran <a href="https://kursatkara.github.io/qiskit-fall-fest-2025/">Qiskit Fall Fest 2025</a>, three weekly workshops on qubits, superposition, and entanglement.</span></li>
-      <li><time>2025</time><span>Kursat Kara received the CEAT Excellent Faculty Award. The lab also received <a href="https://news.okstate.edu/articles/engineering-architecture-technology/2025/ceat_research_lab_awarded_70k_in_ibm_quantum_credits_to_advance_fluid_dynamics_research.html">$70,000 in IBM Quantum credits</a>.</span></li>
-    </ul>
-    <p class="key"><a href="https://www.linkedin.com/in/kursat-kara-4744173/">More updates on LinkedIn →</a></p>
+
+  </div>
+</section>
+
+<!-- ============================== NEWS ============================== -->
+<section id="news" class="alt" aria-labelledby="news-h">
+  <div class="wrap">
+    <h2 id="news-h">News</h2>
+      <!-- Add new items at the top. Keep about 8. -->
+      <ul class="news">
+        <li><time>Oct 2026</time><span>The lab is <b>recruiting M.S. and Ph.D. students</b> in computational aerodynamics, LES, and scientific machine learning. See the <a href="#join">recruiting flyer</a>.</span></li>
+        <li><time>Sep 2026</time><span>The AIAA Oklahoma Section won second place in the AIAA Section–Student Branch Partnership Award, with Kursat Kara as Technical Symposium advisor.</span></li>
+        <li><time>Aug 2026</time><span>Kursat Kara was elected an <b>AIAA Associate Fellow</b> (Class of 2027).</span></li>
+        <li><time>Apr 2026</time><span>Ashraf Kassem received the CEAT Dean's Overall Outstanding Graduate Student Award and the MAE Outstanding Graduate Student Award.</span></li>
+        <li><time>Feb 2026</time><span>The U.S. Navy (NAWCAD) funded <b>AIRWISE</b>, our project on AI for real-time wake inference in ship environments.</span></li>
+        <li><time>Jan 2026</time><span>NASA extended our Early Stage Innovations project on blunt-body dynamic stability through January 2027.</span></li>
+        <li><time>2025–2026</time><span>The lab published 14 journal papers, including six in <i>Aerospace Science and Technology</i> on entry-capsule dynamics.</span></li>
+        <li><time>Oct 2025</time><span>The lab ran <a href="https://kursatkara.github.io/qiskit-fall-fest-2025/">Qiskit Fall Fest 2025</a>, three weekly workshops on qubits, superposition, and entanglement.</span></li>
+        <li><time>2025</time><span>Kursat Kara received the CEAT Excellent Faculty Award. The lab also received <a href="https://news.okstate.edu/articles/engineering-architecture-technology/2025/ceat_research_lab_awarded_70k_in_ibm_quantum_credits_to_advance_fluid_dynamics_research.html">$70,000 in IBM Quantum credits</a>.</span></li>
+      </ul>
+      <p class="key"><a href="https://www.linkedin.com/in/kursat-kara-4744173/">More updates on LinkedIn →</a></p>
   </div>
 </section>
 
@@ -560,7 +582,7 @@
 </section>
 
 <!-- ============================== PUBLICATIONS ============================== -->
-<section id="publications" aria-labelledby="pubs-h">
+<section id="publications" class="alt" aria-labelledby="pubs-h">
   <div class="wrap">
     <h2 id="pubs-h">Selected publications</h2>
     <p class="lede">84 peer-reviewed articles, including 42 journal papers and 42 conference papers (AIAA, AMS, and IEEE), plus 73 conference abstracts and posters. The full list is on <a href="https://scholar.google.com/citations?user=RXSWKeMAAAAJ">Google Scholar</a>; selected papers are in the two-page <a href="assets/Kursat_Kara_CV.pdf?v=20261027b">CV</a>.</p>
@@ -647,7 +669,9 @@
           <li><a href="https://scholar.google.com/citations?user=eAlRaykAAAAJ">Rohit Vuppala</a> <span class="when">2024</span><span>Senior Researcher in Applied ML, Fujitsu Research</span><span>Dissertation: <a href="https://hdl.handle.net/20.500.14446/346724">Wind Field Estimation Using Machine Learning Based Reduced-Order Models for Safe Wind-Aware Navigation of Unmanned Aerial Systems in Urban Spaces</a></span></li>
           <li><a href="https://scholar.google.ae/citations?user=ycVduQUAAAAJ">Bartosz Jurewicz Slupski</a> <span class="when">2019, Khalifa University</span><span>Sr. R&amp;D Programs &amp; Engagement Manager, ASPIRE</span><span>Dissertation: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6820338/file">Study on the Flow Characteristics of the Sweeping Jet Actuator</a></span></li>
         </ul>
-        <p class="label" style="margin-top:22px">M.Sc.</p>
+      </div>
+      <div>
+        <p class="label">M.Sc.</p>
         <ul>
           <li>Mobashera Alam <span class="when">2022</span><span>Flow Assurance Manager, JACAM Catalyst</span><span>Thesis: <a href="https://hdl.handle.net/20.500.14446/338781">Computational Analysis of Sweeping Jet Actuator Using Dynamic Mode Decomposition</a></span></li>
           <li>Amani Bin Amro <span class="when">2019, Khalifa University</span><span>Principal Engineer, EDGE</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/16940043/20229.pdf">Computational Fluid Dynamics Study for Drag Reduction of an Airborne Surveillance Gimbal</a></span></li>
@@ -656,7 +680,7 @@
           <li>Abdelnasir Alnaqbi <span class="when">2020, Khalifa University</span><span>Secondee, Kearney</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6821194/file">Aerodynamics of Bicycles</a></span></li>
         </ul>
       </div>
-      <div style="grid-column: span 2">
+      <div>
         <p class="label">Undergraduate researchers</p>
         <ul class="ug">
           <li>Peyton Pierson<span>Build Engineer, SpaceX (Starship)</span></li>
@@ -690,13 +714,13 @@
 </section>
 
 <!-- ============================== TEACHING ============================== -->
-<section id="teaching" aria-labelledby="teach-h">
+<section id="teaching" class="alt" aria-labelledby="teach-h">
   <div class="wrap">
     <h2 id="teach-h">Teaching</h2>
     <p class="lede">Aerodynamics, computation, and data-driven methods. Recognized with the CEAT Excellent Faculty Award (2025), an ANSYS curriculum development grant (2024), and the President's Faculty Excellence Award for Outstanding Teaching at Khalifa University (2015).</p>
     <!-- Copy one <article class="course"> to add a course. Link a course site in the <a>. -->
     <div class="courses">
-      <article class="course"><p class="pline"><span>MAE 3293, undergraduate</span><span>Every fall since 2019</span></p><h3>Fundamentals of Aerodynamics</h3><p>The junior aerodynamics course, taught to 90–160 students a year. Calculators: <a href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/">compressible aerodynamics</a>.</p></article>
+      <article class="course"><p class="pline"><span>MAE 3293, undergraduate</span><span>Fall 2019–2026</span></p><h3>Fundamentals of Aerodynamics</h3><p>The junior aerodynamics course, taught to 90–160 students a year. Calculators: <a href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/">compressible aerodynamics</a>.</p></article>
       <article class="course"><p class="pline"><span>MAE 5020, graduate</span><span>Spring 2024–2026</span></p><h3><a href="https://github.com/kursatkara/MAE_5020_Spring_2026">Data-Driven Methods in Aerospace Engineering</a></h3><p>Eigendecomposition, SVD, PCA, DMD, neural networks, and PINNs in PyTorch, taught with Colab notebooks.</p></article>
       <article class="course"><p class="pline"><span>MAE 5943, graduate</span><span>2020, 2023</span></p><h3><a href="https://github.com/kursatkara/MAE_5943_S23">Unsteady Aerodynamics and Aeroacoustics</a></h3><p>Governing equations for unsteady flows; linear unsteady aerodynamics of isolated and cascaded lifting surfaces; acoustics in moving media and three-dimensional ducts; sound generation by airfoils, cascades, rotor–stator interaction, propellers, and jets.</p></article>
       <article class="course"><p class="pline"><span>MAE 5010, graduate</span><span>2022</span></p><h3>Hydrodynamic Stability and Transition to Turbulence</h3><p>Linear stability, receptivity, and transition.</p></article>
@@ -710,7 +734,6 @@
 <section id="outreach" aria-labelledby="out-h">
   <div class="wrap">
     <h2 id="out-h">Outreach, honors, and service</h2>
-    <p class="lede">The lab runs quantum computing events with IBM Quantum and hosts high school researchers.</p>
     <div class="events">
       <article class="event">
         <img src="assets/outreach/qiskit-fall-fest-2025.jpg" alt="Qiskit Fall Fest 2025 banner, KARA Lab, Oklahoma State University" loading="lazy" width="1000" height="562">
@@ -743,7 +766,7 @@
 </section>
 
 <!-- ============================== PHOTOS ============================== -->
-<section id="photos" aria-labelledby="photos-h">
+<section id="photos" class="alt" aria-labelledby="photos-h">
   <div class="wrap">
     <h2 id="photos-h">Lab life</h2>
     <p class="lede">Defenses, conferences, and internships.</p>
@@ -787,7 +810,7 @@
 </section>
 
 <!-- ============================== CONTACT ============================== -->
-<section id="contact" aria-labelledby="contact-h">
+<section id="contact" class="alt" aria-labelledby="contact-h">
   <div class="wrap">
     <h2 id="contact-h">Contact</h2>
     <div class="contact">
