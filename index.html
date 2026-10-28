@@ -10,14 +10,14 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#b34b00">
 <meta property="og:site_name" content="KARA Lab">
-<meta property="og:title" content="KARA Lab at OSU · Kursat Kara">
+<meta property="og:title" content="KARA Lab at OSU | Kursat Kara">
 <meta property="og:description" content="Kursat Kara's lab at Oklahoma State University: high-fidelity CFD (DNS, LES), reduced-order modeling, and scientific machine learning for reentry-capsule dynamic stability, ship airwakes, urban turbulence, and hypersonic boundary-layer transition.">
 <meta property="og:image" content="https://www.kursatkara.com/assets/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="KARA Lab: Kursat Kara, Oklahoma State University, with illustrations of reentry-capsule, ship-airwake, urban-turbulence, and hypersonic-transition research">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="KARA Lab at OSU · Kursat Kara">
+<meta name="twitter:title" content="KARA Lab at OSU | Kursat Kara">
 <meta name="twitter:description" content="Kursat Kara's lab at Oklahoma State University: high-fidelity CFD (DNS, LES), reduced-order modeling, and scientific machine learning for reentry-capsule dynamic stability, ship airwakes, urban turbulence, and hypersonic boundary-layer transition.">
 <meta name="twitter:image" content="https://www.kursatkara.com/assets/og-card.jpg">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -49,6 +49,7 @@
     --sketch-top: #f3f5f8; --sketch-bot: #e6eaef;   /* the illustration backdrop gradient, so the panel has no seam */
     --plate-ink: #5a6068; --plate-link: #a24600; --plate-line: #e6e8eb;   /* caption text on the white plate, same in both themes */
     --tunnel-bg: #101215;   /* dark backdrop behind outreach banners */
+    --logo-bg: transparent; --logo-pad: 0;   /* sponsor logos sit directly on white paper */
     --radius: 2px;
     --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
     --sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -58,6 +59,7 @@
       --orange: #ff9a4d; --orange-hi: #ff8a33;
       --bg: #0d1624; --surface: #0d1624; --ink: #e9eef5; --muted: #a9b5c4;
       --line: #2c3b50; --chip: #1a2940;
+      --logo-bg: #ffffff; --logo-pad: 6px;
       color-scheme: dark;
     }
   }
@@ -65,6 +67,7 @@
     --orange: #ff9a4d; --orange-hi: #ff8a33;
     --bg: #0d1624; --surface: #0d1624; --ink: #e9eef5; --muted: #a9b5c4;
     --line: #2c3b50; --chip: #1a2940;
+    --logo-bg: #ffffff; --logo-pad: 6px;
     color-scheme: dark;
   }
 
@@ -89,7 +92,8 @@
   .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; white-space: nowrap; }
   .brand svg { width: 34px; height: 22px; flex: none; }
   .brand b { font: 600 1.2rem var(--serif); letter-spacing: .01em; }
-  .brand span { font: 600 .8rem var(--sans); color: var(--muted); letter-spacing: .02em; }
+  .brand span { font: 400 .92rem var(--sans); color: var(--muted); padding-left: 10px; border-left: 1px solid var(--line); }
+  @media (max-width: 1180px) { .brand span { display: none; } }
   .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
   .nav ul a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; }
   .nav ul a:hover { color: var(--orange); }
@@ -185,6 +189,9 @@
   .pinset figcaption b { color: var(--ink); font-weight: 600; }
   @media (max-width: 480px) { .pinset { grid-template-columns: 96px 1fr; } }
   .pbody { padding: 22px 24px 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .pline { margin: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; font-size: .95rem; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+  .pline span:first-child { font-weight: 600; }
+  .pline span:last-child { color: var(--muted); font-variant-numeric: tabular-nums; }
   .pbody h3 { font: 600 1.45rem/1.22 var(--serif); margin: 0; }
   .pbody .award { margin: 0; font-size: .92rem; color: var(--muted); font-style: italic; }
   .pbody > p { margin: 0; }
@@ -219,11 +226,12 @@
   .more button:hover { border-color: var(--orange); color: var(--orange); }
   .more span { font-size: .85rem; color: var(--muted); }
   .key { font-size: .85rem; color: var(--muted); margin: 14px 0 0; }
-  .sponsors { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 28px 20px; }
-  .sponsors > li { display: flex; flex-direction: column; gap: 10px; }
+  .sponsors { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 28px; }
+  @media (max-width: 860px) { .sponsors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .sponsors > li { display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--line); padding: 18px 0 26px; }
   /* logo plate across the top of the card, so square seals and wide wordmarks both fit */
-  .slogo { height: 88px; display: grid; place-items: center; background: var(--plate); border: 1px solid var(--plate-line); border-radius: 2px; overflow: hidden; }
-  .slogo img { width: auto; height: auto; max-width: 86%; max-height: 64px; }
+  .slogo { height: 64px; display: flex; align-items: center; }
+  .slogo img { width: auto; height: auto; max-width: 150px; max-height: 60px; background: var(--logo-bg); padding: var(--logo-pad); border-radius: var(--radius); box-sizing: content-box; }
   .smark { font: 600 .8rem var(--sans); letter-spacing: .04em; color: var(--plate-ink); }
   .sponsors b { display: block; font-weight: 600; line-height: 1.3; }
   .sponsors b + span { display: block; font-size: .92rem; line-height: 1.4; color: var(--muted); }
@@ -250,6 +258,7 @@
   .alumni ul { list-style: none; padding: 0; margin: 0; }
   .alumni li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: .97rem; }
   .alumni li span { display: block; color: var(--muted); font-size: .9rem; }
+  .alumni li .when { display: inline; margin-left: 4px; font-variant-numeric: tabular-nums; }
   .alumni .label { margin-bottom: 6px; }
   .ug { columns: 2; column-gap: 20px; }
   .ug li { break-inside: avoid; }
@@ -258,7 +267,8 @@
   /* Teaching / outreach */
   .courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px 32px; }
   .course { border-top: 2px solid var(--ink); padding-top: 14px; display: flex; flex-direction: column; gap: 6px; }
-  .course h3 { font: 600 1.15rem/1.3 var(--serif); }
+  .course h3 { font: 600 1.15rem/1.3 var(--serif); margin-top: 4px; }
+  .course .pline { border-bottom: 0; padding-bottom: 0; }
   .course p { margin: 0; color: var(--ink); font-size: .98rem; }
   .events { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .event { display: flex; flex-direction: column; }
@@ -304,7 +314,7 @@
     <a class="brand" href="#top" aria-label="KARA Lab, back to top">
       <!-- Lab mark: an airfoil with a streamline -->
       <svg viewBox="0 0 34 22" aria-hidden="true"><path d="M2 13 C 8 4, 22 4, 32 12 C 22 10, 10 12, 2 13 Z" fill="var(--orange-hi)"/><path d="M1 18 C 10 15, 22 15, 33 17" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <b>KARA Lab</b><span>OSU · MAE</span>
+      <b>KARA Lab</b><span>Oklahoma State University</span>
     </a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
     <nav aria-label="Sections">
@@ -338,7 +348,7 @@
       <li>Associate Professor, School of Mechanical and Aerospace Engineering</li>
       <li>Director, Kara Aerodynamics Research Laboratory (KARA Lab)</li>
       <li>Associate Fellow, American Institute of Aeronautics and Astronautics (AIAA)</li>
-      <li class="inst">Oklahoma State University · Stillwater, Oklahoma</li>
+      <li class="inst">Oklahoma State University, Stillwater, Oklahoma</li>
     </ul>
     <p class="thesis">We study the unsteady flows that flight vehicles generate and fly through: the wake of a blunt reentry capsule oscillating in pitch at supersonic speeds, the turbulent airwake over a ship's flight deck, the turbulent urban atmospheric boundary layer, and the receptivity and growth of instability waves that lead to laminar–turbulent transition in hypersonic boundary layers. We compute these flows with direct numerical simulation (DNS) and large-eddy simulation (LES), then train reduced-order models and machine-learning surrogates on the simulation data that run fast enough for design, uncertainty quantification, and real-time flow estimation. We also study active control of flow separation with sweeping jet actuators and quantum algorithms for computational fluid dynamics.</p>
     <div class="links">
@@ -372,7 +382,7 @@
       <li><b>12</b><span>graduate students supervised (6&nbsp;Ph.D., 6&nbsp;M.S.), 4 in progress</span></li>
       <li><b>29</b><span>undergraduate researchers since 2019</span></li>
     </ul>
-    <p class="asof">Counts from the CV and Google Scholar, October 2026.</p>
+    <!-- Counts from the CV and Google Scholar, October 2026. Update this date when a number changes. -->
     </div>
 
     <div>
@@ -422,13 +432,13 @@
       <li><a href="#project-nsf">Urban winds <span>NSF</span></a></li>
       <li><a href="#project-quantum">Quantum CFD <span>IBM</span></a></li>
       <li><a href="#project-hypersonic">Hypersonic transition <span>NASA EPSCoR</span></a></li>
-      <li><a href="#project-swj">Sweeping jets <span>KU · KAIST</span></a></li>
+      <li><a href="#project-swj">Sweeping jets <span>KU, KAIST</span></a></li>
     </ul>
     <div class="projects">
       <article class="proj" id="project-esi">
         <figure class="pfig"><img src="assets/research/sketch-reentry-capsule.jpg?v=20261027" alt="Illustration: a blunt reentry capsule pitching about its center of gravity in an M∞ = 1.44 stream, with a detached bow shock and a turbulent wake; an inset plots the total angle of attack for two initial conditions: from a small initial angle of attack (2°) the oscillation keeps growing, and from a large one (20°) it decays to a limit cycle" loading="lazy" width="1200" height="900"></figure>
         <div class="pbody">
-          <span class="label">NASA Early Stage Innovations · PI · 2023–2027</span>
+          <p class="pline"><span>NASA Early Stage Innovations</span><span>PI, 2023–2027</span></p>
           <h3>Dynamic stability of reentry capsules</h3>
           <p class="award">Physics-Guided Multifidelity Learning for Characterization of Blunt-Body Dynamic Stability (80NSSC23K0231, with a paid extension)</p>
           <p>Blunt reentry capsules can become dynamically unstable in pitch at supersonic and transonic speeds, where small-amplitude oscillations grow while large-amplitude oscillations decay to a limit cycle. The lab characterizes this behavior from free-flight CFD of the Genesis capsule, using multifidelity data fusion, Bayesian estimation of pitch-damping derivatives, neural-operator surrogates, dynamic mode decomposition, and equation discovery.</p>
@@ -442,7 +452,7 @@
       <article class="proj" id="project-airwise">
         <figure class="pfig"><img src="assets/research/sketch-ship-airwake.jpg?v=20261027" alt="Illustration: the NATO Generic Destroyer, from its 1:50 baseline geometry, with wind over the deck shedding turbulent eddies from the superstructure and separating off the hangar into a recirculating airwake over the flight deck; mast anemometers feed the AIRWISE neural network, which outputs the inferred airwake for an approaching helicopter" loading="lazy" width="1200" height="900"></figure>
         <div class="pbody">
-          <span class="label">U.S. Navy NAWCAD · PI · 2026–2028</span>
+          <p class="pline"><span>U.S. Navy NAWCAD</span><span>PI, 2026–2028</span></p>
           <h3>Ship airwakes and real-time wake inference</h3>
           <p class="award">Artificial Intelligence for Real-time Wake Inference in Ship Environments (AIRWISE), N00421-26-1-0004</p>
           <p>Helicopter and drone operations at sea are limited by the turbulent airwake shed by a ship’s superstructure. AIRWISE runs GPU-accelerated LES of the NATO Generic Destroyer, validated against wind-tunnel measurements, and trains AI surrogates that infer the airwake in real time from sparse sensor data.</p>
@@ -456,7 +466,7 @@
       <article class="proj" id="project-faa">
         <figure class="pfig"><img src="assets/research/sketch-aam-turbulence.jpg?v=20261027" alt="Illustration: an atmospheric boundary-layer inflow, drawn as a mean power-law profile with an instantaneous fluctuating profile, enters a high-rise district; the towers shed turbulent eddies downstream, a vertical LES slice of streamwise velocity behind the towers shows their low-speed wakes, and an AAM VTOL aircraft flies above the district in this turbulent wind environment" loading="lazy" width="1200" height="900"></figure>
         <div class="pbody">
-          <span class="label">FAA ASSURE · Co-PI · 2026–2028</span>
+          <p class="pline"><span>FAA ASSURE</span><span>Co-PI, 2026–2028</span></p>
           <h3>Turbulence loading on AAM VTOL vehicles</h3>
           <p class="award">A94: Effect of Turbulence on Aircraft Structural Loading of AAM VTOL Vehicles (25-C-UAS-OKSU-01)</p>
           <p>Advanced air mobility (AAM) VTOL aircraft will take off and land among high-rise buildings, inside the most turbulent part of the urban atmospheric boundary layer. This ASSURE project creates a validated turbulent wind environment, an ABL inflow with building-induced wakes and gusts resolved by LES, for flight-dynamics simulation of AAM VTOL vehicles and the structural loads they experience.</p>
@@ -471,7 +481,7 @@
       <article class="proj" id="project-nsf">
         <figure class="pfig"><img src="assets/research/sketch-urban-winds.jpg?v=20261027" alt="Illustration: an LES domain over a city block with turbulent eddies shed behind each building, a reduced-order model panel, and a fixed-wing drone flying a wind-aware path" loading="lazy" width="1200" height="900"></figure>
         <div class="pbody">
-          <span class="label">NSF National Robotics Initiative · PI · 2020–2025</span>
+          <p class="pline"><span>NSF National Robotics Initiative</span><span>PI, 2020–2025</span></p>
           <h3>Wind-aware navigation for drones in urban airspace</h3>
           <p class="award"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1925147">NRI: INT: Safe Wind-Aware Navigation for Collaborative Autonomous Aircraft in Low Altitude Airspace</a> (1925147, with an REU supplement)</p>
           <p>Small drones in cities fly through turbulent wind fields that mesoscale weather models do not resolve. The lab simulated the urban atmospheric boundary layer with LES, compressed it into POD–LSTM and convolutional-autoencoder reduced-order models, and coupled those winds to drone and AAM flight dynamics to support wind-aware navigation.</p>
@@ -485,7 +495,7 @@
       <article class="proj" id="project-quantum">
         <figure class="pfig"><img src="assets/research/sketch-quantum-cfd.jpg?v=20261027" alt="Illustration: a quantum computer with its qubit chip, a display of a quantum circuit and a 1D Burgers’ shock, and an arrow of increasing complexity toward a 3D aircraft model with tip vortices and a turbulent wake" loading="lazy" width="1200" height="900"></figure>
         <div class="pbody">
-          <span class="label">IBM Quantum · PI · 2025</span>
+          <p class="pline"><span>IBM Quantum</span><span>PI, 2025</span></p>
           <h3>Quantum computing for fluid dynamics</h3>
           <p class="award">Exploring Quantum Computing Paradigms for Fluid Dynamics ($70,000 in IBM Quantum credits)</p>
           <p>Quantum algorithms may speed up the solution of the partial differential equations behind CFD. The lab developed a quantum PDE solver for the viscous Burgers’ equation and a Chebyshev-point formulation that improves its efficiency, and now builds hybrid classical–quantum lattice Boltzmann methods that target IBM quantum hardware.</p>
@@ -499,7 +509,7 @@
       <article class="proj" id="project-hypersonic">
         <figure class="pfig"><img src="assets/research/sketch-hypersonic.jpg?v=20261027" alt="Illustration: two blunt cones in a Mach 6 free stream with acoustic disturbances. Without control, instability waves grow and the boundary layer transitions from laminar to turbulent flow, heating the aft surface. With a cooling strip and an acoustic metasurface, the waves are damped and the boundary layer stays laminar with low heat flux" loading="lazy" width="1200" height="900"></figure>
         <div class="pbody">
-          <span class="label">NASA Oklahoma EPSCoR · PI · 2019, 2022–2023</span>
+          <p class="pline"><span>NASA Oklahoma EPSCoR</span><span>PI, 2019, 2022–2023</span></p>
           <h3>Hypersonic boundary-layer transition</h3>
           <p class="award">Direct Numerical Simulation of Broadband Acoustic Metasurfaces to Stabilize Acoustic Modes in Hypersonic Boundary Layer (Research Initiation Grant); Hypersonic Boundary-Layer Receptivity to Solid Particulates</p>
           <p>Where the boundary layer turns turbulent sets the heating and drag on a hypersonic vehicle. DNS of Mach 6 flow over a blunt cone tracks how free-stream acoustic disturbances enter the boundary layer as first- and second-mode (Mack-mode) waves. Left alone, the waves grow, the flow transitions, and the surface heat flux rises; a localized cooling strip and an acoustic metasurface stabilize the waves and delay or eliminate transition, keeping the flow laminar.</p>
@@ -513,7 +523,7 @@
       <article class="proj" id="project-swj">
         <figure class="pfig"><img src="assets/research/sketch-sweeping-jets.jpg?v=20261027" alt="Illustration: two wings beyond the stall angle of attack. The free stream approaches each leading edge. With actuators off, the flow separates from the leading edge into large eddies. With sweeping jet actuators on, fan-shaped jets keep the flow attached to the trailing edge. A fluidic oscillator shows the internal feedback channels, and an inset lift curve shows that the actuators delay stall to a higher angle of attack and raise the maximum lift coefficient" loading="lazy" width="1200" height="900"></figure>
         <div class="pbody">
-          <span class="label">Khalifa University and KAIST · PI and Co-PI · 2016</span>
+          <p class="pline"><span>Khalifa University and KAIST</span><span>PI and Co-PI, 2016</span></p>
           <h3>Flow-separation control with sweeping jet actuators</h3>
           <p class="award">Sweeping Jet Actuator: An Innovative Approach for Separated Flow Control (Khalifa University Internal Research Fund); Design of Fluidic Oscillators for Active Flow Control (Khalifa University–KAIST Seed Project)</p>
           <p>Sweeping jet actuators are fluidic oscillators with no moving parts: feedback channels make the exit jet sweep side to side. Without actuation, the flow over a wing separates; with the sweeping jets on, it stays attached even beyond the stall angle of attack. The lab studies how internal geometry and mass flow rate set the oscillation frequency and models the actuator with DMD-based and causal state-space reduced-order models.</p>
@@ -528,7 +538,7 @@
 
     <!-- ===== SPONSORS ===== -->
     <h3 class="sub">Sponsors and funding</h3>
-    <!-- One <li> per sponsor. Logo: assets/sponsors/<name>.svg (or .png), shown on a white plate; without a file, keep the text mark. -->
+    <!-- One <li> per sponsor. Logo: assets/sponsors/<name>.svg (or .png on white), set directly on the page; in dark mode it gets a small white backing so dark wordmarks stay legible. -->
     <ul class="sponsors">
       <li><span class="slogo"><img src="assets/sponsors/nasa.png" alt="NASA logo" width="313" height="256" loading="lazy"></span><span><b>NASA</b><span>Early Stage Innovations; Oklahoma NASA EPSCoR</span></span></li>
       <li><span class="slogo"><img src="assets/sponsors/nsf.png" alt="NSF logo" width="255" height="256" loading="lazy"></span><span><b>National Science Foundation</b><span>National Robotics Initiative, with REU; ACCESS computing</span></span></li>
@@ -567,7 +577,7 @@
     <ol class="pubs" id="pubs-list">
       <li data-t="numerics"><span class="yr">2026</span><div><span class="t">Transition-aware learning for surrogate modeling of expensive engineering response surfaces</span><span class="a"><u>S. A.-S. Romeo</u>, K. Kara</span><span class="v"><i>Engineering with Computers</i> 42(6), 191</span><a class="doi" href="https://doi.org/10.1007/s00366-026-02427-w">doi:10.1007/s00366-026-02427-w</a></div></li>
       <li data-t="numerics"><span class="yr">2026</span><div><span class="t">A knowledge-informed machine learning framework for multifidelity modeling</span><span class="a"><u>S. A.-S. Romeo</u>, K. Kara, O. San</span><span class="v"><i>Machine Learning for Computational Science and Engineering</i> 2(1), 26</span><a class="doi" href="https://doi.org/10.1007/s44379-026-00074-y">doi:10.1007/s44379-026-00074-y</a></div></li>
-      <li data-t="control numerics"><span class="yr">2026</span><div><span class="t">Causal state-space reduced-order modeling of sweeping jet actuators using internal mixing-chamber dynamics</span><span class="a"><u>S. A.-S. Romeo</u>, K. Kara</span><span class="v"><i>Mathematics</i> 14(10), 1694 · Feature paper</span><a class="doi" href="https://doi.org/10.3390/math14101694">doi:10.3390/math14101694</a></div></li>
+      <li data-t="control numerics"><span class="yr">2026</span><div><span class="t">Causal state-space reduced-order modeling of sweeping jet actuators using internal mixing-chamber dynamics</span><span class="a"><u>S. A.-S. Romeo</u>, K. Kara</span><span class="v"><i>Mathematics</i> 14(10), 1694 (feature paper)</span><a class="doi" href="https://doi.org/10.3390/math14101694">doi:10.3390/math14101694</a></div></li>
       <li data-t="hyper numerics"><span class="yr">2026</span><div><span class="t">Discovery of governing equations for reduced-order aerodynamic modes of atmospheric entry capsules</span><span class="a"><u>A. Kassem</u>, <u>S. A.-S. Romeo</u>, B. Tiwari, L. Musharrat, O. San, K. Kara</span><span class="v"><i>Aerospace Science and Technology</i> 178, 112454</span><a class="doi" href="https://doi.org/10.1016/j.ast.2026.112454">doi:10.1016/j.ast.2026.112454</a></div></li>
       <li data-t="hyper numerics"><span class="yr">2026</span><div><span class="t">Data-efficient neural operator surrogates for nonlinear pitch dynamics of blunt-body re-entry vehicles</span><span class="a">B. Tiwari, <u>A. Kassem</u>, <u>S. A.-S. Romeo</u>, D. Ekelschot, C. Kazemba, K. Kara, O. San</span><span class="v"><i>Aerospace Science and Technology</i> 177, 112360</span><a class="doi" href="https://doi.org/10.1016/j.ast.2026.112360">doi:10.1016/j.ast.2026.112360</a></div></li>
       <li data-t="hyper numerics"><span class="yr">2026</span><div><span class="t">Emulator-accelerated Bayesian framework for nonlinear parameter estimation of entry capsule dynamic stability</span><span class="a"><u>S. A.-S. Romeo</u>, <u>A. Kassem</u>, B. Tiwari, L. Musharrat, O. San, K. Kara</span><span class="v"><i>Aerospace Science and Technology</i> 177, 112342</span><a class="doi" href="https://doi.org/10.1016/j.ast.2026.112342">doi:10.1016/j.ast.2026.112342</a></div></li>
@@ -578,14 +588,14 @@
       <li data-t="hyper"><span class="yr">2025</span><div><span class="t">Nonlinear parameter estimation for entry capsule dynamic stability analysis and uncertainty quantification</span><span class="a"><u>F. Oz</u>, <u>S. A.-S. Romeo</u>, <u>A. Kassem</u>, D. Ekelschot, J. Schulz, C. Kazemba, O. San, K. Kara</span><span class="v"><i>Journal of Spacecraft and Rockets</i> 63(2), 407–420</span><a class="doi" href="https://doi.org/10.2514/1.A35998">doi:10.2514/1.A35998</a></div></li>
       <li data-t="hyper numerics"><span class="yr">2025</span><div><span class="t">Multifidelity data fusion for analyzing dynamic stability of atmospheric entry vehicles</span><span class="a"><u>S. A.-S. Romeo</u>, <u>A. Kassem</u>, B. Tiwari, O. San, K. Kara</span><span class="v"><i>Aerospace Science and Technology</i> 168, 111049</span><a class="doi" href="https://doi.org/10.1016/j.ast.2025.111049">doi:10.1016/j.ast.2025.111049</a></div></li>
       <li data-t="hyper numerics"><span class="yr">2025</span><div><span class="t">Bayesian framework for estimating dynamic stability derivatives in 6-DoF blunt-body entry vehicles</span><span class="a"><u>A. Kassem</u>, <u>S. A.-S. Romeo</u>, B. Tiwari, O. San, K. Kara</span><span class="v"><i>Aerospace Science and Technology</i> 167, 110646</span><a class="doi" href="https://doi.org/10.1016/j.ast.2025.110646">doi:10.1016/j.ast.2025.110646</a></div></li>
-      <li data-t="wind"><span class="yr">2025</span><div><span class="t">Urban wind field effects on the flight dynamics of fixed-wing drones</span><span class="a">Z. Krawczyk, <u>R. K. S. S. Vuppala</u>, R. Paul, K. Kara</span><span class="v"><i>Drones</i> 9(5), 362 · Feature paper</span><a class="doi" href="https://doi.org/10.3390/drones9050362">doi:10.3390/drones9050362</a></div></li>
+      <li data-t="wind"><span class="yr">2025</span><div><span class="t">Urban wind field effects on the flight dynamics of fixed-wing drones</span><span class="a">Z. Krawczyk, <u>R. K. S. S. Vuppala</u>, R. Paul, K. Kara</span><span class="v"><i>Drones</i> 9(5), 362 (feature paper)</span><a class="doi" href="https://doi.org/10.3390/drones9050362">doi:10.3390/drones9050362</a></div></li>
       <li data-t="wind numerics"><span class="yr">2024</span><div><span class="t">Evaluating reduced-order urban wind models for simulating flight dynamics of advanced aerial mobility aircraft</span><span class="a">Z. Krawczyk, <u>R. K. S. S. Vuppala</u>, R. Paul, K. Kara</span><span class="v"><i>Aerospace</i> 11(10), 830</span><a class="doi" href="https://doi.org/10.3390/aerospace11100830">doi:10.3390/aerospace11100830</a></div></li>
       <li data-t="hyper"><span class="yr">2024</span><div><span class="t">Controlling hypersonic boundary layer transition with localized cooling and metasurface treatments</span><span class="a"><u>F. Oz</u>, K. Kara</span><span class="v"><i>Scientific Reports</i> 14, 15928</span><a class="doi" href="https://doi.org/10.1038/s41598-024-66867-4">doi:10.1038/s41598-024-66867-4</a></div></li>
       <li data-t="hyper numerics"><span class="yr">2024</span><div><span class="t">An augmented physics informed neural network approach for blunt-body dynamics</span><span class="a"><u>S. A.-S. Romeo</u>, <u>F. Oz</u>, <u>A. Kassem</u>, K. Kara, O. San</span><span class="v"><i>Physics of Fluids</i> 36(1), 017140</span><a class="doi" href="https://doi.org/10.1063/5.0176702">doi:10.1063/5.0176702</a></div></li>
       <li data-t="wind numerics"><span class="yr">2024</span><div><span class="t">Modeling advanced air mobility aircraft in data-driven reduced-order realistic urban winds</span><span class="a"><u>R. K. S. S. Vuppala</u>, Z. Krawczyk, R. Paul, K. Kara</span><span class="v"><i>Scientific Reports</i> 14, 383</span><a class="doi" href="https://doi.org/10.1038/s41598-023-50719-8">doi:10.1038/s41598-023-50719-8</a></div></li>
       <li data-t="quantum"><span class="yr">2023</span><div><span class="t">An efficient quantum partial differential equation solver with Chebyshev points</span><span class="a"><u>F. Oz</u>, O. San, K. Kara</span><span class="v"><i>Scientific Reports</i> 13, 7767</span><a class="doi" href="https://doi.org/10.1038/s41598-023-34966-3">doi:10.1038/s41598-023-34966-3</a></div></li>
       <li data-t="hyper"><span class="yr">2023</span><div><span class="t">Local wall cooling effects on hypersonic boundary-layer stability</span><span class="a"><u>F. Oz</u>, <u>T. E. Goebel</u>, J. S. Jewell, K. Kara</span><span class="v"><i>Journal of Spacecraft and Rockets</i> 60(2), 412–426</span><a class="doi" href="https://doi.org/10.2514/1.A35404">doi:10.2514/1.A35404</a></div></li>
-      <li data-t="wind numerics"><span class="yr">2022</span><div><span class="t">A non-intrusive reduced order model using deep learning for realistic wind data generation for small unmanned aerial systems in urban spaces</span><span class="a"><u>R. K. S. S. Vuppala</u>, K. Kara</span><span class="v"><i>AIP Advances</i> 12(8) · <a href="https://github.com/rohitvuppala/POD-LSTM_BLDG">code</a></span><a class="doi" href="https://doi.org/10.1063/5.0098835">doi:10.1063/5.0098835</a></div></li>
+      <li data-t="wind numerics"><span class="yr">2022</span><div><span class="t">A non-intrusive reduced order model using deep learning for realistic wind data generation for small unmanned aerial systems in urban spaces</span><span class="a"><u>R. K. S. S. Vuppala</u>, K. Kara</span><span class="v"><i>AIP Advances</i> 12(8); <a href="https://github.com/rohitvuppala/POD-LSTM_BLDG">code</a></span><a class="doi" href="https://doi.org/10.1063/5.0098835">doi:10.1063/5.0098835</a></div></li>
       <li data-t="quantum"><span class="yr">2022</span><div><span class="t">Solving Burgers' equation with quantum computing</span><span class="a"><u>F. Oz</u>, <u>R. K. S. S. Vuppala</u>, K. Kara, F. Gaitan</span><span class="v"><i>Quantum Information Processing</i> 21, 30</span><a class="doi" href="https://doi.org/10.1007/s11128-021-03391-8">doi:10.1007/s11128-021-03391-8</a></div></li>
       <li data-t="control"><span class="yr">2022</span><div><span class="t">The influence of exit nozzle geometry on sweeping jet actuator performance</span><span class="a"><u>M. Alam</u>, K. Kara</span><span class="v"><i>Fluids</i> 7(2), 69</span><a class="doi" href="https://doi.org/10.3390/fluids7020069">doi:10.3390/fluids7020069</a></div></li>
       <li data-t="control"><span class="yr">2018</span><div><span class="t">Flow-separation control using sweeping jet actuator</span><span class="a">K. Kara, D. Kim, P. J. Morris</span><span class="v"><i>AIAA Journal</i></span><a class="doi" href="https://doi.org/10.2514/1.J056715">doi:10.2514/1.J056715</a></div></li>
@@ -633,17 +643,17 @@
       <div>
         <p class="label">Ph.D.</p>
         <ul>
-          <li><a href="https://scholar.google.com/citations?user=tRnjE8wAAAAJ">Furkan Oz</a><span>2024 · R&amp;D Associate, Oak Ridge National Laboratory</span></li>
-          <li><a href="https://scholar.google.com/citations?user=eAlRaykAAAAJ">Rohit Vuppala</a><span>2024 · Senior Researcher in Applied ML, Fujitsu Research</span><span>Dissertation: <a href="https://hdl.handle.net/20.500.14446/346724">Wind Field Estimation Using Machine Learning Based Reduced-Order Models for Safe Wind-Aware Navigation of Unmanned Aerial Systems in Urban Spaces</a></span></li>
-          <li><a href="https://scholar.google.ae/citations?user=ycVduQUAAAAJ">Bartosz Jurewicz Slupski</a><span>2019, Khalifa University · Sr. R&amp;D Programs &amp; Engagement Manager, ASPIRE</span><span>Dissertation: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6820338/file">Study on the Flow Characteristics of the Sweeping Jet Actuator</a></span></li>
+          <li><a href="https://scholar.google.com/citations?user=tRnjE8wAAAAJ">Furkan Oz</a> <span class="when">2024</span><span>R&amp;D Associate, Oak Ridge National Laboratory</span></li>
+          <li><a href="https://scholar.google.com/citations?user=eAlRaykAAAAJ">Rohit Vuppala</a> <span class="when">2024</span><span>Senior Researcher in Applied ML, Fujitsu Research</span><span>Dissertation: <a href="https://hdl.handle.net/20.500.14446/346724">Wind Field Estimation Using Machine Learning Based Reduced-Order Models for Safe Wind-Aware Navigation of Unmanned Aerial Systems in Urban Spaces</a></span></li>
+          <li><a href="https://scholar.google.ae/citations?user=ycVduQUAAAAJ">Bartosz Jurewicz Slupski</a> <span class="when">2019, Khalifa University</span><span>Sr. R&amp;D Programs &amp; Engagement Manager, ASPIRE</span><span>Dissertation: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6820338/file">Study on the Flow Characteristics of the Sweeping Jet Actuator</a></span></li>
         </ul>
         <p class="label" style="margin-top:22px">M.Sc.</p>
         <ul>
-          <li>Mobashera Alam<span>2022 · Flow Assurance Manager, JACAM Catalyst</span><span>Thesis: <a href="https://hdl.handle.net/20.500.14446/338781">Computational Analysis of Sweeping Jet Actuator Using Dynamic Mode Decomposition</a></span></li>
-          <li>Amani Bin Amro<span>2019, Khalifa University · Principal Engineer, EDGE</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/16940043/20229.pdf">Computational Fluid Dynamics Study for Drag Reduction of an Airborne Surveillance Gimbal</a></span></li>
-          <li>Shamma Al Hemeiri<span>2019, Khalifa University · Aerospace Engineer, Atlas Aerospace</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6820937/file">Structural Design of an External Aerial Pod</a></span></li>
-          <li>Shaikha Al-Ali<span>2019, Khalifa University · Systems Integration Engineer, UAE Ministry of Defence</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6817906/file">Aerodynamic Optimization of an External Aerial Pod</a></span></li>
-          <li>Abdelnasir Alnaqbi<span>2020, Khalifa University · Secondee, Kearney</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6821194/file">Aerodynamics of Bicycles</a></span></li>
+          <li>Mobashera Alam <span class="when">2022</span><span>Flow Assurance Manager, JACAM Catalyst</span><span>Thesis: <a href="https://hdl.handle.net/20.500.14446/338781">Computational Analysis of Sweeping Jet Actuator Using Dynamic Mode Decomposition</a></span></li>
+          <li>Amani Bin Amro <span class="when">2019, Khalifa University</span><span>Principal Engineer, EDGE</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/16940043/20229.pdf">Computational Fluid Dynamics Study for Drag Reduction of an Airborne Surveillance Gimbal</a></span></li>
+          <li>Shamma Al Hemeiri <span class="when">2019, Khalifa University</span><span>Aerospace Engineer, Atlas Aerospace</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6820937/file">Structural Design of an External Aerial Pod</a></span></li>
+          <li>Shaikha Al-Ali <span class="when">2019, Khalifa University</span><span>Systems Integration Engineer, UAE Ministry of Defence</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6817906/file">Aerodynamic Optimization of an External Aerial Pod</a></span></li>
+          <li>Abdelnasir Alnaqbi <span class="when">2020, Khalifa University</span><span>Secondee, Kearney</span><span>Thesis: <a href="https://khazna.ku.ac.ae/ws/portalfiles/portal/6821194/file">Aerodynamics of Bicycles</a></span></li>
         </ul>
       </div>
       <div style="grid-column: span 2">
@@ -686,12 +696,12 @@
     <p class="lede">Aerodynamics, computation, and data-driven methods. Recognized with the CEAT Excellent Faculty Award (2025), an ANSYS curriculum development grant (2024), and the President's Faculty Excellence Award for Outstanding Teaching at Khalifa University (2015).</p>
     <!-- Copy one <article class="course"> to add a course. Link a course site in the <a>. -->
     <div class="courses">
-      <article class="course"><span class="label">MAE 3293 · Undergraduate · Every fall since 2019</span><h3>Fundamentals of Aerodynamics</h3><p>The junior aerodynamics course, taught to 90–160 students a year. Calculators: <a href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/">compressible aerodynamics</a>.</p></article>
-      <article class="course"><span class="label">MAE 5020 · Graduate · Spring 2024–2026</span><h3><a href="https://github.com/kursatkara/MAE_5020_Spring_2026">Data-Driven Methods in Aerospace Engineering</a></h3><p>Eigendecomposition, SVD, PCA, DMD, neural networks, and PINNs in PyTorch, taught with Colab notebooks.</p></article>
-      <article class="course"><span class="label">MAE 5943 · Graduate · 2020, 2023</span><h3><a href="https://github.com/kursatkara/MAE_5943_S23">Unsteady Aerodynamics and Aeroacoustics</a></h3><p>Governing equations for unsteady flows; linear unsteady aerodynamics of isolated and cascaded lifting surfaces; acoustics in moving media and three-dimensional ducts; sound generation by airfoils, cascades, rotor–stator interaction, propellers, and jets.</p></article>
-      <article class="course"><span class="label">MAE 5010 · Graduate · 2022</span><h3>Hydrodynamic Stability and Transition to Turbulence</h3><p>Linear stability, receptivity, and transition.</p></article>
-      <article class="course"><span class="label">MAE 5010 · Graduate · 2021</span><h3>Quantum Computational Fluid Dynamics</h3><p>Quantum algorithms for PDEs and their application to fluid flows.</p></article>
-      <article class="course"><span class="label">Khalifa University · 2010–2018</span><h3>Aerospace curriculum</h3><p>Low- and high-speed aerodynamics, CFD, boundary-layer analysis, numerical methods, aircraft performance, and senior design.</p></article>
+      <article class="course"><p class="pline"><span>MAE 3293, undergraduate</span><span>Every fall since 2019</span></p><h3>Fundamentals of Aerodynamics</h3><p>The junior aerodynamics course, taught to 90–160 students a year. Calculators: <a href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/">compressible aerodynamics</a>.</p></article>
+      <article class="course"><p class="pline"><span>MAE 5020, graduate</span><span>Spring 2024–2026</span></p><h3><a href="https://github.com/kursatkara/MAE_5020_Spring_2026">Data-Driven Methods in Aerospace Engineering</a></h3><p>Eigendecomposition, SVD, PCA, DMD, neural networks, and PINNs in PyTorch, taught with Colab notebooks.</p></article>
+      <article class="course"><p class="pline"><span>MAE 5943, graduate</span><span>2020, 2023</span></p><h3><a href="https://github.com/kursatkara/MAE_5943_S23">Unsteady Aerodynamics and Aeroacoustics</a></h3><p>Governing equations for unsteady flows; linear unsteady aerodynamics of isolated and cascaded lifting surfaces; acoustics in moving media and three-dimensional ducts; sound generation by airfoils, cascades, rotor–stator interaction, propellers, and jets.</p></article>
+      <article class="course"><p class="pline"><span>MAE 5010, graduate</span><span>2022</span></p><h3>Hydrodynamic Stability and Transition to Turbulence</h3><p>Linear stability, receptivity, and transition.</p></article>
+      <article class="course"><p class="pline"><span>MAE 5010, graduate</span><span>2021</span></p><h3>Quantum Computational Fluid Dynamics</h3><p>Quantum algorithms for PDEs and their application to fluid flows.</p></article>
+      <article class="course"><p class="pline"><span>Khalifa University</span><span>2010–2018</span></p><h3>Aerospace curriculum</h3><p>Low- and high-speed aerodynamics, CFD, boundary-layer analysis, numerical methods, aircraft performance, and senior design.</p></article>
     </div>
   </div>
 </section>
@@ -794,7 +804,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Kursat Kara · KARA Lab, Oklahoma State University</span>
+    <span>© 2026 Kursat Kara, KARA Lab, Oklahoma State University</span>
     <nav aria-label="Profiles"><a href="assets/Kursat_Kara_CV.pdf?v=20261027b">CV</a><a href="https://scholar.google.com/citations?user=RXSWKeMAAAAJ">Scholar</a><a href="https://github.com/kursatkara">GitHub</a><a href="mailto:kursat.kara@okstate.edu">Email</a></nav>
     <span>Last updated October 2026</span>
   </div>

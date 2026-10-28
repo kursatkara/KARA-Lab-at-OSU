@@ -20,7 +20,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - The public CV PDF is the 2-page short CV from that repo (`build/<date>_Kursat_Kara_Short_CV.pdf`), copied to
   `assets/Kursat_Kara_CV.pdf`. Never publish the full CV: it lists pending and unfunded proposals.
 - Do not publish private CV details (citizenship, proposal outcomes, requested amounts, committee-only advising).
-- The "Research record" list (`.record`, under the bio in `#glance`) carries an "as of" line (`.asof`). Update it whenever a number changes.
+- The "Research record" list (`.record`, under the bio in `#glance`) has an HTML comment with the date the counts were
+  taken (not shown on the page). Update that date whenever a number changes.
 - Update "Last updated" in the footer whenever content changes.
 
 ## Style
@@ -32,6 +33,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   orange. `--orange-hi` (#ff7300) is for marks and rules; `--orange` (#b34b00) is the hover text color (passes WCAG AA).
 - Containers: research project panels are the only bordered boxes. Everything else (team, courses, sponsors, events,
   lists) is set as ruled rows on the page. Secondary text is at least 0.86rem.
+- No middle dots (·) as separators. Use commas or structure instead: in `.pline`, the sponsor or course number sits on
+  the left and role and years on the right; alumni show the graduation year after the name and the position below.
 - Fonts: Source Serif 4 (headings, figures in the Research record) and Source Sans 3 (body, labels, dates, DOIs). No monospace
   font; use `font-variant-numeric: tabular-nums` where digits must align. No all-caps letter-spaced labels.
 - Corners are nearly square: `--radius` (2px) for panels, cards, buttons, and photos. No pill buttons or circular photos;
@@ -60,7 +63,7 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - **Graduate → alumni:** delete the person's card and add an `<li>` under Alumni with their current position, plus a
   `<span>Thesis: <a href="…">title</a></span>` line (Dissertation for Ph.D.) linking the thesis in the university repository.
 - **Research projects:** one `<article class="proj">` panel per funded project in `.projects`, newest first, plus a link
-  in the `.pindex` list above it. Each panel: sponsor · role · years (label), a plain-language title (h3), the official
+  in the `.pindex` list above it. Each panel: a `.pline` with the sponsor on the left and "PI, years" on the right, a plain-language title (h3), the official
   award title and number (`.award`), a 2–3 sentence summary, an optional "From the paper" inset (`.pinset`), then Setup
   (if useful), Team, and Papers ("Related papers" for earlier work, "Status" before the first paper). The main image is an illustration, `assets/research/sketch-<name>.jpg` (1200×900), made
   with the three.js scenes in `tools/scenes/` (see its README); describe the scene fully in the `alt` text.
@@ -72,7 +75,8 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   APS DFD and other abstracts and posters are not peer-reviewed; count them separately.
 - **Publications list** shows the 10 newest by default; "Show all" reveals the rest. Keep it to about 25 selected papers.
 - **Sponsors and funding:** one `<li>` in `.sponsors` per funding organization (name + programs). Put the official logo in
-  `assets/sponsors/<name>.svg` (or a PNG at least 120 px tall; square seals and wide wordmarks both fit) and replace the `<span class="smark">` text mark with
+  `assets/sponsors/<name>.svg` (or a PNG on white, at least 120 px tall; square seals and wide wordmarks both fit). Logos sit
+  directly on the page, left-aligned, with no plate or box (dark mode adds a small white backing). Replace the `<span class="smark">` text mark with
   `<img src="assets/sponsors/<name>.svg" alt="<Sponsor> logo">`. Only organizations that funded an award.
 - **Other support:** add an `<li>` at the top of `.grants` (role, title + sponsor, years). Only funded awards;
   memberships, computing allocations, and in-kind software licenses (e.g., Volcano ScaLES) go in the
