@@ -25,8 +25,13 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 
 ## Style
 - Keep the design tokens in `:root` and the two dark-mode blocks in sync. Add new colors as tokens, never hard-coded.
-- Accent is OSU orange: `--orange-hi` (#ff7300) for fills and rules, `--orange` (#b34b00 in light mode) for text so it passes
-  WCAG AA (4.5:1) on every light background; check contrast before changing either.
+- Palette: white paper (`--bg`), navy ink (`--ink` #12233d) for body text, headings, figures, and strong rules, slate
+  (`--muted` #4a5667) for secondary text, and visible hairlines (`--line` #c9d1db). Navy and orange are the lab's colors.
+- OSU orange is the signature, used sparingly: the 3px stripe on the top bar, the airfoil mark, link underlines, the
+  current-position marker, the focus ring, and the "Join the lab" button. Do not color text, labels, dates, or numbers
+  orange. `--orange-hi` (#ff7300) is for marks and rules; `--orange` (#b34b00) is the hover text color (passes WCAG AA).
+- Containers: research project panels are the only bordered boxes. Everything else (team, courses, sponsors, events,
+  lists) is set as ruled rows on the page. Secondary text is at least 0.86rem.
 - Fonts: Source Serif 4 (headings, figures in the Research record) and Source Sans 3 (body, labels, dates, DOIs). No monospace
   font; use `font-variant-numeric: tabular-nums` where digits must align. No all-caps letter-spaced labels.
 - Corners are nearly square: `--radius` (2px) for panels, cards, buttons, and photos. No pill buttons or circular photos;
