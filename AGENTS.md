@@ -20,14 +20,17 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
 - The public CV PDF is the 2-page short CV from that repo (`build/<date>_Kursat_Kara_Short_CV.pdf`), copied to
   `assets/Kursat_Kara_CV.pdf`. Never publish the full CV: it lists pending and unfunded proposals.
 - Do not publish private CV details (citizenship, proposal outcomes, requested amounts, committee-only advising).
-- The "By the numbers" tiles carry an "as of" line (`.asof`). Update it whenever a number changes.
+- The "Research record" list (`.record`, under the bio in `#glance`) carries an "as of" line (`.asof`). Update it whenever a number changes.
 - Update "Last updated" in the footer whenever content changes.
 
 ## Style
 - Keep the design tokens in `:root` and the two dark-mode blocks in sync. Add new colors as tokens, never hard-coded.
 - Accent is OSU orange: `--orange-hi` (#ff7300) for fills and rules, `--orange` (#b34b00 in light mode) for text so it passes
   WCAG AA (4.5:1) on every light background; check contrast before changing either.
-- Fonts: Source Serif 4 (headings), IBM Plex Sans (body), IBM Plex Mono (labels, dates, DOIs).
+- Fonts: Source Serif 4 (headings, figures in the Research record) and Source Sans 3 (body, labels, dates, DOIs). No monospace
+  font; use `font-variant-numeric: tabular-nums` where digits must align. No all-caps letter-spaced labels.
+- Corners are nearly square: `--radius` (2px) for panels, cards, buttons, and photos. No pill buttons or circular photos;
+  the only circles are the Career path timeline markers.
 - Do not use official OSU logos or wordmarks; the airfoil mark in the header and `assets/favicon.svg` is the lab's own.
 - Keep text short; this is a landing page, not the CV.
 - Use precise technical terminology, as in a paper abstract: "dynamic stability of reentry capsules" (not "tumbling"),
@@ -59,7 +62,7 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   The inset is a real paper figure on a white 800×600 canvas (letterbox, don't crop away axes or colorbars) with a
   credit: authors, venue + DOI link, and license for open-access figures.
   Smaller grants (curriculum, state seed funds) go in the "Other support" list below the panels.
-- **Publication counts** (By the numbers and the Publications lede): peer-reviewed = published journal articles plus
+- **Publication counts** (Research record and the Publications lede): peer-reviewed = published journal articles plus
   peer-reviewed conference papers (AIAA, AMS, IEEE; `keywords` contains `peer-reviewed` in `publications.bib`).
   APS DFD and other abstracts and posters are not peer-reviewed; count them separately.
 - **Publications list** shows the 10 newest by default; "Show all" reveals the rest. Keep it to about 25 selected papers.
@@ -79,7 +82,7 @@ Instructions for people and AI agents (Claude Code, Codex) editing this reposito
   "Join the lab" section (`#join`) sits above Contact: flyer on the left, text and buttons on the right. When not
   recruiting, delete the `<a class="flyer">` and the download button, set `.joinlab` to one column, change the lede, and remove the News item that links to the flyer.
   Shareable link: `https://www.kursatkara.com/#join`.
-- **CV:** overwrite `assets/Kursat_Kara_CV.pdf` (keep the name), then check the numbers in "By the numbers".
+- **CV:** overwrite `assets/Kursat_Kara_CV.pdf` (keep the name), then check the numbers in the Research record.
 - **Headshot:** overwrite `assets/kursat-kara.jpg` with a square JPEG (~480×480).
 - **Link preview** (LinkedIn, Slack, etc.): `assets/og-card.jpg`, 1200×630, built from `tools/og-card/og-card.html` with
   `node tools/og-card/render.js` (see the comment in that file). Re-render after a title, headshot, or illustration change.
