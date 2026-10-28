@@ -179,6 +179,19 @@
   .news li { display: grid; grid-template-columns: 110px 1fr; gap: 20px; }
   .news time { font: 600 .92rem/1.75 var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
     @media (max-width: 480px) { .news li { grid-template-columns: 1fr; gap: 0; } }
+  /* News list with a "Featured tool" tile beside it; the tile drops below the list on narrow screens */
+  .newsgrid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px 56px; align-items: start; }
+  .newsgrid .news { max-width: none; }
+  .feature { display: flex; flex-direction: column; gap: 8px; }
+  .feature .label { margin: 0; }
+  .feature .thumb { display: block; background: var(--plate); border-radius: var(--radius); overflow: hidden; }
+  .feature .thumb img { display: block; width: 100%; }
+  .feature h3 { font: 600 1.15rem/1.3 var(--serif); margin: 4px 0 0; }
+  .feature h3 a { text-decoration: none; }
+  .feature h3 a:hover { text-decoration: underline; }
+  .feature p { margin: 0; font-size: .95rem; color: var(--muted); }
+  .feature .more { color: var(--ink); }
+  @media (max-width: 860px) { .newsgrid { grid-template-columns: 1fr; } .feature { max-width: 420px; } }
 
 
   /* Research projects: one panel per funded project; figure and text alternate sides on wide screens */
@@ -421,9 +434,12 @@
 <section id="news" class="alt" aria-labelledby="news-h">
   <div class="wrap">
     <h2 id="news-h">News</h2>
+    <div class="newsgrid">
+      <div>
       <!-- Add new items at the top. Keep about 8. -->
       <ul class="news">
         <li><time>Oct 2026</time><span>The lab is <b>recruiting M.S. and Ph.D. students</b> in computational aerodynamics, LES, and scientific machine learning. See the <a href="#join">recruiting flyer</a>.</span></li>
+        <li><time>Oct 2026</time><span>The updated <a href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/supersonic-airfoils.html#diamond">Supersonic Airfoil Calculator</a> for MAE 3293 is online: shock-expansion theory for a flat plate, a wedge, and a diamond airfoil, with step-by-step worked solutions.</span></li>
         <li><time>Sep 2026</time><span>The AIAA Oklahoma Section won second place in the AIAA Section–Student Branch Partnership Award, with Kursat Kara as Technical Symposium advisor.</span></li>
         <li><time>Aug 2026</time><span>Kursat Kara was elected an <b>AIAA Associate Fellow</b> (Class of 2027).</span></li>
         <li><time>Apr 2026</time><span>Ashraf Kassem received the CEAT Dean's Overall Outstanding Graduate Student Award and the MAE Outstanding Graduate Student Award.</span></li>
@@ -434,6 +450,17 @@
         <li><time>2025</time><span>Kursat Kara received the CEAT Excellent Faculty Award. The lab also received <a href="https://news.okstate.edu/articles/engineering-architecture-technology/2025/ceat_research_lab_awarded_70k_in_ibm_quantum_credits_to_advance_fluid_dynamics_research.html">$70,000 in IBM Quantum credits</a>.</span></li>
       </ul>
       <p class="key"><a href="https://www.linkedin.com/in/kursat-kara-4744173/">More updates on LinkedIn →</a></p>
+      </div>
+
+      <!-- Featured tool: thumbnail, title, one line, text link. Thumbnail is a crop of the calculator's own figure, 800×600. -->
+      <aside class="feature" aria-labelledby="feature-h">
+        <p class="label">Featured tool</p>
+        <a class="thumb" href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/supersonic-airfoils.html#diamond" tabindex="-1"><img src="assets/teaching-supersonic-airfoil.jpg?v=20261028" width="800" height="600" loading="lazy" alt="Diamond airfoil at Mach 3 and 15 degrees angle of attack, with an oblique shock and Prandtl–Meyer expansion fans on each face, labeled with the pressure ratio and Mach number on each surface and the resultant force"></a>
+        <h3 id="feature-h"><a href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/supersonic-airfoils.html#diamond">Supersonic Airfoil Calculator</a></h3>
+        <p>Shock-expansion theory for a diamond airfoil: wave pattern, surface pressures, and c<sub>l</sub>, c<sub>d</sub>, c<sub>m</sub>.</p>
+        <p><a class="more" href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/supersonic-airfoils.html#diamond">Open the calculator →</a></p>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -720,7 +747,7 @@
     <p class="lede">Aerodynamics, computation, and data-driven methods. Recognized with the CEAT Excellent Faculty Award (2025), an ANSYS curriculum development grant (2024), and the President's Faculty Excellence Award for Outstanding Teaching at Khalifa University (2015).</p>
     <!-- Copy one <article class="course"> to add a course. Link a course site in the <a>. -->
     <div class="courses">
-      <article class="course"><p class="pline"><span>MAE 3293, undergraduate</span><span>Fall 2019–2026</span></p><h3>Fundamentals of Aerodynamics</h3><p>The junior aerodynamics course, taught to 90–160 students a year. Calculators: <a href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/">compressible aerodynamics</a>.</p></article>
+      <article class="course"><p class="pline"><span>MAE 3293, undergraduate</span><span>Fall 2019–2026</span></p><h3>Fundamentals of Aerodynamics</h3><p>The junior aerodynamics course, taught to 90–160 students a year. Calculators: <a href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/">compressible aerodynamics</a>, <a href="https://kursatkara.github.io/MAE3293-Compressible-Aerodynamics-Calculator/supersonic-airfoils.html#diamond">supersonic airfoils</a>.</p></article>
       <article class="course"><p class="pline"><span>MAE 5020, graduate</span><span>Spring 2024–2026</span></p><h3><a href="https://github.com/kursatkara/MAE_5020_Spring_2026">Data-Driven Methods in Aerospace Engineering</a></h3><p>Eigendecomposition, SVD, PCA, DMD, neural networks, and PINNs in PyTorch, taught with Colab notebooks.</p></article>
       <article class="course"><p class="pline"><span>MAE 5943, graduate</span><span>2020, 2023</span></p><h3><a href="https://github.com/kursatkara/MAE_5943_S23">Unsteady Aerodynamics and Aeroacoustics</a></h3><p>Governing equations for unsteady flows; linear unsteady aerodynamics of isolated and cascaded lifting surfaces; acoustics in moving media and three-dimensional ducts; sound generation by airfoils, cascades, rotor–stator interaction, propellers, and jets.</p></article>
       <article class="course"><p class="pline"><span>MAE 5010, graduate</span><span>2022</span></p><h3>Hydrodynamic Stability and Transition to Turbulence</h3><p>Linear stability, receptivity, and transition.</p></article>
